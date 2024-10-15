@@ -70,4 +70,15 @@ List<int> numeri4 = new List<int> {10, 20, 30, 40, 50 }; // dichiazarione e iniz
 
 // sia le liste che gli array sono collezioni di dati che possono di Int, Double, Char, String, ecc.
 // esempio di lista di stringhe
-List<string> nomi = new List<string> {"Mario", "Luigi", "Peach",};
+List<string> nomi = new List<string> {"Mario", "Luigi", "Peach",}; // dichiazarione e inizializzazione di una lista ineteri
+
+//DIZIONARIO
+Dictionary<string, int> voti = new Dictionary<string, int> (); // dichiazarione di un dizionario con chiave di tipo stringa e un valore intero
+// in questo caso string e la chiave ed int al valore
+
+// BEST PRACTICES PER LA DICHIARAZIONE DI VARIABILI
+//dichiarare le varibili con nomi significativi
+// dichiarare le varibili con la notazione CamelCase o PascalCase
+// esempio camel case etaStudente
+// esempio pascal case EtaStudente
+
