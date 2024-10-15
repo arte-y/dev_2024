@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xx-Esercitazioni", "xx-Eser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_metodi-console", "xx-Esercitazioni\01_metodi-console\01_metodi-console.csproj", "{EB5333FE-5E53-48BE-B656-1A85803E1BD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_tipi-di-dati", "xx-Esercitazioni\02_tipi-di-dati\02_tipi-di-dati.csproj", "{F87D9170-2F70-4A6A-88F9-0A615D4B6BFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,8 +28,13 @@ Global
 		{EB5333FE-5E53-48BE-B656-1A85803E1BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB5333FE-5E53-48BE-B656-1A85803E1BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB5333FE-5E53-48BE-B656-1A85803E1BD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F87D9170-2F70-4A6A-88F9-0A615D4B6BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F87D9170-2F70-4A6A-88F9-0A615D4B6BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F87D9170-2F70-4A6A-88F9-0A615D4B6BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F87D9170-2F70-4A6A-88F9-0A615D4B6BFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EB5333FE-5E53-48BE-B656-1A85803E1BD4} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
+		{F87D9170-2F70-4A6A-88F9-0A615D4B6BFF} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 	EndGlobalSection
 EndGlobal
