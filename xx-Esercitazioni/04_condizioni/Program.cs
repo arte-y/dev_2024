@@ -51,10 +51,10 @@ else
 int y = 10;
 switch (y)
 {
-    case 5;
+    case 5:
     Console.WriteLine("y e uguale a 5");
     break;
-    case 10;
+    case 10:
     Console.WriteLine("y e uguale a 10");
     break;
     default:
@@ -82,12 +82,80 @@ bool a = true;
 switch (a)
 {
     case true:
-    Console.WriteLine("a e true"):
+    Console.WriteLine("a e true");
     break;
     case false:
     Console.WriteLine("a e false");
+    break;
     default:
     Console.WriteLine("a non e true ne false");
     break;
 }
+
+
+// Esempio-1
+Console.Clear();    
+
+Console.WriteLine("Inserice una parola Genovese!");
+string g2 = Console.ReadLine().ToLower();
+
+
+if (g2=="belin")
+{
+    Console.WriteLine($"Va bien, Sei di Genvoese! perhcè hai detto {g2}!");
+}
+else
+{
+    Console.WriteLine("Non sei di Genovese!");
+}
+
+// Esempio-2
+Console.Clear();
+Dictionary<string, int> voti = new Dictionary<string, int>(); 
+voti.Add("Tamer", 90);
+voti.Add("Mario", 85);
+voti.Add("Irene", 50);
+voti.Add("Jane", 70);
+voti.Add("Anto", 75);
+voti.Add("Francesco", 40);
+
+
+foreach (var item in voti) 
+{
+    Console.WriteLine($"Name: {item.Key}, Vote: {item.Value}"); 
+}
+
+// Esempio-3
+Console.Clear();
+Console.WriteLine("Metti il nome di mese");
+string meseNome = Console.ReadLine().ToLower();
+
+switch (meseNome)
+{
+    case "dicembre":
+    case "gennaio":
+    case "febbraio":
+    Console.WriteLine("Stagione Inverno");
+    break;
+    case "marzo":
+    case "aprile":
+    case "maggio":
+    Console.WriteLine("Stagione Primavera");
+    break;
+    case "giugno":
+    case "luglio":
+    case"agosto":
+    Console.WriteLine("Stagione Estate");
+    break;
+    case "settembre":
+    case "ottobre":
+    case "novembre":
+    Console.WriteLine("Stagione autom");
+    break;
+    default:
+    break;
+}
+
+
+
 
