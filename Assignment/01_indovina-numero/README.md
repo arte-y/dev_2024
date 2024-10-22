@@ -145,5 +145,74 @@ while (tentativiEffettuati < tentativiMassimi && !haIndovinato)
         Console.WriteLine("Hai esaurito i tentativi. Il numero era " + numeroDaIndovinare + ".");  
     }  
 }
+```
 
+## Versione 4
+
+**Obiettivo**
+Imposta un numero masssi di tentativi (ad esempio, 5). Se l'utente non indivina entro questi tentativi, ilgiovo termina.
+**Istruzioni:**
+* Iniziz con puntteggio massimo
+
+**Esempio di codice**
+```csharp
+do
+{
+    Random rnd = new Random();
+    int indovinaNumero = rnd.Next(1, 100);
+
+    int inseritoNumero = 0;
+    int tentativo = 5;
+    
+    int puntiMax = 100 / tentativo;
+    int ciclio =0;
+
+    Console.WriteLine(indovinaNumero);
+
+    while (tentativo > 0)
+    {
+        ciclio++;
+        Console.WriteLine($"indovina un numero (tra 1 e 100) e Hai {tentativo - 0} tentativi.");
+        inseritoNumero = int.Parse(Console.ReadLine());
+        tentativo--;
+
+        if (inseritoNumero == indovinaNumero)
+        {
+            int punti = 100 - (puntiMax * (ciclio -1));
+            Console.WriteLine($"Complimenti! Hai indovinato il numero {indovinaNumero} e punti {punti}");
+            break;
+        }
+        else
+        {
+            if (tentativo == 0)
+            {
+                Console.WriteLine($"finito tentativo");
+                break;
+            }
+            if (inseritoNumero < indovinaNumero)
+            {
+                Console.WriteLine("maggiore");
+            }
+            else
+            {
+                Console.WriteLine("minore");
+            }
+        }
+    }
+    Console.WriteLine("Game Over");
+    Console.WriteLine("****************");
+
+    Console.Write("vuole continuare a giocare? (S/N):");
+    string risulto = Console.ReadLine().ToLower();
+    if (risulto == "s")
+    {
+        Console.WriteLine("inizia a nouvo gioco");
+    }
+    else
+    {
+        Console.WriteLine("Cioa Caro/a");
+        break;
+    }
+
+} while (true);
 ```
