@@ -1,66 +1,37 @@
-﻿Console.Clear();
-Random rnd = new Random(); // random e la classe che genera numeri causali
-// new e il construttore della classe Random che istanzia un oggetto Random
-// random e l'oggetto che possiamo utilizzare
-int numeroDaIndovinare =rnd.Next(1,100); // next e il metodo genra numero casuale tra 1 e 100
-// vienen generato un intervall semi aperto tra 1 e 101 che comprende il numero iniziale (1) ma esculude il numero finale (101)
-// il metodo Next genera un numero casuale compreso tra il minimo incluso e il valore massimo esclude
+﻿﻿Random random = new Random(); // Random e la classe che genera numeri casuali
+// new e il costruttore della classe Random che istanzia un oggetto Random
+// random e l'oggetto Random che possiamo utilizzare
+int numeroDaIndovinare = random.Next(1, 101); // Next e il metodo che genera un numero casuale tra 1 e 100
+// viene generato un intervallo semi aperto tra 1 e 101 quindi che comprende il numero iniziale (1) ma esclude il numero finale (101)
+// il metodo Next genera un numero casuale compreso tra il valore minimo incluso e il valore massimo escluso.
 
-// verifici che il metodo next abbia enerato il numero casuale stampandolo
+// verifico che il metodo next abbia generato il numero casuale stampandolo
 // Console.WriteLine(numeroDaIndovinare);
-// messagio di inserimento numero
-// Console.WriteLine("Indovino il numero (tra 1 e 100)");
 
-// dichiaro una variabile alla quale dopo associero il valore inserimento dall'utente
-int numeroInserito=0;
+// messaggio di inserimento numero
+Console.WriteLine("Indovina il numero (tra 1 e 100): ");
 
-// associo alla variabile il valore inserito dall'utente
-numeroInserito = Convert.ToInt32(Console.ReadLine()); // converto il valore inserito dall'utente in un intero perche Console.ReadLine restituisce uan stringa 
+// dichiaro una variabile alla quale dopo assegnero il valore inserito dall'utente
+int numeroInserito;
 
+// assegno alla variabile il valore inserito dall'utente
+numeroInserito = Convert.ToInt32(Console.ReadLine()); // converto il valore inserito dall'utente in un intero perche Console.ReadLine restituisce una stringa
+// in alternativa al ToInt32 posso usare il metodo Parse
+// int numeroInserito = int.Parse(Console.ReadLine());
 // oppure se voglio farlo in un unica istruzione
-// int numeroInserito =Convert.ToInt32(Console.ReadLine());
+// int numeroInserito = Convert.ToInt32(Console.ReadLine());
 
 // verifico che il numero inserito sia uguale al numero da indovinare
-
 if (numeroInserito == numeroDaIndovinare)
 {
-    Console.WriteLine("Complimenti! Hai indovinato il numero");
+    // se il numero inserito e uguale al numero da indovinare stampo il messaggio di congratulazioni
+    Console.WriteLine("Complimenti! Hai indovinato il numero.");
 }
 else
 {
-    Console.WriteLine("Mi dispiace! Non hai indovinato il numero");
+    // se il numero inserito non e uguale al numero da indovinare stampo il messaggio di errore
+    Console.WriteLine("Mi dispiace! Non hai indovinato il numero.");
+    // stampo il numero da indovinare
+    Console.WriteLine($"Il numero da indovinare era: {numeroDaIndovinare}");
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// do
-// {
-//   odev2sayac++;
-//   Console.WriteLine($"{odev2sayac} hakkiniz uretilen sayiyi tahmin ediniz");
-//   odev2tahmin = int.Parse(Console.ReadLine());
-  
-// } while (odev2tahmin != odev2uretilenSayi);
-// Console.WriteLine($"{odev2sayac}. kere denediniz sayiyi tahamin ettiniz");
-// if (tutulan > sayi)
-//             {
-//                 Console.WriteLine("yukari");
-//             }
-//             else
-//             {
-//                 Console.WriteLine("asagi");
-//             }
