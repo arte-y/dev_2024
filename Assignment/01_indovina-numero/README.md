@@ -8,32 +8,38 @@ L'obiettivo di questa applicazione e di indovinare un **numero casuale** generat
 1. Il computer genera un numero casuale tra 1 e 100.
 2. L'utente inserisce un numero.
 3. Il computer confronta il numero inserito con quello generato.
-
+4. Se il numero inserito è uguale a quello generato, l'utente ha indovinato.
+5. Altrimenti, il computer fornisce un suggerimento (maggiore o minore) e l'utente può inserire un nuovo numero.
+6. Il gioco termina quando l'utente indovina il numero o quando raggiunge il numero massimo di tentativi.
 
 
 **Esempio di codice**
 
 ## Versione 1
-Random random = new Random();
 
-int numeroDaIndovinare = random.Next(1, 101);
+```csharp
+Random random = new Random(); // Random e la classe che genera numeri casuali
 
-Console.WriteLine(numeroDaIndovinare);
+int numeroDaIndovinare = random.Next(1, 101); // Next e il metodo che genera un numero casuale tra 1 e 100
 
 Console.WriteLine("Indovina il numero (tra 1 e 100): ");
 
+
 int numeroInserito;
 
-numeroInserito = Convert.ToInt32(Console.ReadLine()); 
+numeroInserito = Convert.ToInt32(Console.ReadLine()); // converto il valore inserito dall'utente in un intero perche Console.ReadLine restituisce una stringa
 
 if (numeroInserito == numeroDaIndovinare)
 {
+    // se il numero inserito e uguale al numero da indovinare stampo il messaggio di congratulazioni
     Console.WriteLine("Complimenti! Hai indovinato il numero.");
 }
 else
 {
+    // se il numero inserito non e uguale al numero da indovinare stampo il messaggio di errore
     Console.WriteLine("Mi dispiace! Non hai indovinato il numero.");
+    // stampo il numero da indovinare
     Console.WriteLine($"Il numero da indovinare era: {numeroDaIndovinare}");
 }
 
-```csharp
+```
