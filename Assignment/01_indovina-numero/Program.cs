@@ -83,11 +83,9 @@
 // sunum yaptigim bu
 
 
-
+Console.Clear();
 do
 {
-    Console.Clear();
-
     int difficiltà = 0;
     int tentativo = 0;
     int puntiMax = 100;
@@ -107,6 +105,7 @@ do
         Console.WriteLine("Inserisci un numero valido!");
         continue;
     }
+    Console.Clear();
 
     switch (utenteS)
     {
@@ -135,7 +134,7 @@ do
 
     int ciclio = 0;
     // int puntiMax = 100 / tentativo;
-    Console.WriteLine(indovinaNumero);
+    Console.WriteLine($"PC ha creato questo numero ({indovinaNumero})");
 
 
     while (tentativo > 0)
@@ -192,9 +191,14 @@ do
     {
         Console.WriteLine("Inizia a nouvo gioco");
     }
-    else
+    else if (risulto == "n")
     {
         Console.WriteLine("Cioa Caro/a");
+        break;
+    }
+    else
+    {
+        Console.WriteLine("non valido - Ciao!");
         break;
     }
 
