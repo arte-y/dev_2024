@@ -12,8 +12,15 @@ L'obiettivo di questa applicazione e di indovinare un **numero casuale** generat
 5. Altrimenti, il computer fornisce un suggerimento (maggiore o minore) e l'utente può inserire un nuovo numero.
 6. Il gioco termina quando l'utente indovina il numero o quando raggiunge il numero massimo di tentativi.
 
+- punto 1
+- punto 2
 
-**Esempio di codice**
+__prova__
+
+_prova_
+
+
+> **Esempio di codice**
 
 ## Versione 1
 
@@ -55,7 +62,7 @@ git push -u origin main
 **Obiettivo**
 Modifica il programma precedente per fornire all'utente suggerimenti dopo ogni tentativo, indicando se il numero da indovinare è maggiore o minore di quello inserito.
 
- Istruzioni:
+> Istruzioni:
 1. Usa un ciclo while per permettere all'utente di continuare a tentare finché non indovina.
 2. Dopo ogni tentativo errato, indica se il numero da indovinare è maggiore o minore di quello inserito.
 3. Quando l'utente indovina, esci dal ciclo e stampa un messaggio di congratulazioni.
@@ -103,7 +110,7 @@ Imposta un numero masssi di tentativi (ad esempio, 5). Se l'utente non indivina 
 * Dopo ogni tentativo, decrementa il numero di tentativi rimasti e informane l'utente
 * Se i tentativi esauriscono senza che l'utente abbia indovinato, stampa un messaggio du sconfitta e rivela il numero.
 
-**Esempio di codice**
+> **Esempio di codice**
 ```csharp
 Random random = new Random(); // Random e la classe che genera numeri casuali
 int numeroDaIndovinare = random.Next(1, 101); // Next e il metodo che genera un numero casuale tra 1 e 100
@@ -153,11 +160,11 @@ while (tentativiEffettuati < tentativiMassimi && !haIndovinato)
 Assegna un punteggio all'utente in base al numero di tentativi utilizzati. Più tentativi impiega, minore sarà il punteggio.
 
 **Istruzioni:**
-* Inizia con un punteggio massimo (ad esempio, 100 punti).
-* Ad ogni tentativo fallito, sottrai un certo numero di punti (ad esempio, 2 punti).
-* Alla fine del gioco, mostra il punteggio all'utente.
+> * Inizia con un punteggio massimo (ad esempio, 100 punti).
+> * Ad ogni tentativo fallito, sottrai un certo numero di punti (ad esempio, 2 punti).
+> * Alla fine del gioco, mostra il punteggio all'utente.
 
-**Esempio di codice**
+> **Esempio di codice**
 ```csharp
 do
 {
@@ -354,3 +361,414 @@ switch (utenteDif)
 } while (true);
 
 ```
+
+## Versione 6
+
+**Obiettivo**
+* Storico dei Tentativi: Mostra all'utente tutti i numeri inseriti precedentemente.
+
+
+**Istruzioni:**
+
+- Utilizza una lista per memorizzare i tentativi dell'utente. I tentativi sono memorizzati fino a quando l'utente indovina il numero o esaurisce i tentativi ma vengono persi quando viene eseguito il codice successivo.
+
+
+
+**Esempio di codice**
+```csharp
+do
+{
+    Console.Clear();
+    int difficiltà = 0;
+    int tentativo = 0;
+    int puntiMax = 100;
+    List<int> tentativiUtente = new List<int>();
+
+    Console.WriteLine("Scegli un livelli di difficiltà");
+    Console.WriteLine("1. Facile (numeri da 1 a 50, 10 tentativi)");
+    Console.WriteLine("2. Medio(numeri da 1 a 100, 7 tentativi)");
+    Console.WriteLine("3. Difficile(numeri da 1 a 200, 5 tentativi)");
+    string utenteD = Console.ReadLine();
+    int utenteS = Convert.ToInt32(utenteD);
+
+
+
+    switch (utenteS)
+    {
+
+        case 1:
+            tentativo = 10;
+            difficiltà = 50;
+            puntiMax = 100 / tentativo;
+
+            break;
+        case 2:
+            tentativo = 7;
+            difficiltà = 100;
+            puntiMax = 100 / tentativo;
+            break;
+        case 3:
+            tentativo = 5;
+            difficiltà = 200;
+            puntiMax = 100 / tentativo;
+            break;
+        default:
+            Console.WriteLine("Erorre! Scegli bene belinn");
+            break;
+    }
+    Random rnd = new Random();
+    int indovinaNumero = rnd.Next(1, difficiltà);
+    int inseritoNumero = 0;
+    int ciclio = 0;
+    // int puntiMax = 100 / tentativo;
+    Console.WriteLine(indovinaNumero);
+
+
+    while (tentativo > 0)
+    {
+        ciclio++;
+        Console.WriteLine($"indovina un numero (tra 1 e {difficiltà}) e Hai {tentativo - 0} tentativi.");
+        inseritoNumero = int.Parse(Console.ReadLine());
+        tentativo--;
+        tentativiUtente.Add(inseritoNumero);
+
+
+        if (inseritoNumero == indovinaNumero)
+        {
+            int punti = 100 - (puntiMax * (ciclio - 1));
+            Console.WriteLine($"Complimenti! Hai indovinato il numero {indovinaNumero} e punti {punti}");
+            break;
+        }
+        else
+        {
+            if (tentativo == 0)
+            {
+                Console.WriteLine($"Tentativi finiti. Hai perso.!");
+                break;
+            }
+            if (inseritoNumero < indovinaNumero)
+            {
+                Console.WriteLine("il numero è maggiore");
+            }
+            else
+            {
+                Console.WriteLine("il numero è minore");
+            }
+        }
+
+    }
+    foreach (var item in tentativiUtente)
+    {
+        Console.WriteLine($"Hai provato il numero; {item}");
+    }
+    Console.WriteLine("Game Over");
+    Console.WriteLine("****************");
+
+    Console.Write("Voresti continuare a giocare? (S/N):");
+    string risulto = Console.ReadLine().ToLower();
+    if (risulto == "s")
+    {
+        Console.WriteLine("Inizia a nouvo gioco");
+    }
+    else
+    {
+        Console.WriteLine("Cioa Caro/a");
+        break;
+    }
+
+} while (true);
+```
+
+### Comandi versionamento
+git add --all
+git commit -m "Indovina Numero: Versione 6"
+git push -u origin main
+
+
+## Versione 7
+
+**Obiettivo**
+* Validazione degli input: Aggiungi controlli per assicurarti che l'utente inserisca un numero valido.
+
+
+**Istruzioni:**
+
+- Utilizza il metodo int.TryParse per convertire l'input dell'utente in un numero intero.
+
+-Il TryParse funziona cosi:
+
+**Esempio di codice**
+```csharp
+do
+{
+    Console.Clear();
+
+    int difficiltà = 0;
+    int tentativo = 0;
+    int puntiMax = 100;
+    List<int> tentativiUtente = new List<int>(); // per memorizzia i numeri (girilen sayilar icin liste yapildi!)
+
+    Console.WriteLine("Scegli un livelli di difficiltà");
+    Console.WriteLine("1. Facile (numeri da 1 a 50, 10 tentativi)");
+    Console.WriteLine("2. Medio(numeri da 1 a 100, 7 tentativi)");
+    Console.WriteLine("3. Difficile(numeri da 1 a 200, 5 tentativi)");
+    //string utenteD = Console.ReadLine();
+    //int utenteS = Convert.ToInt32(utenteD);
+    int utenteS = 0;
+
+    bool successo1 = int.TryParse(Console.ReadLine(), out utenteS);
+    if (!successo1 || utenteS < 1 || utenteS > 3)
+    {
+        Console.WriteLine("Inserisci un numero valido!");
+        continue;
+    }
+
+    switch (utenteS)
+    {
+        case 1:
+            tentativo = 10;
+            difficiltà = 50;
+            puntiMax = 100 / tentativo;
+
+            break;
+        case 2:
+            tentativo = 7;
+            difficiltà = 100;
+            puntiMax = 100 / tentativo;
+            break;
+        case 3:
+            tentativo = 5;
+            difficiltà = 200;
+            puntiMax = 100 / tentativo;
+            break;
+        default:
+            Console.WriteLine("Erorre! Scegli bene belinn");
+            break;
+    }
+    Random rnd = new Random();
+    int indovinaNumero = rnd.Next(1, difficiltà);
+
+    int ciclio = 0;
+    // int puntiMax = 100 / tentativo;
+    Console.WriteLine(indovinaNumero);
+
+
+    while (tentativo > 0)
+    {
+        ciclio++;
+        int inseritoNumero = 0;
+        Console.WriteLine($"indovina un numero (tra 1 e {difficiltà}) e Hai {tentativo - 0} tentativi.");
+        //inseritoNumero = int.Parse(Console.ReadLine());
+        bool successo = int.TryParse(Console.ReadLine(), out inseritoNumero);
+        if (!successo || inseritoNumero > difficiltà)
+        {
+            Console.WriteLine("Inserisci un numero valido!");
+            continue;
+        }
+        tentativo--;
+        tentativiUtente.Add(inseritoNumero); // add liste ciclio! (girilen sayilari listeye ekler ve asagida yazdiririz)
+
+        if (inseritoNumero == indovinaNumero)
+        {
+            int punti = 100 - (puntiMax * (ciclio - 1));
+            Console.WriteLine($"Complimenti! Hai indovinato il numero {indovinaNumero} e punti {punti}");
+            break;
+        }
+        else
+        {
+            if (tentativo == 0)
+            {
+                Console.WriteLine($"Tentativi finiti. Hai perso.!");
+                break;
+            }
+            if (inseritoNumero < indovinaNumero)
+            {
+                Console.WriteLine("il numero è maggiore");
+            }
+            else
+            {
+                Console.WriteLine("il numero è minore");
+            }
+        }
+
+    }
+    Console.WriteLine($"Hai provato il numero; ");
+    foreach (var item in tentativiUtente) // per memorizzia - crea una list e poi fai una display con foreach!
+    {
+        Console.Write($"- {item} ");
+    }
+
+    Console.WriteLine(" \nGame Over");
+    Console.WriteLine("****************");
+
+    Console.Write("Voresti continuare a giocare? (S/N):");
+    string risulto = Console.ReadLine().ToLower();
+    if (risulto == "s")
+    {
+        Console.WriteLine("Inizia a nouvo gioco");
+    }
+    else
+    {
+        Console.WriteLine("Cioa Caro/a");
+        break;
+    }
+
+} while (true);
+```
+### Comandi versionamento
+git add --all
+git commit -m "Indovina Numero: Versione 7"
+git push -u origin main
+
+
+
+
+## Versione 8
+
+**Obiettivo**
+* Ripetizione del Livello: Chiedi all'utente di inserire il livello di difficoltà finché non sceglie un livello valido.
+
+* Se vogliamo che chieda di nuovo il livello di difficoltà quando la scelta non è valida dobbiamo mettere tutto il codice precedente in un ciclo do-while e fare in modo che il ciclo si ripeta finché la scelta non è valida
+
+**Istruzioni:**
+
+
+**Esempio di codice**
+```csharp
+do
+{
+    Console.Clear();
+
+    int difficiltà = 0;
+    int tentativo = 0;
+    int puntiMax = 100;
+    List<int> tentativiUtente = new List<int>(); // per memorizzia i numeri (girilen sayilar icin liste yapildi!)
+
+    Console.WriteLine("Scegli un livelli di difficiltà");
+    Console.WriteLine("1. Facile (numeri da 1 a 50, 10 tentativi)");
+    Console.WriteLine("2. Medio(numeri da 1 a 100, 7 tentativi)");
+    Console.WriteLine("3. Difficile(numeri da 1 a 200, 5 tentativi)");
+    //string utenteD = Console.ReadLine();
+    //int utenteS = Convert.ToInt32(utenteD);
+    int utenteS = 0;
+
+    bool successo1 = int.TryParse(Console.ReadLine(), out utenteS);
+    if (!successo1 || utenteS < 1 || utenteS > 3)
+    {
+        Console.WriteLine("Inserisci un numero valido!");
+        continue;
+    }
+
+    switch (utenteS)
+    {
+        case 1:
+            tentativo = 10;
+            difficiltà = 50;
+            puntiMax = 100 / tentativo;
+
+            break;
+        case 2:
+            tentativo = 7;
+            difficiltà = 100;
+            puntiMax = 100 / tentativo;
+            break;
+        case 3:
+            tentativo = 5;
+            difficiltà = 200;
+            puntiMax = 100 / tentativo;
+            break;
+        default:
+            Console.WriteLine("Erorre! Scegli bene belinn");
+            break;
+    }
+    Random rnd = new Random();
+    int indovinaNumero = rnd.Next(1, difficiltà);
+
+    int ciclio = 0;
+    // int puntiMax = 100 / tentativo;
+    Console.WriteLine(indovinaNumero);
+
+
+    while (tentativo > 0)
+    {
+        ciclio++;
+        int inseritoNumero = 0;
+        Console.WriteLine($"indovina un numero (tra 1 e {difficiltà}) e Hai {tentativo - 0} tentativi.");
+        //inseritoNumero = int.Parse(Console.ReadLine());
+        bool successo = int.TryParse(Console.ReadLine(), out inseritoNumero);
+        if (!successo || inseritoNumero > difficiltà)
+        {
+            Console.WriteLine("Inserisci un numero valido!");
+            continue;
+        }
+        tentativo--;
+        tentativiUtente.Add(inseritoNumero); // add liste ciclio! (girilen sayilari listeye ekler ve asagida yazdiririz)
+
+        if (inseritoNumero == indovinaNumero)
+        {
+            int punti = 100 - (puntiMax * (ciclio - 1));
+            Console.WriteLine($"Complimenti! Hai indovinato il numero {indovinaNumero} e punti {punti}");
+            break;
+        }
+        else
+        {
+            if (tentativo == 0)
+            {
+                Console.WriteLine($"Tentativi finiti. Hai perso.!");
+                break;
+            }
+            if (inseritoNumero < indovinaNumero)
+            {
+                Console.WriteLine("il numero è maggiore");
+            }
+            else
+            {
+                Console.WriteLine("il numero è minore");
+            }
+        }
+
+    }
+    Console.WriteLine($"Hai provato il numero; ");
+    foreach (var item in tentativiUtente) // per memorizzia - crea una list e poi fai una display con foreach!
+    {
+        Console.Write($"- {item} ");
+    }
+
+    Console.WriteLine(" \nGame Over");
+    Console.WriteLine("****************");
+
+    Console.Write("Voresti continuare a giocare? (S/N):");
+    string risulto = Console.ReadLine().ToLower();
+    if (risulto == "s")
+    {
+        Console.WriteLine("Inizia a nouvo gioco");
+    }
+    else
+    {
+        Console.WriteLine("Cioa Caro/a");
+        break;
+    }
+
+} while (true);
+```
+### Comandi versionamento
+git add --all
+git commit -m "Indovina Numero: Versione 8"
+git push -u origin main
+
+
+## Versione 9
+
+**Obiettivo**
+
+**Istruzioni:**
+
+
+**Esempio di codice**
+```csharp
+
+```
+### Comandi versionamento
+git add --all
+git commit -m "Indovina Numero: Versione 9"
+git push -u origin main

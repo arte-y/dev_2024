@@ -54,10 +54,10 @@
 // while (tentativiEffettuati < tentativiMassimi && !haIndovinato)  
 // {  
 //     Console.Write("Tentativo {0}: ", tentativiEffettuati + 1);  
-    
+
 //     // numeroUtente = int.Parse(Console.ReadLine());  
 //     numeroUtente = int.Parse(Console.ReadLine());
-    
+
 //     tentativiEffettuati++;
 
 //     if (numeroUtente < numeroDaIndovinare)  
@@ -82,60 +82,80 @@
 // ***************************************************************************************************************
 // sunum yaptigim bu
 
+
+
 do
 {
-Console.Clear();
+    Console.Clear();
 
-Console.WriteLine("Scegli un livelli di difficiltà");
-Console.WriteLine("1. Facile (numeri da 1 a 50, 10 tentativi)");
-Console.WriteLine("2. Medio(numeri da 1 a 100, 7 tentativi)");
-Console.WriteLine("3. Difficile(numeri da 1 a 200, 5 tentativi)");
-string utenteD = Console.ReadLine();
-int utenteDif =Convert.ToInt32(utenteD);
+    int difficiltà = 0;
+    int tentativo = 0;
+    int puntiMax = 100;
+    List<int> tentativiUtente = new List<int>(); // per memorizzia i numeri (girilen sayilar icin liste yapildi!)
 
-int difficiltà=0;
-int tentativo = 0;
-int puntiMax=100;
-switch (utenteDif)
-{
+    Console.WriteLine("Scegli un livelli di difficiltà");
+    Console.WriteLine("1. Facile (numeri da 1 a 50, 10 tentativi)");
+    Console.WriteLine("2. Medio(numeri da 1 a 100, 7 tentativi)");
+    Console.WriteLine("3. Difficile(numeri da 1 a 200, 5 tentativi)");
+    //string utenteD = Console.ReadLine();
+    //int utenteS = Convert.ToInt32(utenteD);
+    int utenteS = 0;
 
-    case 1:
-    tentativo = 10;
-    difficiltà =50;
-    puntiMax = 100 / tentativo;
+    bool successo1 = int.TryParse(Console.ReadLine(), out utenteS);
+    if (!successo1 || utenteS < 1 || utenteS > 3)
+    {
+        Console.WriteLine("Inserisci un numero valido!");
+        continue;
+    }
 
-    break;
-    case 2:
-    tentativo = 7;
-    difficiltà=100;
-    puntiMax = 100 / tentativo;
-    break; 
-    case 3:
-    tentativo = 5;
-    difficiltà=200;
-    puntiMax = 100 / tentativo;
-    break;    
-    default:
-    Console.WriteLine("Erorre! Scegli bene belinn");
-    break;
-}  
+    switch (utenteS)
+    {
+        case 1:
+            tentativo = 10;
+            difficiltà = 50;
+            puntiMax = 100 / tentativo;
+
+            break;
+        case 2:
+            tentativo = 7;
+            difficiltà = 100;
+            puntiMax = 100 / tentativo;
+            break;
+        case 3:
+            tentativo = 5;
+            difficiltà = 200;
+            puntiMax = 100 / tentativo;
+            break;
+        default:
+            Console.WriteLine("Erorre! Scegli bene belinn");
+            break;
+    }
     Random rnd = new Random();
-    int indovinaNumero = rnd.Next(1, difficiltà);    
-    int inseritoNumero = 0;
-    int ciclio =0;
+    int indovinaNumero = rnd.Next(1, difficiltà);
+
+    int ciclio = 0;
     // int puntiMax = 100 / tentativo;
     Console.WriteLine(indovinaNumero);
-    
+
+
     while (tentativo > 0)
     {
         ciclio++;
+        int inseritoNumero = 0;
         Console.WriteLine($"indovina un numero (tra 1 e {difficiltà}) e Hai {tentativo - 0} tentativi.");
-        inseritoNumero = int.Parse(Console.ReadLine());
+        //inseritoNumero = int.Parse(Console.ReadLine());
+        bool successo = int.TryParse(Console.ReadLine(), out inseritoNumero);
+        if (!successo || inseritoNumero > difficiltà)
+        {
+            Console.WriteLine("Inserisci un numero valido!");
+            continue;
+        }
         tentativo--;
+        tentativiUtente.Add(inseritoNumero); // add liste ciclio! (girilen sayilari listeye ekler ve asagida yazdiririz)
 
         if (inseritoNumero == indovinaNumero)
         {
-            int punti = 100 - (puntiMax * (ciclio -1));
+            int punti = 100 - (puntiMax * (ciclio - 1));
             Console.WriteLine($"Complimenti! Hai indovinato il numero {indovinaNumero} e punti {punti}");
             break;
         }
@@ -155,8 +175,15 @@ switch (utenteDif)
                 Console.WriteLine("il numero è minore");
             }
         }
+
     }
-    Console.WriteLine("Game Over");
+    Console.WriteLine($"Hai provato il numero; ");
+    foreach (var item in tentativiUtente) // per memorizzia - crea una list e poi fai una display con foreach!
+    {
+        Console.Write($"- {item} ");
+    }
+
+    Console.WriteLine(" \nGame Over");
     Console.WriteLine("****************");
 
     Console.Write("Voresti continuare a giocare? (S/N):");
@@ -173,5 +200,7 @@ switch (utenteDif)
 
 } while (true);
 
-// hocanin eklemesi 
+
+
+// ****************************************************************************************
 
