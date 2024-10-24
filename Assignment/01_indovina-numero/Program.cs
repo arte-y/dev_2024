@@ -149,8 +149,9 @@
 
 // sunum yaptigim bu
 
+do
+{
 Console.Clear();
-
 
 Console.WriteLine("Scegli un livelli di difficiltà");
 Console.WriteLine("1. Facile (numeri da 1 a 50, 10 tentativi)");
@@ -159,45 +160,43 @@ Console.WriteLine("3. Difficile(numeri da 1 a 200, 5 tentativi)");
 string utenteD = Console.ReadLine();
 int utenteDif =Convert.ToInt32(utenteD);
 
+int difficiltà=0;
+int tentativo = 0;
+int puntiMax=100;
 switch (utenteDif)
 {
 
     case 1:
-        Random rnd = new Random();
-    int indovinaNumero = rnd.Next(1, 50);
+    tentativo = 10;
+    difficiltà =50;
+    puntiMax = 100 / tentativo;
 
-    int inseritoNumero = 0;
-    int tentativo = 10;
-    
-    int puntiMax = 100 / tentativo;
     break;
     case 2:
+    tentativo = 7;
+    difficiltà=100;
+    puntiMax = 100 / tentativo;
     break; 
     case 3:
+    tentativo = 5;
+    difficiltà=200;
+    puntiMax = 100 / tentativo;
     break;    
     default:
+    Console.WriteLine("Erorre! Scegli bene belinn");
     break;
-}
-
-
-
-do
-{
+}  
     Random rnd = new Random();
-    int indovinaNumero = rnd.Next(1, 100);
-
+    int indovinaNumero = rnd.Next(1, difficiltà);    
     int inseritoNumero = 0;
-    int tentativo = 5;
-    
-    int puntiMax = 100 / tentativo;
     int ciclio =0;
-
+    // int puntiMax = 100 / tentativo;
     Console.WriteLine(indovinaNumero);
-
+    
     while (tentativo > 0)
     {
         ciclio++;
-        Console.WriteLine($"indovina un numero (tra 1 e 100) e Hai {tentativo - 0} tentativi.");
+        Console.WriteLine($"indovina un numero (tra 1 e {difficiltà}) e Hai {tentativo - 0} tentativi.");
         inseritoNumero = int.Parse(Console.ReadLine());
         tentativo--;
 
@@ -211,27 +210,27 @@ do
         {
             if (tentativo == 0)
             {
-                Console.WriteLine($"finito tentativo");
+                Console.WriteLine($"Tentativi finiti. Hai perso.!");
                 break;
             }
             if (inseritoNumero < indovinaNumero)
             {
-                Console.WriteLine("maggiore");
+                Console.WriteLine("il numero è maggiore");
             }
             else
             {
-                Console.WriteLine("minore");
+                Console.WriteLine("il numero è minore");
             }
         }
     }
     Console.WriteLine("Game Over");
     Console.WriteLine("****************");
 
-    Console.Write("vuole continuare a giocare? (S/N):");
+    Console.Write("Voresti continuare a giocare? (S/N):");
     string risulto = Console.ReadLine().ToLower();
     if (risulto == "s")
     {
-        Console.WriteLine("inizia a nouvo gioco");
+        Console.WriteLine("Inizia a nouvo gioco");
     }
     else
     {
