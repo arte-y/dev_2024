@@ -79,74 +79,7 @@
 //         Console.WriteLine("Hai esaurito i tentativi. Il numero era " + numeroDaIndovinare + ".");  
 //     }  
 // }
-
-
-
-
-// Evde yaptigim
-
-// do
-// {
-//     int gues = 1;
-//     int guesNumber = 0;
-//     Random rdn = new Random();
-//     guesNumber = rdn.Next(1, 10); //computer give a number
-
-//     while (true)
-//     {
-//         Console.WriteLine("Please insert your guess number");
-//         string guesNumberUser = Console.ReadLine(); // user gues a number--
-//         int guesNumberUser1;
-
-//         if (!int.TryParse(guesNumberUser, out guesNumberUser1)) // una domanda! perhcè non so come posso farlo...!
-//         {
-//             Console.WriteLine("Invalid input! Please insert a valid number");
-//             continue;
-//         }
-
-//         if (guesNumber == guesNumberUser1) // user and computer gues number --
-//         {
-//             Console.WriteLine("Congratulations, you guessed correctly.");
-//             break;
-//         }
-//         else
-//         {
-//             gues++;
-//             Console.Write("You guessed wrong, try again. / ");
-//         }
-//         if (guesNumber > guesNumberUser1) // computer number > from user number
-//         {
-//             Console.WriteLine("GO-UP");
-//         }
-//         else
-//         {
-//             Console.WriteLine("GO-DOWN");
-//         }
-//     }
-//     Console.WriteLine("Game Over!");
-
-//     Console.Write("Would you like to continue the game? (y/n): ");
-//     string result = Console.ReadLine().ToLower();
-
-//     if (result == "y")
-//     {
-//         Console.WriteLine("Starting a new game ...");
-//     }
-//     else if (result == "n")
-//     {
-//         Console.WriteLine("Thank you. See you again!");
-//         break; // finish the game
-
-//     }
-//     else
-//     {
-//         Console.WriteLine("Error!");
-//         break; //invalid input. finish game
-//     }
-// } while (true);
-//evde yaptigim son
-
-
+// ***************************************************************************************************************
 // sunum yaptigim bu
 
 do

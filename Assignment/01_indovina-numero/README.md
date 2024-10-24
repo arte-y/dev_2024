@@ -251,3 +251,106 @@ switch (utenteDif)
 } while (true);
 
 ```
+## Versione 5
+
+**Obiettivo**
+Livelli di Difficoltà: Permetti all'utente di scegliere tra diversi livelli di difficoltà che modificano il munero di punti sottratti o l'intervallo dei numeri o il numero di tentativi disponibili.
+**Istruzioni:**
+* Livelli di Difficoltà:
+    * Facile: Numeri da 1 a 50, 10 tentativi.
+    * Medio: Numeri da 1 a 100, 7 tentativi.
+    * Difficile: Numeri da 1 a 200, 5 tentativi.
+**Esempio di codice**
+```csharp
+do
+{
+Console.Clear();
+
+Console.WriteLine("Scegli un livelli di difficiltà");
+Console.WriteLine("1. Facile (numeri da 1 a 50, 10 tentativi)");
+Console.WriteLine("2. Medio(numeri da 1 a 100, 7 tentativi)");
+Console.WriteLine("3. Difficile(numeri da 1 a 200, 5 tentativi)");
+string utenteD = Console.ReadLine();
+int utenteDif =Convert.ToInt32(utenteD);
+
+int difficiltà=0;
+int tentativo = 0;
+int puntiMax=100;
+switch (utenteDif)
+{
+
+    case 1:
+    tentativo = 10;
+    difficiltà =50;
+    puntiMax = 100 / tentativo;
+
+    break;
+    case 2:
+    tentativo = 7;
+    difficiltà=100;
+    puntiMax = 100 / tentativo;
+    break; 
+    case 3:
+    tentativo = 5;
+    difficiltà=200;
+    puntiMax = 100 / tentativo;
+    break;    
+    default:
+    Console.WriteLine("Erorre! Scegli bene belinn");
+    break;
+}  
+    Random rnd = new Random();
+    int indovinaNumero = rnd.Next(1, difficiltà);    
+    int inseritoNumero = 0;
+    int ciclio =0;
+    // int puntiMax = 100 / tentativo;
+    Console.WriteLine(indovinaNumero);
+    
+    while (tentativo > 0)
+    {
+        ciclio++;
+        Console.WriteLine($"indovina un numero (tra 1 e {difficiltà}) e Hai {tentativo - 0} tentativi.");
+        inseritoNumero = int.Parse(Console.ReadLine());
+        tentativo--;
+
+        if (inseritoNumero == indovinaNumero)
+        {
+            int punti = 100 - (puntiMax * (ciclio -1));
+            Console.WriteLine($"Complimenti! Hai indovinato il numero {indovinaNumero} e punti {punti}");
+            break;
+        }
+        else
+        {
+            if (tentativo == 0)
+            {
+                Console.WriteLine($"Tentativi finiti. Hai perso.!");
+                break;
+            }
+            if (inseritoNumero < indovinaNumero)
+            {
+                Console.WriteLine("il numero è maggiore");
+            }
+            else
+            {
+                Console.WriteLine("il numero è minore");
+            }
+        }
+    }
+    Console.WriteLine("Game Over");
+    Console.WriteLine("****************");
+
+    Console.Write("Voresti continuare a giocare? (S/N):");
+    string risulto = Console.ReadLine().ToLower();
+    if (risulto == "s")
+    {
+        Console.WriteLine("Inizia a nouvo gioco");
+    }
+    else
+    {
+        Console.WriteLine("Cioa Caro/a");
+        break;
+    }
+
+} while (true);
+
+```
