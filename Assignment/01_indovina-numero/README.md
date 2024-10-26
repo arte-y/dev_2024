@@ -616,9 +616,11 @@ do
 } while (true);
 ```
 ### Comandi versionamento
+```bash
 git add --all
 git commit -m "Indovina Numero: Versione 7"
 git push -u origin main
+```
 
 
 
@@ -628,9 +630,12 @@ git push -u origin main
 **Obiettivo**
 * Ripetizione del Livello: Chiedi all'utente di inserire il livello di difficoltà finché non sceglie un livello valido.
 
-* Se vogliamo che chieda di nuovo il livello di difficoltà quando la scelta non è valida dobbiamo mettere tutto il codice precedente in un ciclo do-while e fare in modo che il ciclo si ripeta finché la scelta non è valida
-
 **Istruzioni:**
+Se vogliamo che chieda di nuovo il livello di difficoltà quando la scelta non è valida dobbiamo mettere tutto il codice precedente in un ciclo do-while e fare in modo che il ciclo si ripeta finché la scelta non è valida
+
+Con un semplice while non possiamo fare in modo che il ciclo si ripeta finché la scelta non è valida, perché il ciclo while si ripete finché la condizione è vera, ma non possiamo sapere se la scelta è valida o meno finché non la controlliamo.
+
+Quindi dobbiamo usare un ciclo do-while, che esegue il blocco di codice almeno una volta e poi si ripete finché la condizione è vera.
 
 
 **Esempio di codice**
@@ -752,23 +757,143 @@ do
 } while (true);
 ```
 ### Comandi versionamento
+```bash
 git add --all
 git commit -m "Indovina Numero: Versione 8"
 git push -u origin main
-
+```
 
 ## Versione 9
 
 **Obiettivo**
+Pulizia console Usa Console.Clear() per pulire la console tra un gioco e l'altro e tra un tentativo e l altro per rendere il gioco più pulito.
 
 **Istruzioni:**
-
+- Aggiungi Console.Clear() all inizio del gioco per pulire la console prima di iniziare.
+- Aggiungi Console.Clear() alla fine del ciclo di gioco per pulire la console tra un gioco e l'altro.
+- Aggiungi Console.Clear() dopo ogni tentativo per pulire la console tra un tentativo e l'altro.
 
 **Esempio di codice**
 ```csharp
+do
+{
+    Console.Clear();
 
+    int difficiltà = 0;
+    int tentativo = 0;
+    int puntiMax = 100;
+    List<int> tentativiUtente = new List<int>(); // per memorizzia i numeri (girilen sayilar icin liste yapildi!)
+
+    Console.WriteLine("Scegli un livelli di difficiltà");
+    Console.WriteLine("1. Facile (numeri da 1 a 50, 10 tentativi)");
+    Console.WriteLine("2. Medio(numeri da 1 a 100, 7 tentativi)");
+    Console.WriteLine("3. Difficile(numeri da 1 a 200, 5 tentativi)");
+    //string utenteD = Console.ReadLine();
+    //int utenteS = Convert.ToInt32(utenteD);
+    int utenteS = 0;
+
+    bool successo1 = int.TryParse(Console.ReadLine(), out utenteS);
+    if (!successo1 || utenteS < 1 || utenteS > 3)
+    {
+        Console.WriteLine("Inserisci un numero valido!");
+        continue;
+    }
+
+    switch (utenteS)
+    {
+        case 1:
+            tentativo = 10;
+            difficiltà = 50;
+            puntiMax = 100 / tentativo;
+
+            break;
+        case 2:
+            tentativo = 7;
+            difficiltà = 100;
+            puntiMax = 100 / tentativo;
+            break;
+        case 3:
+            tentativo = 5;
+            difficiltà = 200;
+            puntiMax = 100 / tentativo;
+            break;
+        default:
+            Console.WriteLine("Erorre! Scegli bene belinn");
+            break;
+    }
+    Random rnd = new Random();
+    int indovinaNumero = rnd.Next(1, difficiltà);
+
+    int ciclio = 0;
+    // int puntiMax = 100 / tentativo;
+    Console.WriteLine(indovinaNumero);
+
+
+    while (tentativo > 0)
+    {
+        ciclio++;
+        int inseritoNumero = 0;
+        Console.WriteLine($"indovina un numero (tra 1 e {difficiltà}) e Hai {tentativo - 0} tentativi.");
+        //inseritoNumero = int.Parse(Console.ReadLine());
+        bool successo = int.TryParse(Console.ReadLine(), out inseritoNumero);
+        if (!successo || inseritoNumero > difficiltà)
+        {
+            Console.WriteLine("Inserisci un numero valido!");
+            continue;
+        }
+        tentativo--;
+        tentativiUtente.Add(inseritoNumero); // add liste ciclio! (girilen sayilari listeye ekler ve asagida yazdiririz)
+
+        if (inseritoNumero == indovinaNumero)
+        {
+            int punti = 100 - (puntiMax * (ciclio - 1));
+            Console.WriteLine($"Complimenti! Hai indovinato il numero {indovinaNumero} e punti {punti}");
+            break;
+        }
+        else
+        {
+            if (tentativo == 0)
+            {
+                Console.WriteLine($"Tentativi finiti. Hai perso.!");
+                break;
+            }
+            if (inseritoNumero < indovinaNumero)
+            {
+                Console.WriteLine("il numero è maggiore");
+            }
+            else
+            {
+                Console.WriteLine("il numero è minore");
+            }
+        }
+
+    }
+    Console.WriteLine($"Hai provato il numero; ");
+    foreach (var item in tentativiUtente) // per memorizzia - crea una list e poi fai una display con foreach!
+    {
+        Console.Write($"- {item} ");
+    }
+
+    Console.WriteLine(" \nGame Over");
+    Console.WriteLine("****************");
+
+    Console.Write("Voresti continuare a giocare? (S/N):");
+    string risulto = Console.ReadLine().ToLower();
+    if (risulto == "s")
+    {
+        Console.WriteLine("Inizia a nouvo gioco");
+    }
+    else
+    {
+        Console.WriteLine("Cioa Caro/a");
+        break;
+    }
+
+} while (true);
 ```
 ### Comandi versionamento
+```bash
 git add --all
 git commit -m "Indovina Numero: Versione 9"
 git push -u origin main
+```
