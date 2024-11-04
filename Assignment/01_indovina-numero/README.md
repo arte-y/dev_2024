@@ -1058,12 +1058,20 @@ https://jojozhuang.github.io/tutorial/mermaid-cheat-sheet/
 
 ``` mermaid
 graph TD
-    A[Indovina numero] -->B(Scegli difficilità tra 1 e 3) 
-    B --> |Inserisce il nome| C{Inserice il numero indovina}
-    C --> D[punteggio]
-    C --> E[tentativo] 
-    D -->F
-    E -->F{Risulto}
-    F -->G[Gioco di nuovo]
-    G --->A
+    Start --> SelectDifficulty
+    SelectDifficulty --> EnterName
+    EnterName --> InputNum
+    InputNum --> CheckNum
+    CheckNum -- "Yes" --> Win
+    CheckNum -- "No, too low" --> TooLow
+    CheckNum -- "No, too high" --> TooHigh
+    TooLow --> AttemptsLeft
+    TooHigh --> AttemptsLeft
+    AttemptsLeft --> |"If attempts left"| InputNum
+    AttemptsLeft --> |"If no attempts left"| ShowAttempts
+    Win --> Score
+    Score --> ShowAttempts
+    ShowAttempts --> PlayAgain
+    PlayAgain -- "Yes" --> Start
+    PlayAgain -- "No" --> End
 ```
