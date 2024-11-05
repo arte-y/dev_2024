@@ -1,5 +1,42 @@
 ﻿// Lista di partecipante di corso dev2024
 
+List<string> partecipanti = new List<string> { "Tamer", "Felipe", "Diego", "Ivan", "Giorgio", "Anita", "Sofia", "Andrea" };
+
+Random rnd = new Random();
+
+Console.WriteLine("inserice il numero di squadre: ");
+int numeroSquadre =int.Parse(Console.ReadLine());
+
+
+string risposta = null;
+
+do
+{
+  if (partecipanti.Count == 0)
+  {
+    Console.WriteLine("non ci sono piu partecipanti da estrare");
+    break;
+  }
+  else
+  {
+    int index = rnd.Next(partecipanti.Count);
+
+    string partecipante = partecipanti[index];
+
+    Console.WriteLine(partecipante);
+
+    partecipanti.RemoveAt(index);
+  }
+
+  Console.WriteLine("Vuoi estrare un altro partecipante? (S/N)");
+  risposta = Console.ReadLine().ToLower();
+
+} while (risposta == "s");
+
+
+// ****************************************************************************************
+
+
 Console.WriteLine("Divide squadre che vuole creare squadre da questo gruppo");
 int divisoU =int.Parse(Console.ReadLine());
 
