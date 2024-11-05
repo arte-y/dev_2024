@@ -1069,9 +1069,20 @@ graph TD
     TooHigh --> AttemptsLeft
     AttemptsLeft --> |"If attempts left"| InputNum
     AttemptsLeft --> |"If no attempts left"| ShowAttempts
-    Win --> Score
-    Score --> ShowAttempts
+    Win --> Score/Attempts
+    Score/Attempts --> ShowAttempts
     ShowAttempts --> PlayAgain
     PlayAgain -- "Yes" --> Start
     PlayAgain -- "No" --> End
+```
+
+## new TD
+
+``` mermaid
+graph TD
+    Start --> EnterYourName
+    EnterYourName --> SelectDifficulty
+    SelectDifficulty --> enterGuesNum
+    enterGuesNum --> CheckNum
+    CheckNum -- "Yes" --> win
 ```

@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_indovina-numero", "Assig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_metodi-dizionario", "xx-Esercitazioni\08_metodi-dizionario\08_metodi-dizionario.csproj", "{0610230F-8771-4610-9734-4D2138C917AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_sorteggio_partecipanti_corso", "Assignment\02_sorteggio_partecipanti_corso\02_sorteggio_partecipanti_corso.csproj", "{BD4F7280-3675-4E9B-AF0E-F35C3F53408A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{0610230F-8771-4610-9734-4D2138C917AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0610230F-8771-4610-9734-4D2138C917AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0610230F-8771-4610-9734-4D2138C917AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD4F7280-3675-4E9B-AF0E-F35C3F53408A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD4F7280-3675-4E9B-AF0E-F35C3F53408A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD4F7280-3675-4E9B-AF0E-F35C3F53408A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD4F7280-3675-4E9B-AF0E-F35C3F53408A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,5 +87,6 @@ Global
 		{96D060D4-482E-45CB-A6D5-E3D3F691BCC0} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 		{AFA080A9-6AB1-4A77-B0C6-7908E3FB7AC4} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 		{0610230F-8771-4610-9734-4D2138C917AE} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
+		{BD4F7280-3675-4E9B-AF0E-F35C3F53408A} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 	EndGlobalSection
 EndGlobal
