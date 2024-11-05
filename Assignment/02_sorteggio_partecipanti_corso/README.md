@@ -46,47 +46,37 @@ git push -u origin main
 
 
 ```csharp
-List<string> ListPart = new List<string>();
+List<string> partecipanti = new List<string> { "Tamer", "Felipe", "Diego", "Ivan", "Giorgio", "Anita", "Sofia", "Andrea" };
 
-ListPart.Add("Andrea");
-ListPart.Add("Felipe");
-ListPart.Add("Giorgio");
-ListPart.Add("Ivan");
-ListPart.Add("Anita");
-ListPart.Add("Sofia");
-ListPart.Add("Diego");
-ListPart.Add("Tamer");
+Random rnd = new Random();
 
-var rnd = new Random();
-int rndNome = rnd.Next(ListPart.Count);
 
-// Console.WriteLine(ListPart[rndNome]);
+string risposta = null;
 
-Console.WriteLine("Cioa, vuole vedere partecipante di corso? Dai iniziamo!");
-
-bool control = true;
-string control1 = string.Empty;
 do
 {
-    for (int i = rndNome; i < ListPart.Count; i++)
-    {
-        Console.WriteLine($"Il nome: {ListPart[i]}");
-        // ListPart.Remove(ListPart[i]);
-        // ListPart.Remove(ListPart[rndNome]);
+  if (partecipanti.Count == 0)
+  {
+    Console.WriteLine("non ci sono piu partecipanti da estrare");
+    break;
+  }
+  else
+  {
+    int index = rnd.Next(partecipanti.Count);
 
-        if (i <= ListPart.Count)
-        {
-            Console.WriteLine("voule vedere altr partecipante? (S/N)");
-            control1 = Console.ReadLine().ToLower();
-        }
-        else
-        {
-            Console.WriteLine("Terminato!");
-        }
-    }
+    string partecipante = partecipanti[index];
+
+    Console.WriteLine(partecipante);
+
+    partecipanti.RemoveAt(index);
+  }
+
+  Console.WriteLine("Vuoi estrare un altro partecipante? (S/N)");
+  risposta = Console.ReadLine().ToLower();
 
 
-} while (control1 == "s");
+
+} while (risposta == "s");
 
 ```
 
@@ -106,3 +96,45 @@ git push -u origin main
 - Il programma deve chiedere all utente il numero di squadre.
 - Se il numero dei partecipanti non è divisibile per il numero di suqadre, il partecipanti rimanenti vengono assegnati ad un gruppo in modo casuale.
 
+```csharp
+List<string> partecipanti = new List<string> { "Tamer", "Felipe", "Diego", "Ivan", "Giorgio", "Anita", "Sofia", "Andrea" };
+
+Random rnd = new Random();
+
+Console.WriteLine("inserice il numero di squadre: ");
+int numeroSquadre =int.Parse(Console.ReadLine());
+
+
+string risposta = null;
+
+do
+{
+  if (partecipanti.Count == 0)
+  {
+    Console.WriteLine("non ci sono piu partecipanti da estrare");
+    break;
+  }
+  else
+  {
+    int index = rnd.Next(partecipanti.Count);
+
+    string partecipante = partecipanti[index];
+
+    Console.WriteLine(partecipante);
+
+    partecipanti.RemoveAt(index);
+  }
+
+  Console.WriteLine("Vuoi estrare un altro partecipante? (S/N)");
+  risposta = Console.ReadLine().ToLower();
+
+
+
+} while (risposta == "s");
+```
+
+```bash
+git add --all
+git mìcommit -m "sorteggiia partecipente (manca qualcosa qui) versione 3"
+git push -u origin main
+```
