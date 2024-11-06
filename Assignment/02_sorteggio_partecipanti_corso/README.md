@@ -170,3 +170,21 @@ git add --all
 git mìcommit -m "sorteggiia partecipente versione 4"
 git push -u origin main
 ```
+
+## Versione 5
+
+## Obiettivo
+
+- Scrivere un programma che permetta di sorteggiare i partecipante del corso da una lista di nomi dividendoli in gruppi
+- Il programma deve stampare la lista dei partecipante
+- Il programma deve chiedere all utente di inserire o eliminare un partecipante presente nella lista iniziale o fare il sorteggio
+
+```csharp
+
+```
+
+```bash
+git add --all
+git mìcommit -m "sorteggiia partecipente versione 5"
+git push -u origin main
+```
