@@ -153,7 +153,7 @@ git mìcommit -m "sorteggio partecipente versione 3"
 git push -u origin main
 ```
 
-## Versione 3
+## Versione 4
 
 ## Obiettivo
 
@@ -168,48 +168,5 @@ git push -u origin main
 ```bash
 git add --all
 git mìcommit -m "sorteggiia partecipente versione 4"
-git push -u origin main
-```
-
-```csharp
-List<string> partecipanti = new List<string> { "Tamer", "Felipe", "Diego", "Ivan", "Giorgio", "Anita", "Sofia", "Andrea" };
-
-Random rnd = new Random();
-
-Console.WriteLine("inserice il numero di squadre: ");
-int numeroSquadre =int.Parse(Console.ReadLine());
-
-
-string risposta = null;
-
-do
-{
-  if (partecipanti.Count == 0)
-  {
-    Console.WriteLine("non ci sono piu partecipanti da estrare");
-    break;
-  }
-  else
-  {
-    int index = rnd.Next(partecipanti.Count);
-
-    string partecipante = partecipanti[index];
-
-    Console.WriteLine(partecipante);
-
-    partecipanti.RemoveAt(index);
-  }
-
-  Console.WriteLine("Vuoi estrare un altro partecipante? (S/N)");
-  risposta = Console.ReadLine().ToLower();
-
-
-
-} while (risposta == "s");
-```
-
-```bash
-git add --all
-git mìcommit -m "sorteggiia partecipente (manca qualcosa qui) versione 3"
 git push -u origin main
 ```
