@@ -159,7 +159,7 @@ do
 
 ```bash
 git add --all
-git mìcommit -m "sorteggiia partecipente versione 3"
+git mìcommit -m "sorteggio partecipente versione 3"
 git push -u origin main
 ```
 
