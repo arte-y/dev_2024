@@ -1,62 +1,48 @@
-﻿// Lista di partecipante di corso dev2024
+﻿List<string> partecipanti = new List<string> { "Tamer", "Felipe", "Diego", "Ivan", "Giorgio", "Anita", "Sofia", "Andrea" };
 
-Console.WriteLine("Divide squadre che vuole creare squadre da questo gruppo");
-int divisoU =int.Parse(Console.ReadLine());
+Random rnd = new Random();
 
+Console.Write("inserice il numero di squadre: ");
+int numeroSquadre =int.Parse(Console.ReadLine());
 
-List<string> ListPart = new List<string>
-{"Tamer", "Andrea", "Felipe", "Ivan", "Anita", "Sofia", "Giorgio", "Diego"};
+List<List<string>> squadre = new List<List<string>>();
 
-var rnd = new Random();
-int rndNome = rnd.Next(ListPart.Count);
+for (int i = 0; i < numeroSquadre; i++)
+{
+  squadre.Add(new List<string>());
+}
 
-int diviso = ListPart.Count / divisoU;
+for (int i = 0; i < partecipanti.Count; i++)
+{
+  squadre[i %numeroSquadre].Add(partecipanti[i]);
+}
 
-if (diviso%2==1)
-Console.WriteLine("diviso bene");
-else
-Console.WriteLine("fuori di gruppo uno persone");
+for (int i = 0; i < squadre.Count; i++)
+{
+  Console.WriteLine($"Squadre {i+1}: {string.Join(",",squadre[i])}");
+}
 
-Console.WriteLine(diviso);
-// Console.WriteLine(ListPart[rndNome]);
+string risposta = null;
 
-Console.WriteLine("Cioa, vuole vedere partecipante di corso? Dai iniziamo!");
-
-bool control = true;
-string control1 = string.Empty;
 do
 {
-    for (int i = rndNome; i < ListPart.Count; i++)
-    {
-        Console.WriteLine($"Il nome: {ListPart[i]}");
-        // ListPart.Remove(ListPart[i]);
-        // ListPart.Remove(ListPart[rndNome]);
+  if (partecipanti.Count == 0)
+  {
+    Console.WriteLine("non ci sono piu partecipanti da estrare");
+    break;
+  }
+  else
+  {
+    int index = rnd.Next(partecipanti.Count);
 
-        if (i <= ListPart.Count)
-        {
-            Console.WriteLine("voule vedere altr partecipante? (S/N)");
-            control1 = Console.ReadLine().ToLower();
-        }
-        else
-        {
-            Console.WriteLine("Terminato!");
-        }
-    }
+    string partecipante = partecipanti[index];
 
+    Console.WriteLine(partecipante);
 
-} while (control1 == "s");
+    partecipanti.RemoveAt(index);
+  }
 
+  Console.WriteLine("Vuoi estrare un altro partecipante? (S/N)");
+  risposta = Console.ReadLine().ToLower();
 
-
-// Console.WriteLine("Vuole vedere tutte le partecipante?(s/n)");
-// string control2 = Console.ReadLine();
-
-// if (control2 == "s")
-// {
-//     for (int i = rndNome; i < ListPart.Count; i++)
-//     {
-//         Console.WriteLine($"Il nome: {ListPart[i]}");
-//     }
-// }
-// else
-//     Console.WriteLine("Good Bye");
+} while (risposta == "s");
