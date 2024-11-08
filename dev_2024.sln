@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_metodi-dizionario", "xx-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_sorteggio_partecipanti_corso", "Assignment\02_sorteggio_partecipanti_corso\02_sorteggio_partecipanti_corso.csproj", "{BD4F7280-3675-4E9B-AF0E-F35C3F53408A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_dates", "xx-Esercitazioni\09_dates\09_dates.csproj", "{D509166B-C831-4430-87A0-D658BA62A6B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_math", "xx-Esercitazioni\10_math\10_math.csproj", "{20348E5F-7E58-4E44-9CB1-B812040BD4D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,14 @@ Global
 		{BD4F7280-3675-4E9B-AF0E-F35C3F53408A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD4F7280-3675-4E9B-AF0E-F35C3F53408A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD4F7280-3675-4E9B-AF0E-F35C3F53408A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D509166B-C831-4430-87A0-D658BA62A6B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D509166B-C831-4430-87A0-D658BA62A6B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D509166B-C831-4430-87A0-D658BA62A6B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D509166B-C831-4430-87A0-D658BA62A6B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20348E5F-7E58-4E44-9CB1-B812040BD4D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20348E5F-7E58-4E44-9CB1-B812040BD4D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20348E5F-7E58-4E44-9CB1-B812040BD4D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20348E5F-7E58-4E44-9CB1-B812040BD4D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,5 +100,7 @@ Global
 		{AFA080A9-6AB1-4A77-B0C6-7908E3FB7AC4} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 		{0610230F-8771-4610-9734-4D2138C917AE} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 		{BD4F7280-3675-4E9B-AF0E-F35C3F53408A} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
+		{D509166B-C831-4430-87A0-D658BA62A6B7} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
+		{20348E5F-7E58-4E44-9CB1-B812040BD4D5} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 	EndGlobalSection
 EndGlobal

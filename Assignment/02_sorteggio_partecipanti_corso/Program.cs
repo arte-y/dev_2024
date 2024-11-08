@@ -1,12 +1,16 @@
-List<string> partecipanti = new List<string> { "Tamer", "Felipe", "Diego", "Ivan", "Giorgio", "Anita", "Sofia", "Andrea" };
+﻿List<string> partecipanti = new List<string> { "Tamer", "Felipe", "Diego", "Ivan", "Giorgio", "Anita", "Sofia", "Andrea" };
 
 Random rnd = new Random();
+
+partecipanti.Sort();
 
 bool control =false;
 for (int i = 0; i < partecipanti.Count; i++)
 {
   Console.WriteLine($"Partecipanti: {partecipanti[i]}");
 }
+
+
 do
 {
 
@@ -55,7 +59,7 @@ else if (risposta == "s")
 
 } while (true);
 
-
+Console.WriteLine("sfasf");
 
 
 
@@ -88,6 +92,7 @@ else if (risposta == "s")
 #endregion
 
 #region prof ha fatto!
+/*
 // creo la lista dei partecipanti
 List<string> partecipanti = new List<string> { "Partecipante 1", "Partecipante 2", "Partecipante 3", "Partecipante 4", "Partecipante 5", "Partecipante 6", "Partecipante 7", "Partecipante 8", "Partecipante 9", "Partecipante 10" };
 
@@ -186,4 +191,5 @@ while (true)
         Console.WriteLine(partecipante);
     }
 }
+*/
 #endregion
