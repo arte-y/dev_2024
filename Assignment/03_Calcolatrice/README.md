@@ -59,4 +59,26 @@ else
 git add --all
 git mìcommit -m "calcolatrice_semplice_Versione_1"
 git push -u origin main
+
+```
+
+# Versione 2
+
+## Obiettivo
+
+- Aggiungere la gestione degli errori per evitare crash del programma.
+- Se l'utente inserice un valore non numerico, il programma deve stampare un messaggio di errore dicendo di inserice un numero valido
+- Se l'utente inserice un valore non numerico, il programma deve stampare un messaggio di errore dicendo di selezionare un operatore valido
+- Se l'utente tenta di dividere per zero, il programma deve stampare un messaggio di errore dicendo che la divisione per zero non è consentita
+- Il programma deve usare i blocchi try-catch per gestire gli errori
+- num* era(long) --- now(double ---- Convert.ToDouble...)
+
+```csharp
+
+```
+
+```bash
+git add --all
+git commit -m "calcolatrice_semplice_Versione2"
+git push -u origin main
 ```
