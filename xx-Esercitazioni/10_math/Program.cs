@@ -132,3 +132,6 @@ for (int i = 0; i < numeri3.Length; i++)
     Console.WriteLine($"Arrotondato per eccesso: {perEccesso}");
     Console.WriteLine($"Arrotondato per difetto: {perDifetto}");
 }
+
+// Calcola la radice quadrata di un array di numeri interi usando Math.Sqrt
+int[] numeri4 = { 4, 9, 16, 25};
