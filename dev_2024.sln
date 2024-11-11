@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_dates", "xx-Esercitazion
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_math", "xx-Esercitazioni\10_math\10_math.csproj", "{20348E5F-7E58-4E44-9CB1-B812040BD4D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_gestione_delle_eccezioni", "xx-Esercitazioni\11_gestione_delle_eccezioni\11_gestione_delle_eccezioni.csproj", "{F891048A-AB94-4EF6-8DB0-7AE7BCC060F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{20348E5F-7E58-4E44-9CB1-B812040BD4D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20348E5F-7E58-4E44-9CB1-B812040BD4D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20348E5F-7E58-4E44-9CB1-B812040BD4D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F891048A-AB94-4EF6-8DB0-7AE7BCC060F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F891048A-AB94-4EF6-8DB0-7AE7BCC060F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F891048A-AB94-4EF6-8DB0-7AE7BCC060F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F891048A-AB94-4EF6-8DB0-7AE7BCC060F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,5 +108,6 @@ Global
 		{BD4F7280-3675-4E9B-AF0E-F35C3F53408A} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 		{D509166B-C831-4430-87A0-D658BA62A6B7} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 		{20348E5F-7E58-4E44-9CB1-B812040BD4D5} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
+		{F891048A-AB94-4EF6-8DB0-7AE7BCC060F3} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 	EndGlobalSection
 EndGlobal
