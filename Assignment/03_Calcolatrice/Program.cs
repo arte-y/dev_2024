@@ -40,64 +40,90 @@
 #region Versione 2
 
 
+double num1 = 0;
+double num2 = 0;
 bool inputValido = false;
 
 
-try
+while (!inputValido)
 {
-    Console.WriteLine("Calcolatrice");
+  try
+  {
     Console.WriteLine("Inserisci il primo numero: ");
-    double num1 = Convert.ToDouble(Console.ReadLine());
+    num1 = Convert.ToDouble(Console.ReadLine());
+    inputValido = true;
 
+  }
+  catch (FormatException e)
+  {
+    Console.WriteLine("Inserice un numero valido:");
+  }
+}
+
+inputValido = false;
+while (!inputValido)
+{
+  try
+  {
     Console.WriteLine("Inserisci il secondo numero: ");
-    double num2 = Convert.ToDouble(Console.ReadLine());
+    num2 = Convert.ToDouble(Console.ReadLine());
+    inputValido = true;
+  }
+  catch (FormatException e)
+  {
+    Console.WriteLine("Inserice un numero valido:");
+  }
+}
+
+do
+{
+  try
+  {
+
 
     Console.WriteLine("Inserisci l'operazione (+, -, *, /): ");
     // string operazione = Console.ReadLine();
     char operazione = Console.ReadKey().KeyChar; //! porf. suggest!
     Console.WriteLine();
 
+    inputValido = true;
     if (operazione == '+')
     {
-        double risultato = num1 + num2;
-        Console.WriteLine($"Il risultato è: {num1} {operazione} {num2} = {risultato}");
+      double risultato = num1 + num2;
+      Console.WriteLine($"Il risultato è: {num1} {operazione} {num2} = {risultato}");
     }
     else if (operazione == '-')
     {
-        double risultato2 = num1 - num2;
-        Console.WriteLine($"Il risultato è: {num1} {operazione} {num2} = {risultato2}");
+      double risultato2 = num1 - num2;
+      Console.WriteLine($"Il risultato è: {num1} {operazione} {num2} = {risultato2}");
     }
     else if (operazione == '*')
     {
-        double risultato3 = num1 * num2;
-        Console.WriteLine($"Il risultato è: {num1} {operazione} {num2} = {risultato3}");
+      double risultato3 = num1 * num2;
+      Console.WriteLine($"Il risultato è: {num1} {operazione} {num2} = {risultato3}");
     }
     else if (operazione == '/')
     {
-        double risultato4 = num1 / num2;
-        Console.WriteLine($"Il risultato è: {num1} {operazione} {num2}  {risultato4}");
+      if (num2 == 0)
+      {
+        throw new DivideByZeroException();
+      }
+      double risultato4 = num1 / num2;
+      Console.WriteLine($"Il risultato è: {num1} {operazione} {num2} = {risultato4}");
     }
     else
     {
-        Console.WriteLine("Operazione non valida. Deve essere (+, -, *, /)");
+      Console.WriteLine("Operazione non valida. Deve essere (+, -, *, /)");
+      inputValido = false;
     }
-}
-catch (FormatException)
-{
-    Console.WriteLine("Errore: Inserire un numero valido");
-}
-catch (DivideByZeroException)
-{
-    Console.WriteLine("Errore: Divisione per zero");
-}
-catch (OverflowException)
-{
-    Console.WriteLine("Errore: Numero troppo grande");
-}
-catch (Exception)
-{
-    Console.WriteLine("Errore generico");
-}
+  }
+  catch (DivideByZeroException)
+  {
+    Console.WriteLine("Non puoi dividere per zero");
+    inputValido = false;
+  }
+} while (!inputValido);
+
 // finally
 // {
 //     Console.WriteLine("il blocco finally");
