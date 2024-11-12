@@ -59,9 +59,6 @@ do
 
 } while (true);
 
-Console.WriteLine("sfasf");
-
-
 
 #region bla bla bla
 // string risposta = null;

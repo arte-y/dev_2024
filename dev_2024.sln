@@ -39,6 +39,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_funzioni", "xx-Esercitaz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Calcolatrice_con_funzioni", "Assignment\04_Calcolatrice_con_funzioni\04_Calcolatrice_con_funzioni.csproj", "{1E4FB8F7-9CFA-4FE2-AF95-6E2A3ACBA6D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_Sorteggio_con_funzioni", "Assignment\05_Sorteggio_con_funzioni\05_Sorteggio_con_funzioni.csproj", "{03A15A68-9D6E-4957-B2DD-24E8BCC8BDD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_Indovina-numero_con_funzioni", "Assignment\06_Indovina-numero_con_funzioni\06_Indovina-numero_con_funzioni.csproj", "{3B8129B8-4537-442D-BA0F-76C30E694419}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +113,14 @@ Global
 		{1E4FB8F7-9CFA-4FE2-AF95-6E2A3ACBA6D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E4FB8F7-9CFA-4FE2-AF95-6E2A3ACBA6D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E4FB8F7-9CFA-4FE2-AF95-6E2A3ACBA6D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03A15A68-9D6E-4957-B2DD-24E8BCC8BDD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03A15A68-9D6E-4957-B2DD-24E8BCC8BDD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03A15A68-9D6E-4957-B2DD-24E8BCC8BDD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03A15A68-9D6E-4957-B2DD-24E8BCC8BDD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B8129B8-4537-442D-BA0F-76C30E694419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B8129B8-4537-442D-BA0F-76C30E694419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B8129B8-4537-442D-BA0F-76C30E694419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B8129B8-4537-442D-BA0F-76C30E694419}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -130,5 +142,7 @@ Global
 		{F0BB9744-C44E-43D2-AADC-7F42FE888F86} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 		{E39076D5-725C-4317-B582-3BBC45895707} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 		{1E4FB8F7-9CFA-4FE2-AF95-6E2A3ACBA6D6} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
+		{03A15A68-9D6E-4957-B2DD-24E8BCC8BDD0} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
+		{3B8129B8-4537-442D-BA0F-76C30E694419} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 	EndGlobalSection
 EndGlobal

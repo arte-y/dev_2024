@@ -126,4 +126,6 @@ double SommaDiv(double a, double b, string operazione)
 {
     double risultato = a / b;
     Console.WriteLine($"Il risultato è: {num1} {operazione} {num2} = {risultato}");
-    return a / b;}  
+    return a / b;}
+
+    
