@@ -1,14 +1,12 @@
-# Calcolatrice semplice
+### Calcolatrice con funzioni
+
 # Calcolatrice semplice
 
 ## Versione 1
 
 ## Obiettivo
 
-- Scrivere un programma che simuli una calcolatrice semplice.
-- l'utente deve poter inserice due numeri e selezionare un operatore matematico (+,-+,/)
-- Il programma deve sesguire lìoperazione selezionata e stampare il risultato.
-- Il pogramma non gestisce nessun tipo di errore o di eccezione
+- implementare le funzioni nella versione semplificata della calcolatrice.
 
 ```csharp
 double num1 = 0;
@@ -144,6 +142,6 @@ double SommaDiv(double a, double b, string operazione)
 
 ```bash
 git add --all
-git mìcommit -m "calcolatrice/con/funzioni_semplice_Versione_1"
+git mìcommit -m "Implementata la versione 1 della calcolatrice con funzioni"
 git push -u origin main
 ```
