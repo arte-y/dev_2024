@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_gestione_delle_eccezioni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Calcolatrice", "Assignment\03_Calcolatrice\03_Calcolatrice.csproj", "{F0BB9744-C44E-43D2-AADC-7F42FE888F86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_funzioni", "xx-Esercitazioni\12_funzioni\12_funzioni.csproj", "{E39076D5-725C-4317-B582-3BBC45895707}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Calcolatrice_con_funzioni", "Assignment\04_Calcolatrice_con_funzioni\04_Calcolatrice_con_funzioni.csproj", "{1E4FB8F7-9CFA-4FE2-AF95-6E2A3ACBA6D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +101,14 @@ Global
 		{F0BB9744-C44E-43D2-AADC-7F42FE888F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0BB9744-C44E-43D2-AADC-7F42FE888F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0BB9744-C44E-43D2-AADC-7F42FE888F86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E39076D5-725C-4317-B582-3BBC45895707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E39076D5-725C-4317-B582-3BBC45895707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E39076D5-725C-4317-B582-3BBC45895707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E39076D5-725C-4317-B582-3BBC45895707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E4FB8F7-9CFA-4FE2-AF95-6E2A3ACBA6D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E4FB8F7-9CFA-4FE2-AF95-6E2A3ACBA6D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E4FB8F7-9CFA-4FE2-AF95-6E2A3ACBA6D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E4FB8F7-9CFA-4FE2-AF95-6E2A3ACBA6D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -116,5 +128,7 @@ Global
 		{20348E5F-7E58-4E44-9CB1-B812040BD4D5} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 		{F891048A-AB94-4EF6-8DB0-7AE7BCC060F3} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 		{F0BB9744-C44E-43D2-AADC-7F42FE888F86} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
+		{E39076D5-725C-4317-B582-3BBC45895707} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
+		{1E4FB8F7-9CFA-4FE2-AF95-6E2A3ACBA6D6} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 	EndGlobalSection
 EndGlobal

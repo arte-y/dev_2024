@@ -421,7 +421,7 @@ do
     Console.WriteLine("Inserisci il tuo nome:");
     string nomeUtente = Console.ReadLine();
 
-    
+
 
     Console.WriteLine($"Indovina il numero. Punteggio massimo: {punteggio} punti.");
 

@@ -4,7 +4,7 @@ Random rnd = new Random();
 
 partecipanti.Sort();
 
-bool control =false;
+bool control = false;
 for (int i = 0; i < partecipanti.Count; i++)
 {
   Console.WriteLine($"Partecipanti: {partecipanti[i]}");
@@ -14,48 +14,48 @@ for (int i = 0; i < partecipanti.Count; i++)
 do
 {
 
-Console.WriteLine("Vuole inserire un partecipante o eliminare o sorteggiare i partecipanti? (I/E/S)");
-string risposta = Console.ReadLine().ToLower();
+  Console.WriteLine("Vuole inserire un partecipante o eliminare o sorteggiare i partecipanti? (I/E/S)");
+  string risposta = Console.ReadLine().ToLower();
 
-if (risposta == "i")
-{
-  Console.Write("Inserice il nome partecipante: ");
-  string rispostaI = Console.ReadLine();
-  partecipanti.Add(rispostaI);
-
-}
-else if (risposta == "e")
-{
-  Console.Write("Inserice il nome partecipante: ");
-  string rispostaE = Console.ReadLine();
-  partecipanti.Remove(rispostaE);
-
-}
-else if (risposta == "s")
-{
-  Console.Write("inserice il numero di squadre: ");
-  int numeroSquadre = int.Parse(Console.ReadLine());
-  List<List<string>> squadre = new List<List<string>>();
-  
-  for (int i = 0; i < numeroSquadre; i++)
+  if (risposta == "i")
   {
-    
-    squadre.Add(new List<string>());
-    
-  }
+    Console.Write("Inserice il nome partecipante: ");
+    string rispostaI = Console.ReadLine();
+    partecipanti.Add(rispostaI);
 
-  for (int i = 0; i < partecipanti.Count; i++)
-  {
-    squadre[i % numeroSquadre].Add(partecipanti[i]);
-    // int index = rnd.Next(partecipanti.Count);
   }
+  else if (risposta == "e")
+  {
+    Console.Write("Inserice il nome partecipante: ");
+    string rispostaE = Console.ReadLine();
+    partecipanti.Remove(rispostaE);
 
-  for (int i = 0; i < squadre.Count; i++)
-  {
-    Console.WriteLine($"Squadre {i + 1}: {string.Join(",", squadre[i])}");
   }
-  break;
-}
+  else if (risposta == "s")
+  {
+    Console.Write("inserice il numero di squadre: ");
+    int numeroSquadre = int.Parse(Console.ReadLine());
+    List<List<string>> squadre = new List<List<string>>();
+
+    for (int i = 0; i < numeroSquadre; i++)
+    {
+
+      squadre.Add(new List<string>());
+
+    }
+
+    for (int i = 0; i < partecipanti.Count; i++)
+    {
+      squadre[i % numeroSquadre].Add(partecipanti[i]);
+      // int index = rnd.Next(partecipanti.Count);
+    }
+
+    for (int i = 0; i < squadre.Count; i++)
+    {
+      Console.WriteLine($"Squadre {i + 1}: {string.Join(",", squadre[i])}");
+    }
+    break;
+  }
 
 } while (true);
 
