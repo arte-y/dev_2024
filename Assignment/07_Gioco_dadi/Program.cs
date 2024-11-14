@@ -1,117 +1,101 @@
-﻿
 
-using System.Net;
-
-bool giocareDiNuovo = true;
-bool contolPunteggio = false;
 int punteggioUtente = 100;
 int punteggioComputer = 100;
 
+bool continua = true;
+Random rnd = new Random();
 
-while (giocareDiNuovo)
+Console.WriteLine("Insersci il tuo nome");
+string nome = Console.ReadLine();
+do
 {
-    int utenteDado = UtenteLanciaDado();
-    int computerDado = ComputerLanciaDado();
+  int utenteDado = UtenteLanciaDado();
 
-    ControlVinto(utenteDado, computerDado, punteggioComputer, punteggioUtente);
+  int computerDado = ComputerLanciaDado();
 
-    if (punteggioComputer == 0)
-    {
-        Console.WriteLine("Il computer ha perso!");
-        giocareDiNuovo = false;
-    }
-    else if (punteggioUtente == 0)
-    {
-        Console.WriteLine("L'utente ha perso!");
-        giocareDiNuovo = false;
-    }
+  int differenza = Math.Abs(utenteDado - computerDado);
 
-    // string risposta = ControlGiocareDiNuovo();
-    // if (risposta == "s")
-    // {
-    //     giocareDiNuovo = true;
-    // }
-    // else
-    // {
-    //     Console.WriteLine("Grazie finita!");
-    //     break;
-    // }
 
-}
+  ControloVittoria(utenteDado, computerDado, differenza);
+  ControloFineGioco();
 
-#region funzioni
+  GiocoDiNuovo();
+} while (continua);
+
+Console.WriteLine("Fine del gioco, arriverderci!");
+
+
+#region Funzioni
 
 int UtenteLanciaDado()
 {
-    Random rnd = new Random();
-    int utenteDado = rnd.Next(1, 7);
-    Console.WriteLine("Utente lancia il dado...");
-    Console.ReadLine();
-    Thread.Sleep(2000);
-    Console.WriteLine($"Il risultato del lancio è: {utenteDado}");
-    return utenteDado;
+  int utenteDado = rnd.Next(1, 7);
+
+  Console.WriteLine($"Sig:{nome} tocca un tasto per lanciare il dado");
+  Console.ReadKey(true);
+  Thread.Sleep(500);
+  Console.WriteLine($"Il tuo dado: {utenteDado}");
+  return utenteDado;
 }
 
 int ComputerLanciaDado()
 {
-    Random rnd = new Random();
-    int computerDado = rnd.Next(1, 7);
-    Console.WriteLine("Computer lancia il dado...");
-    Thread.Sleep(2000);
-    Console.WriteLine($"Il risultato del lancio è: {computerDado}");
-    return computerDado;
+  int computerDado = rnd.Next(1, 7);
+  Console.WriteLine("Computer lancia il dado");
+  Thread.Sleep(500);
+  Console.WriteLine($"Il dado del computer: {computerDado}");
+  return computerDado;
 }
 
-void ControlVinto(int utenteDado, int computerDado, int punteggioComputer, int punteggioUtente)
+void ControloVittoria(int utenteDado, int computerDado, int differenza)
 {
-    if (utenteDado > computerDado)
-    {
-        punteggioUtente += 10 + (utenteDado - computerDado);
-        punteggioComputer -= 10 + (utenteDado - computerDado);
-        Console.WriteLine($"Utente ha vinto! Punteggio: {punteggioUtente}");
-    }
-    else if (utenteDado < computerDado)
-    {
-        punteggioUtente -= 10 + (computerDado - utenteDado);
-        punteggioComputer += 10 + (computerDado - utenteDado);
-        Console.WriteLine($"Il computer ha vinto! Punteggio: {punteggioComputer}");
-    }
-    else
-    {
-        Console.WriteLine("Uguale!");
-    }
-
-    Console.WriteLine($"L'utente punteggio; {punteggioUtente}");
-    Console.WriteLine($"Il computer punteggio: {punteggioComputer}");
+  if (utenteDado > computerDado)
+  {
+    punteggioUtente += 10 + differenza;
+    punteggioComputer -= 10 + differenza;
+    Console.WriteLine("Utente ha vinto!");
+  }
+  else if (utenteDado < computerDado)
+  {
+    punteggioUtente -= 10 + differenza;
+    punteggioComputer += 10 + differenza;
+    Console.WriteLine("Il computer ha vinto");
+  }
+  else
+  {
+    Console.WriteLine("Uguale!");
+  }
+  Console.WriteLine($"Punteggio Utente: {punteggioUtente}");
+  Console.WriteLine($"Punteggio Computer: {punteggioComputer}");
 }
 
-string ControlGiocareDiNuovo()
+void ControloFineGioco()
 {
-    Console.WriteLine("Vuole giocare di nuovo? (s/n)");
-    string risposta = Console.ReadLine().ToLower();
-    return risposta;
+  if (punteggioUtente <= 0)
+  {
+    Console.WriteLine("Il computer ha vinto il gioco");
+    continua = false;
+  }
+  else if (punteggioComputer <= 0)
+  {
+    Console.WriteLine("L'utente ha vinto il gioco");
+    continua = false;
+  }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void GiocoDiNuovo()
+{
+  Console.WriteLine("Vuole giocare ancora? (s/n)");
+  string risposta = Console.ReadLine().ToLower();
+  if (risposta == "s")
+  {
+    Console.WriteLine("continua il gioco");
+  }
+  else
+  {
+    Console.WriteLine("Esce dal gioco ...");
+    continua = false;
+  }
+}
 
 #endregion
-
-
-
-
