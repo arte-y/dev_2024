@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_Sorteggio_con_funzioni",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_Indovina-numero_con_funzioni", "Assignment\06_Indovina-numero_con_funzioni\06_Indovina-numero_con_funzioni.csproj", "{3B8129B8-4537-442D-BA0F-76C30E694419}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_Gioco_dadi", "Assignment\07_Gioco_dadi\07_Gioco_dadi.csproj", "{F2025C71-5BA1-46C8-B787-E6089B8119D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,6 +123,10 @@ Global
 		{3B8129B8-4537-442D-BA0F-76C30E694419}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B8129B8-4537-442D-BA0F-76C30E694419}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B8129B8-4537-442D-BA0F-76C30E694419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2025C71-5BA1-46C8-B787-E6089B8119D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2025C71-5BA1-46C8-B787-E6089B8119D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2025C71-5BA1-46C8-B787-E6089B8119D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2025C71-5BA1-46C8-B787-E6089B8119D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -144,5 +150,6 @@ Global
 		{1E4FB8F7-9CFA-4FE2-AF95-6E2A3ACBA6D6} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 		{03A15A68-9D6E-4957-B2DD-24E8BCC8BDD0} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 		{3B8129B8-4537-442D-BA0F-76C30E694419} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
+		{F2025C71-5BA1-46C8-B787-E6089B8119D2} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 	EndGlobalSection
 EndGlobal
