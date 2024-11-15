@@ -1,3 +1,6 @@
+﻿
+List<int> listaStoriaUtente = new List<int>();
+List<int> listaStoriaComputer = new List<int>();
 
 int punteggioUtente = 100;
 int punteggioComputer = 100;
@@ -15,12 +18,17 @@ do
 
   int differenza = Math.Abs(utenteDado - computerDado);
 
-
   ControloVittoria(utenteDado, computerDado, differenza);
   ControloFineGioco();
 
   GiocoDiNuovo();
 } while (continua);
+
+Console.WriteLine("Storia del gioco:");
+
+StampaStoriaUtente();
+StampaStoriaComputer();
+
 
 Console.WriteLine("Fine del gioco, arriverderci!");
 
@@ -35,6 +43,7 @@ int UtenteLanciaDado()
   Console.ReadKey(true);
   Thread.Sleep(500);
   Console.WriteLine($"Il tuo dado: {utenteDado}");
+  listaStoriaUtente.Add(utenteDado);
   return utenteDado;
 }
 
@@ -44,6 +53,7 @@ int ComputerLanciaDado()
   Console.WriteLine("Computer lancia il dado");
   Thread.Sleep(500);
   Console.WriteLine($"Il dado del computer: {computerDado}");
+  listaStoriaComputer.Add(computerDado);
   return computerDado;
 }
 
@@ -67,6 +77,8 @@ void ControloVittoria(int utenteDado, int computerDado, int differenza)
   }
   Console.WriteLine($"Punteggio Utente: {punteggioUtente}");
   Console.WriteLine($"Punteggio Computer: {punteggioComputer}");
+  listaStoriaUtente.Add(punteggioUtente);
+  listaStoriaComputer.Add(punteggioComputer);
 }
 
 void ControloFineGioco()
@@ -96,6 +108,26 @@ void GiocoDiNuovo()
     Console.WriteLine("Esce dal gioco ...");
     continua = false;
   }
+}
+
+void StampaStoriaUtente()
+{
+  Console.WriteLine($"Dadi e Punteggi di {nome}:");
+ foreach (var dadiUtent in listaStoriaUtente)
+ {
+    Console.Write($" {dadiUtent}, ");
+ }
+  Console.WriteLine();
+}
+
+void StampaStoriaComputer()
+{
+  Console.WriteLine("Dadi e Punteggi di Computer:");
+ foreach (var dadiComp in listaStoriaComputer)
+ {
+    Console.Write($" {dadiComp}, ");
+ }
+  Console.WriteLine();
 }
 
 #endregion

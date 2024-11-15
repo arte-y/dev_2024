@@ -88,6 +88,8 @@ void Divisione(int dividendo, int divisore, out int quoziente, out int resto) //
     // non posso fare un return di due valori, quindi uso i parametri out
 }
 
+// ! Prof ha fatto uan esempio con ref - controllo REF (e ref-out diffrenza)
+
 int q, r; // (q=quoziente --- r=resto) dichiaro le variabili che conterranno i valori restituiti dalla funzione
 Divisione(10, 3, out q, out r); // utilizzo della funzione
 Console.WriteLine($"Quoziente: {q}, Resto: {r}"); // stampa: Quoziente: 3, Resto: 1
