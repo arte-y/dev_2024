@@ -22,60 +22,6 @@
 ```csharp
 // Generatore di Password
 
-//! un altro modo
-
-// Random random = new Random();
-// string password1 = string.Empty;
-
-// int lunghezza1 = random.Next(8, 20);
-
-// for (int i = 0; i < lunghezza1; i++)
-// {
-//   char p1 = (char)random.Next(33, 127);
-//   password1 += p1;
-// }
-// Console.WriteLine($"Computer ha creato un password:{password1}");
-
-//! prima
-
-// Random rnd = new Random();
-// string password = string.Empty;
-
-// Console.WriteLine("Per creare un password deve inserire:");
-
-// Console.Write("Metti una lettera maiuscola: ");
-// char letteraMaiuscola = Console.ReadLine().ToUpper()[0];
-// password += letteraMaiuscola;
-
-// Console.Write("Metti una lettera minuscola: ");
-// char letteraMinuscola = Console.ReadLine().ToLower()[0];
-// password += letteraMinuscola;
-
-// Console.Write("Metti un numero: ");
-// char numero = Console.ReadLine()[0];
-// password += numero;
-
-// Console.Write("Metti un simbolo: ");
-// char simbolo = Console.ReadLine()[0];
-// password += simbolo;
-
-// int lunghezza =20;
-// lunghezza -= 4;
-// lunghezza = rnd.Next(8,20);
-
-
-// for (int i = 0; i < lunghezza; i++)
-// {
-//   char p = (char)rnd.Next(33, 127);
-//   password += p;
-// }
-
-// password = new string(password.OrderBy(i => rnd.Next()).ToArray());
-
-// Console.WriteLine($"Computer ha creato un password:{password}");
-
-
-//! creo di nuovo
 
 string maiuscola = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 string minuscola = "abcdefghijklmnopqrstuvwxyz";
@@ -96,8 +42,6 @@ if (lunghezza1 < 8 || lunghezza1 > 20)
 }
 else
 {
-  if(maiuscola.Contains(password1)&& minuscola.Contains(password1)&&numeri.Contains(password1)&& simboli.Contains(password1))
-
   for (int i = 0; i < lunghezza1; i++)
   {
     char p = caratteri[rnd1.Next(0, caratteri.Length)];
@@ -105,9 +49,17 @@ else
   }
 }
 
+Console.WriteLine("Controlliamo la sicurezza della password");
+if(maiuscola.Contains(password1) == password1.Contains(maiuscola)&& minuscola.Contains(password1) == password1.Contains(minuscola)&&numeri.Contains(password1) ==password1.Contains(numeri)&& simboli.Contains(password1)==password1.Contains(simboli))
+{
+  Console.WriteLine("Password sicura");
+}
+else
+{
+  Console.WriteLine("Password non sicura");
+}
+
 Console.WriteLine($"Computer ha creato un password:{password1}");
-
-
 
 
 ```
