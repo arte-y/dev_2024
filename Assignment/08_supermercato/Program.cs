@@ -77,10 +77,15 @@ void Menu()
 
 void VisualizzaProdotti(List<string> products)
 {
-  Console.WriteLine("Prodotti disponibili:");
-  foreach (var item in products)
+  // Console.WriteLine("Prodotti disponibili:");
+  // foreach (var item in products)
+  // {
+  //   Console.Write($"{item}, ");
+  // }
+
+  foreach (var item in prezzi)
   {
-    Console.Write($"{item}, ");
+    Console.Write($"Prodotto: {item.Key} e Prezzo: {item.Value}€ ");
   }
 }
 
@@ -89,13 +94,13 @@ void CercaProdotto(List<string> products)
   Console.Write("Cerca un prodotto: ");
   string risposta = Console.ReadLine().ToLower();
 
-  if (!products.Contains(risposta))
+  if (products.Contains(risposta))
   {
-    Console.WriteLine($"Prodotto non trovato: {risposta}");
+    Console.WriteLine($"Prodotto trovato: {risposta}");
   }
   else
   {
-    Console.WriteLine($"Prodotto trovato");
+    Console.WriteLine($"Prodotto non trovato {risposta}");
   }
 
 }
@@ -103,7 +108,7 @@ void CercaProdotto(List<string> products)
 void AggiungiProdotto(List<string> products, Dictionary<string, int> carrello)
 {
   Console.Write("Aggiungi un prodotto: ");
-  string risposta = Console.ReadLine();
+  string risposta = Console.ReadLine().ToLower();
   if (products.Contains(risposta))
   {
     Console.Write("Quanti ne vuoi?: ");
@@ -124,13 +129,13 @@ void AggiungiProdotto(List<string> products, Dictionary<string, int> carrello)
 
 void RimuoviProdotto(Dictionary<string, int> carrello)
 {
-  Console.WriteLine("Carrello details:");
+  Console.WriteLine("Carrello Prodotto e Quantita Details:");
   foreach (var item in carrello)
   {
     Console.Write($"{item.Key}: {item.Value} ");
   }
   Console.Write("\nRimuovi un prodotto: ");
-  string risposta = Console.ReadLine();
+  string risposta = Console.ReadLine().ToLower();
   if (carrello.ContainsKey(risposta))
   {
     Console.Write("Quanti ne vuoi rimuovere?: ");
@@ -152,23 +157,24 @@ void RimuoviProdotto(Dictionary<string, int> carrello)
 
 void VisualizzaCarrello(Dictionary<string, int> carrrello)
 {
-  Console.WriteLine("Prodotti nel carrello:");
+  Console.WriteLine("*** Prodotti nel carrello details ***");
   foreach (var item in carrrello)
   {
     prezzi.TryGetValue(item.Key, out double valore);
-    Console.WriteLine($"Prodotto: {item.Key} e Prezzo: {valore} € e Quantita: {item.Value } = Totale prezzo: {item.Value * valore} Euro");
+    Console.WriteLine($"Prodotto: {item.Key} e Prezzo unitar: {valore} € e Quantita: {item.Value } = Totale prezzo: {item.Value * valore} Euro");
   }
 }
 
 void ProcediAlPagamento(Dictionary<string, int> carrrello)
 {
+  Console.WriteLine("*** Pagina al pagamento ***");
   double totale = 0;
   foreach (var item in carrrello)
   {
     prezzi.TryGetValue (item.Key, out double valore);
     totale += item.Value * valore;
   }
-  Console.WriteLine($"Totale prezzi: {totale}");
+  Console.WriteLine($"Totale prezzi: {totale} Euro");
 }
 
 void Esci()

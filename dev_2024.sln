@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_Gioco_dadi", "Assignment
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_supermercato", "Assignment\08_supermercato\08_supermercato.csproj", "{9505C58F-9BF4-41FF-8738-6F00DC05D3C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Genaratore_Password", "Assignment\09_Genaratore_Password\09_Genaratore_Password.csproj", "{87C412B3-C818-428A-9B9E-0A1748F54F97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +135,10 @@ Global
 		{9505C58F-9BF4-41FF-8738-6F00DC05D3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9505C58F-9BF4-41FF-8738-6F00DC05D3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9505C58F-9BF4-41FF-8738-6F00DC05D3C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87C412B3-C818-428A-9B9E-0A1748F54F97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87C412B3-C818-428A-9B9E-0A1748F54F97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87C412B3-C818-428A-9B9E-0A1748F54F97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87C412B3-C818-428A-9B9E-0A1748F54F97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -158,5 +164,6 @@ Global
 		{3B8129B8-4537-442D-BA0F-76C30E694419} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 		{F2025C71-5BA1-46C8-B787-E6089B8119D2} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 		{9505C58F-9BF4-41FF-8738-6F00DC05D3C7} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
+		{87C412B3-C818-428A-9B9E-0A1748F54F97} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 	EndGlobalSection
 EndGlobal
