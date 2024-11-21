@@ -55,6 +55,7 @@
 
 //! creo di nuovo
 
+
 string maiuscola = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 string minuscola = "abcdefghijklmnopqrstuvwxyz";
 string numeri = "0123456789";
@@ -74,13 +75,21 @@ if (lunghezza1 < 8 || lunghezza1 > 20)
 }
 else
 {
-  if(maiuscola.Contains(password1)&& minuscola.Contains(password1)&&numeri.Contains(password1)&& simboli.Contains(password1))
-
   for (int i = 0; i < lunghezza1; i++)
   {
     char p = caratteri[rnd1.Next(0, caratteri.Length)];
     password1 += p;
   }
+}
+
+Console.WriteLine("Controlliamo la sicurezza della password");
+if(maiuscola.Contains(password1) == password1.Contains(maiuscola)&& minuscola.Contains(password1) == password1.Contains(minuscola)&&numeri.Contains(password1) ==password1.Contains(numeri)&& simboli.Contains(password1)==password1.Contains(simboli))
+{
+  Console.WriteLine("Password sicura");
+}
+else
+{
+  Console.WriteLine("Password non sicura");
 }
 
 Console.WriteLine($"Computer ha creato un password:{password1}");
