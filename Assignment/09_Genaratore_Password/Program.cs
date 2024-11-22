@@ -55,76 +55,100 @@
 
 //! creo di nuovo
 
-
 string maiuscola = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 string minuscola = "abcdefghijklmnopqrstuvwxyz";
 string numeri = "0123456789";
 string simboli = "!@#$%^&*()_+";
-
 string caratteri = maiuscola + minuscola + numeri + simboli;
-
 Random rnd1 = new Random();
 string password1 = string.Empty;
-Console.WriteLine("Decidi la lunghezza della password tra 8 e 20 caratteri");
+int lunghezza1 = 0;
 
-int lunghezza1;
-while (true)
-{
-    lunghezza1 = int.Parse(Console.ReadLine());
-    if (lunghezza1 < 8 || lunghezza1 > 20)
-    {
-        Console.WriteLine("Devi inserire un numero tra 8 e 20");
-    }
-    else
-    {
-        break;
-    }
-}
+LunghezzaPassword();
 
-password1 += maiuscola[rnd1.Next(maiuscola.Length)];
-password1 += minuscola[rnd1.Next(minuscola.Length)];
-password1 += numeri[rnd1.Next(numeri.Length)];
-password1 += simboli[rnd1.Next(simboli.Length)];
-
-for (int i = 4; i < lunghezza1; i++)
-{
-    char p = caratteri[rnd1.Next(caratteri.Length)];
-    password1 += p;
-}
-
-// per fare mix-password!
-password1 = new string(password1.OrderBy(c => rnd1.Next()).ToArray());
-
-Console.WriteLine("Controlliamo la sicurezza della password");
-// controllo sicurezze e anche count i carretteri.
+CreaPassword();
 
 int countMaiuscola = 0;
 int countMinuscola = 0;
 int countNumeri = 0;
 int countSimboli = 0;
 
-foreach (char item in password1)
+ControlloSicurezza();
+
+DettagliSicurezza();
+
+
+#region Funzioni
+
+void LunghezzaPassword()
 {
-    if (maiuscola.Contains(item)) countMaiuscola++;
-    if (minuscola.Contains(item)) countMinuscola++;
-    if (numeri.Contains(item)) countNumeri++;
-    if (simboli.Contains(item)) countSimboli++;
+    Console.WriteLine("Decidi la lunghezza della password tra 8 e 20 caratteri");
+    while (true)
+    {
+        lunghezza1 = int.Parse(Console.ReadLine());
+        if (lunghezza1 < 8 || lunghezza1 > 20)
+        {
+            Console.WriteLine("Devi inserire un numero tra 8 e 20");
+        }
+        else
+        {
+            break;
+        }
+    }
 }
 
-bool controlloNull = string.IsNullOrWhiteSpace(password1);
-
-if (countMaiuscola > 0 && countMinuscola > 0 && countNumeri > 0 && countSimboli > 0 && !controlloNull)
+void CreaPassword()
 {
-    Console.WriteLine("La password è sicura");
+    password1 += maiuscola[rnd1.Next(maiuscola.Length)];
+    password1 += minuscola[rnd1.Next(minuscola.Length)];
+    password1 += numeri[rnd1.Next(numeri.Length)];
+    password1 += simboli[rnd1.Next(simboli.Length)];
+    
+    for (int i = 0; i < lunghezza1; i++)
+    {
+        char p = caratteri[rnd1.Next(caratteri.Length)];
+        password1 += p;
+    }
+    password1 = new string(password1.OrderBy(c => rnd1.Next()).ToArray());
+}
+
+void ControlloSicurezza()
+{
+    foreach (char item in password1)
+    {
+        if (maiuscola.Contains(item)) countMaiuscola++;
+        if (minuscola.Contains(item)) countMinuscola++;
+        if (numeri.Contains(item)) countNumeri++;
+        if (simboli.Contains(item)) countSimboli++;
+    }
+
+    bool controlloNull = string.IsNullOrWhiteSpace(password1);
+
     Console.WriteLine($"Computer ha creato un password: {password1}");
-}
-else
-{
-    Console.WriteLine("La password non è sicura e prova di nuovo");
+
+    Console.WriteLine("Controlliamo la sicurezza della password ...");
+    
+    Thread.Sleep(2000);
+
+    if (countMaiuscola > 0 && countMinuscola > 0 && countNumeri > 0 && countSimboli > 0 && !controlloNull)
+    {
+        Console.WriteLine("La password è sicura");
+        
+    }
+    else
+    {
+        Console.WriteLine("La password non è sicura e prova di nuovo");
+    }
 }
 
-Console.WriteLine("dettagli di sicurezza della password");
-Console.Write($"Maiscola: {countMaiuscola}");
-Console.Write($"\nMinuscola: {countMinuscola}");
-Console.Write($"\nNumeri: {countNumeri}");
-Console.Write($"\nSimboli: {countSimboli}");
+void DettagliSicurezza()
+{
+    Console.WriteLine("Dettagli di sicurezza della password ...");
+    Thread.Sleep(2000);
+    Console.Write($"Maiscola: {countMaiuscola}");
+    Console.Write($"\nMinuscola: {countMinuscola}");
+    Console.Write($"\nNumeri: {countNumeri}");
+    Console.Write($"\nSimboli: {countSimboli}");
+}
+
+#endregion
