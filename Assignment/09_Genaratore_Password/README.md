@@ -1,5 +1,7 @@
 # Generatore di Password
 
+## Versione 1
+
 ## Obiettivo
 
 - programma in c# che genera una password sicura basata sui seguenti criteri:
@@ -14,11 +16,9 @@
 ## Suggerimenti
 
  - usa la classe Random per generare caretteri casuali.
- - puoi creare gruppi di caratteri (lettere maiuscole, minuscole, numero e caratteri speciali) e slezionare casualmente un carattere da ciascun gruppo-
- - 
+ - puoi creare gruppi di caratteri (lettere maiuscole, minuscole, numero e caratteri speciali) e slezionare casualmente un carattere da ciascun gruppo
 
-## Versione 1
-
+ Codice Programma
 ```csharp
 string maiuscola = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 string minuscola = "abcdefghijklmnopqrstuvwxyz";
@@ -98,7 +98,6 @@ void ControlloSicurezza()
     if (countMaiuscola > 0 && countMinuscola > 0 && countNumeri > 0 && countSimboli > 0 && !controlloNull)
     {
         Console.WriteLine("La password è sicura");
-        
     }
     else
     {
@@ -124,3 +123,8 @@ git add --all
 git commit -m "Versione1"
 git push -u origin main
 ```
+
+## Versione 2
+
+## Obiettivo
+
