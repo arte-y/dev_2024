@@ -1,0 +1,148 @@
+#navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #85A98F;
+  color: #252525;
+  font-size: 2rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+  position: fixed;
+  width: 100%;
+
+
+}
+.navbar-logo img{
+  cursor: pointer;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 5rem;
+
+}
+
+.navbar-center a{
+text-decoration: none;
+font-size: 2rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+padding: 1rem;
+color: #252525;
+text-align: center;
+align-items: center;
+margin-left: 1rem;
+
+}
+
+.navbar-center a:hover{
+  background-color: #D3F1DF;
+  color: #000000;
+  border-radius: 0.8rem;
+}
+
+.navbar-icons a{
+  color: #252525;
+  margin-left: 1rem;
+  margin-right: 3rem;
+  font-size: 2.4rem;
+}
+.navbar-icons a:hover{
+  color: #D3F1DF;
+}
+
+.landing-page img{
+  width: 20rem;
+  height: 20rem;
+  border-radius: 10rem;
+}
+
+.landing-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #D3F1DF;
+  gap: 3rem;
+  flex-direction: column;
+
+}
+
+.landing-page h1{
+  font-size: 4rem;
+  font-weight: 700;
+  color: #252525;
+  margin: 4rem;
+}
+
+.landing-page h2{
+  font-size: 3rem;
+  font-weight: 500;
+  color: #252525;
+  margin: 4rem;
+}
+
+.landing-page p{
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #252525;
+  margin: 4rem;
+  margin-bottom: 5rem;
+}
+
+.landing-page-center{
+background-color: #85A98F;
+border-radius: 5rem;
+padding: 2rem;
+opacity: 0.9;
+
+}
+
+.btn{
+  text-decoration: none;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 1rem;
+  color: #252525;
+  text-align: center;
+  align-items: center;
+  background-color: #85A98F;
+  border-radius: 0.8rem;
+  margin: 4rem; 
+  margin-bottom: 5rem;   
+}
+.btn:hover{
+  background-color: #5A6C57;
+  color: #fff;
+}
+
+
+
+
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  background-color: #85A98F;
+  color: #252525;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+  width: 100%;
+
+}
+
+
+
+
+
+
+
+
+
