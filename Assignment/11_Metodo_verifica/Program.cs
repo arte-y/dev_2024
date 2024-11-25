@@ -1,168 +1,125 @@
-﻿
-Intero();
-Decimale();
-Stringa();
-Overflow();
-Charr();
+﻿﻿Console.Clear();
+int controlInt = VerificaIntero();
+Console.WriteLine($"*** Hai inserito il numero: {controlInt} ***");
+
+decimal controlDec = VerificaDecimale();
+Console.WriteLine($"*** Hai inserito il numero decimale: {controlDec} ***");
+
+string controlString = VerificaStringa();
+Console.WriteLine($"*** Hai inserito la stringa: {controlString} ***");
+
+char controlChar = VerificaChar();
+Console.WriteLine($"*** Hai inserito il carattere: {controlChar} ***");
 
 
-//***********************
 
-void Intero()
+#region METODI
+int VerificaIntero()
 {
-  bool isIntero;
+  int risposta=0;
+  bool isInt = false;
   do
   {
-    isIntero=false;
     try
     {
-      Console.WriteLine("Inserisci un numero: Intero ");
-      int risposta1 = int.Parse(Console.ReadLine());
-      if (risposta1 == ' ')
-      {
-        throw new NullReferenceException();
-      }
+      Console.WriteLine("Inserisci un numero intero: ");
+      risposta = Convert.ToInt32(Console.ReadLine());
+      break;      
     }
     catch (FormatException)
     {
-      Console.WriteLine("Errore: Inserire un numero intero");
-      isIntero = true;
+      Console.WriteLine("Errore! Inserisci un numero intero.");
+      continue;
     }
-    catch (OverflowException)
-    {
-      Console.WriteLine("Errore: Il numero è troppo grande");
-      isIntero = true;
-    }
-    catch (NullReferenceException)
-    {
-      Console.WriteLine("Errore: Inserire un numero intero perhce vuoto");
-      isIntero = true;
-    }
-    catch (Exception)
-    {
-      Console.WriteLine("Errore: Generale");
-      isIntero = true;
-    }
+    
+  } while (!isInt);
 
-
-  } while (isIntero);
-
-}
-
-void Decimale()
-{
-  bool isDecimale;
+  return risposta;
   
+}
+
+decimal VerificaDecimale()
+{
+  decimal risposta =0;
+  bool isDecimal = false;
   do
-  
   {
-      isDecimale =false;
     try
     {
-      Console.WriteLine("Inserisci un numero: Decimale ");
-      decimal risposta2 = decimal.Parse(Console.ReadLine());
-      if (risposta2.ToString() == " ")
-      {
-        throw new NullReferenceException();
-      }
+      Console.WriteLine("Inserisci un numero decimale: ");
+      risposta = Convert.ToDecimal(Console.ReadLine());
     }
     catch (FormatException)
     {
-      Console.WriteLine("Errore: Inserire un numero decimale");
-      isDecimale = true;
+      Console.WriteLine("Errore! Inserisci un numero decimale.");
+      continue;
     }
-    catch (NullReferenceException)
+    if (!risposta.ToString().Contains(","))
     {
-      Console.WriteLine("Errore: Inserire un numero decimale perhce vuoto");
-      isDecimale = true;
+      Console.WriteLine("Errore! Inserisci un numero decimale.");
+      continue;
     }
-    catch (OverflowException)
-    {
-      Console.WriteLine("Errore: Il numero è troppo grande");
-      isDecimale = true;
-    }
-    catch (Exception)
-    {
-      Console.WriteLine("Errore: Generale");
-      isDecimale = true;
-    }
-   
-  } while (isDecimale);
+    break;
 
+  } while (!isDecimal);
+  return risposta;
 }
 
-void Stringa()
+string VerificaStringa()
 {
-  bool isStringa;
+  string risposta=string.Empty;
+  bool isString = false;
   do
   {
-    isStringa =false;
     try
     {
-      Console.WriteLine("Inserisci una stringa: Stringa ");
-      string risposta3 = Console.ReadLine();
-      if (risposta3 == " ")
-      {
-        throw new NullReferenceException("vuoto");
-      }
-    }
-    catch (NullReferenceException)
-    {
-      Console.WriteLine("Errore: Vuoto Inserire una stringa");
-      isStringa = true;
+      Console.WriteLine("Inserisci una stringa: ");
+      risposta = Console.ReadLine();
     }
     catch (FormatException)
     {
-      Console.WriteLine("Errore: Inserire una stringa");
-      isStringa = true;
+      Console.WriteLine("Errore! Inserisci una stringa.");
+      continue;
     }
-    catch (Exception)
+    if (string.IsNullOrWhiteSpace(risposta))
     {
-      Console.WriteLine("Errore: Generale");
-      isStringa = true;
+      Console.WriteLine("Errore! stringa vuota.");
+      continue;
     }
-  
-  } while (isStringa);
-
+    break;
+  } while (!isString);
+  return risposta;
 }
 
-void Overflow()
+char VerificaChar()
 {
-   bool isStringa;
+  char risposta ='\0';
+  bool isChar = false;
   do
   {
-    isStringa = false;
     try
     {
-      Console.WriteLine("Inserisci un numero: Overflow ");
-      int risposta4 = int.Parse(Console.ReadLine());
-    }
-    catch (OverflowException)
-    {
-      Console.WriteLine("Errore: Il numero è troppo grande");
-      isStringa = true;
+      Console.WriteLine("Inserisci un carattere Char: ");
+      risposta = Convert.ToChar(Console.ReadLine());
     }
     catch (FormatException)
     {
-      Console.WriteLine("Errore: Inserire un numero intero");
-      isStringa = true;
+      Console.WriteLine("Errore! Inserisci un carattere.");
+      continue;
     }
-
-    catch (Exception)
+    if (risposta.ToString().Length > 1)
     {
-      Console.WriteLine("Errore: Generale");
-      isStringa = true;
+      Console.WriteLine("Errore! Inserisci un solo carattere.");
+      continue;
     }
-  } while (isStringa);
-
+    if (char.IsWhiteSpace(risposta) || char.IsDigit(risposta) || char.IsPunctuation(risposta) || char.IsSymbol(risposta))
+    {
+      Console.WriteLine("Errore! Char vuoto o (numero, punteggiatura, simbolo).");
+      continue;
+    }
+    break;
+  } while (!isChar);
+  return risposta;
 }
 
-void Charr()
-{
-  Console.WriteLine("una cosa vuota: Char ");
-  char risposta5 = char.Parse(Console.ReadLine());
-  if (risposta5 == ' ')
-  {
-    throw new NullReferenceException();
-  }
-}
+#endregion
