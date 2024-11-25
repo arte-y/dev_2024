@@ -15,7 +15,7 @@
 - un metodo per la verifica di un numero
 
 ```csharp
-﻿Console.Clear();
+Console.Clear();
 int controlInt = VerificaIntero();
 Console.WriteLine($"*** Hai inserito il numero: {controlInt} ***");
 

@@ -1,4 +1,4 @@
-﻿﻿Console.Clear();
+﻿Console.Clear();
 int controlInt = VerificaIntero();
 Console.WriteLine($"*** Hai inserito il numero: {controlInt} ***");
 
@@ -121,5 +121,7 @@ char VerificaChar()
   } while (!isChar);
   return risposta;
 }
+
+
 
 #endregion
