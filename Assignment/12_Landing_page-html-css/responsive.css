@@ -1,6 +1,6 @@
 /* Per telefono (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-  body{
+  body {
     background-color: #697565;
   }
   .container-nav {
@@ -26,7 +26,7 @@
     padding: 0.1rem;
   }
   .navbar-center a {
-font-size: 1.6rem;
+    font-size: 1.6rem;
     padding: 0.4rem;
   }
   .navbar-icons {
@@ -60,43 +60,43 @@ font-size: 1.6rem;
     padding-right: 10%;
   }
   .container-footer {
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
     align-items: center;
-    padding: 1.2rem;
+    padding: 0.8rem;
   }
-  .main-info span{
+  .main-info span {
     color: rgb(69, 69, 62);
     font-size: 1.4rem;
   }
-  .btn-container{
+  .btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .btn-c{
+  .btn-c {
     font-size: 1.6rem;
-    color: #1E201E;
-    background-color: #EB5B00;
+    color: #1e201e;
+    background-color: #eb5b00;
     border: none;
     padding: 1.2rem 2.4rem;
     border-radius: 0.8rem;
     cursor: pointer;
-    color: #ECDFCC;
+    color: #ecdfcc;
     font-weight: bold;
     margin-bottom: 3.6rem;
   }
-  
+
   .btn-c:hover {
     background-color: #d8b98b;
-    color: #EB5B00;
+    color: #eb5b00;
   }
 }
 
 /* Per Tablet */
 @media (min-width: 769px) and (max-width: 1200px) {
-  body{
+  body {
     background-color: #629584;
   }
   .container-nav {
@@ -119,7 +119,7 @@ font-size: 1.6rem;
     width: 20%;
   }
 
-  .navbar-icons a{
+  .navbar-icons a {
     color: #243642;
   }
 
@@ -128,13 +128,11 @@ font-size: 1.6rem;
     height: 18rem;
   }
 
-  .container-main
-  {
+  .container-main {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
   }
 
   .main-info h1 {
@@ -156,32 +154,32 @@ font-size: 1.6rem;
     text-align: center;
   }
 
-  .main-info span{
+  .main-info span {
     margin-top: -2rem;
     font-size: 1.6rem;
     color: #515450;
   }
-  .btn-container{
+  .btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .btn-c{
+  .btn-c {
     font-size: 1.6rem;
-    color: #1E201E;
-    background-color: #EB5B00;
+    color: #1e201e;
+    background-color: #eb5b00;
     border: none;
     padding: 1.2rem 2.4rem;
     border-radius: 0.8rem;
     cursor: pointer;
-    color: #ECDFCC;
+    color: #ecdfcc;
     font-weight: bold;
     margin-bottom: 4.2rem;
   }
-  
+
   .btn-c:hover {
     background-color: #d8b98b;
-    color: #EB5B00;
+    color: #eb5b00;
   }
 
   .container-footer {
@@ -195,29 +193,28 @@ font-size: 1.6rem;
 
 /* per PC */
 @media (min-width: 1200px) {
-
-  .btn-container{
+  .btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1.6rem;
   }
-  .btn-c{
+  .btn-c {
     font-size: 1.6rem;
-    color: #1E201E;
-    background-color: #EB5B00;
+    color: #1e201e;
+    background-color: #eb5b00;
     border: none;
     padding: 1.2rem 2.4rem;
     border-radius: 0.8rem;
     cursor: pointer;
-    color: #ECDFCC;
+    color: #ecdfcc;
     font-weight: bold;
     margin-bottom: 3.6rem;
   }
-  
+
   .btn-c:hover {
     background-color: #d8b98b;
-    color: #EB5B00;
+    color: #eb5b00;
   }
 
   .container-footer {
@@ -226,7 +223,5 @@ font-size: 1.6rem;
     width: 100%;
     align-items: center;
     padding: 0.8rem;
-
   }
-
 }
