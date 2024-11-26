@@ -3,66 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>My Resume</title>
+    <script
+      src="https://kit.fontawesome.com/69b29e49f7.js"
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="utils.css" />
     <link rel="stylesheet" href="responsive.css" />
-    <title>Document</title>
+    <script src="myscript.js"></script>
   </head>
   <body>
-    <header id="responsive-nav">
-      <nav id="navbar">
-        <div class="navbar-logo">
-          <img src ="https://img.freepik.com/vettori-gratuito/disegno-del-logo-vettoriale-delle-lettere_557339-698.jpg?t=st=1732539004~exp=1732542604~hmac=b452dba6ec2caa39bd51d5e666b78b0154a391f31d79cced8645cdecbd1a2ef7&w=826" alt="Logo" />
+    <div class="page-container">
+      <div class="container-nav">
+        <div class="logo">
+          <a href="#"><img
+            src="./images/21112210.jpg"
+            alt="logo"
+          /></a>
+       
         </div>
         <div class="navbar-center">
           <a href="#">Home</a>
           <a href="#">About me</a>
-          <a href="#">Skills</a>
           <a href="#">Portfolio</a>
+          <a href="#">Skills</a>
           <a href="#">Contact</a>
         </div>
         <div class="navbar-icons">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-solid fa-bars"></i></a>
-        </div>
-      </nav>
-    </header>
-
-    <div id="responsive-lan">
-      <div class="landing-page">
-        <img src="https://img.freepik.com/foto-gratuito/lato-frontale-dell-utente-con-sfondo-bianco_187299-40007.jpg?t=st=1732538647~exp=1732542247~hmac=4c96e28fc925ca371e20cc501ff84a3b6fe71aaee333e7ceb4a9f23cdca0794e&w=826" alt="Profile_Photo">
-        <div class="landing-page-center">
-          <h1>Nome Cognome</h1>
-          <h2>FullStack Developer</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            quod, voluptates, quae, quos quia quibusdam quidem quas necessitatibus
-            <br>
-            <br> <i>Readme more ...</i>
-          </p>
-          <a href="#" class="btn">Contact</a>
+          <a href="https://www.instagram.com/" target="_blank"
+            ><i class="fa-brands fa-square-instagram fa-lg"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/tameryyilmaz/" target="_blank"
+            ><i class="fa-brands fa-linkedin fa-lg"></i
+          ></a>
+          <a href="https://www.facebook.com/" target="_blank"
+            ><i class="fa-brands fa-square-facebook fa-lg"></i
+          ></a>
+          <a href="https://github.com/arte-y" target="_blank"
+            ><i class="fa-brands fa-github fa-lg"></i
+          ></a>
+          <a href="https://www.youtube.com/" target="_blank"
+            ><i class="fa-brands fa-youtube fa-lg"></i
+          ></a>
         </div>
       </div>
-    </div>
 
-    <footer>
-      <h5>copyright 2024 | artyilmaz Portfolio - www.artyilmaz.com</h5>
-    </footer>
+      <section class="main">
+        <div class="Pp-foto">
+          <img
+            src="https://img.freepik.com/foto-gratuito/lato-frontale-dell-utente-con-sfondo-bianco_187299-40007.jpg"
+            alt="profile"
+            class="profile"
+          />
+        </div>
+        <div class="container-main">
+          <div class="main-info">
+            <h1>Nome Cognome</h1>
+            <h2>Web Developer</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              imperdiet, nulla et dictum interdum, nisi lorem egestas vitae
+              scelerisque enim ligula venenatis dolor. Maecenas nisl est,
+                ultrices nec congue eget, auctor vitae massa. Fusce luctus
+                vestibulum augue ut aliquet Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente obcaecati qui doloremque recusandae deserunt quisquam Lorem, ipsum dolor Lorem, ipsum dolor Lorem, ipsum dolor...
+                <span id="dots">Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt delectus alias possimus repudiandae ad minima necessitatibus ab repellendus quos esse!</span> </p>
+
+            <span onclick="myFunction()" id="myBtn">Read more</button>
+            <br>
+            
+          </div>
+        </div>
+        
+      </section>
+      <div class="btn-container"><button class="btn-c">Contact</button></div>
+      
+
+      <footer class="container-footer">
+        <p>&copy; 2024 All rights reserved</p>
+      </footer>
+    </div>
   </body>
 </html>

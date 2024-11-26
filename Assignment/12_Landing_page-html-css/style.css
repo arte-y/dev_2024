@@ -1,148 +1,164 @@
-#navbar{
+/* Navbar */
+.container-nav{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  background-color: #85A98F;
-  color: #252525;
-  font-size: 2rem;
-  font-weight: 500;
-  font-style: normal;
-  line-height: normal;
-  position: fixed;
+  font-size: 1.6rem;
+  padding-top: 1.4rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
   width: 100%;
+}
 
+.logo{
+  width: 20%;
 
 }
-.navbar-logo img{
-  cursor: pointer;
+.logo img{
   width: 5rem;
   height: 5rem;
   border-radius: 5rem;
-
+  cursor: pointer;
 }
 
 .navbar-center a{
-text-decoration: none;
-font-size: 2rem;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-padding: 1rem;
-color: #252525;
-text-align: center;
-align-items: center;
-margin-left: 1rem;
-
+  width: 80%;
+  text-decoration: none;
+  text-align: center;
+  color: #1E201E;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1.2rem;
 }
 
 .navbar-center a:hover{
-  background-color: #D3F1DF;
-  color: #000000;
+  color: #ECDFCC;
+  background-color: #697565;
   border-radius: 0.8rem;
 }
 
-.navbar-icons a{
-  color: #252525;
-  margin-left: 1rem;
-  margin-right: 3rem;
-  font-size: 2.4rem;
-}
-.navbar-icons a:hover{
-  color: #D3F1DF;
+.navbar-icons{
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
 }
 
-.landing-page img{
+.navbar-icons a:hover{
+  color: #fb9a09;
+  border-radius: 0.8rem;
+}
+
+/* Navbar finito */
+
+/* Main info */
+
+.container-main{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex: 1fr;
+}
+
+.Pp-foto{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.Pp-foto img{
   width: 20rem;
   height: 20rem;
-  border-radius: 10rem;
-}
-
-.landing-page{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #D3F1DF;
-  gap: 3rem;
-  flex-direction: column;
-
-}
-
-.landing-page h1{
-  font-size: 4rem;
-  font-weight: 700;
-  color: #252525;
-  margin: 4rem;
-}
-
-.landing-page h2{
-  font-size: 3rem;
-  font-weight: 500;
-  color: #252525;
-  margin: 4rem;
-}
-
-.landing-page p{
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #252525;
-  margin: 4rem;
-  margin-bottom: 5rem;
-}
-
-.landing-page-center{
-background-color: #85A98F;
-border-radius: 5rem;
-padding: 2rem;
-opacity: 0.9;
-
-}
-
-.btn{
-  text-decoration: none;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  padding: 1rem;
-  color: #252525;
-  text-align: center;
-  align-items: center;
-  background-color: #85A98F;
-  border-radius: 0.8rem;
-  margin: 4rem; 
-  margin-bottom: 5rem;   
-}
-.btn:hover{
-  background-color: #5A6C57;
-  color: #fff;
+  border-radius: 50%;
+  margin-top: 2.4rem;
 }
 
 
 
-
-
-footer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 5vh;
-  background-color: #85A98F;
-  color: #252525;
-  font-size: 1.5rem;
-  font-weight: 500;
-  font-style: normal;
-  line-height: normal;
+.main-info{
   width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
 
+.main-info h1{
+  font-size: 3.2rem;
+  color: #1E201E;
+  margin-bottom: 1.2rem;
+}
+
+.main-info h2{
+  font-size: 2.4rem;
+  color: #1E201E;
+  margin-bottom: 0.8rem;
+}
+
+.main-info p{
+  font-size: 1.6rem;
+  color: #252825;
+  margin-bottom: 1.2rem;
+  width: 100%;
+  padding-left: 15%;
+  padding-right: 15%;
+  text-align: justify;
+}
+
+.main-info span{
+  font-size: 1.6rem;
+  color: #697565;
+  margin-bottom: 1.8rem;
+  display: block;
+  cursor: pointer;
+}
+.btn-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -1.8rem;
+}
+.btn-c{
+  font-size: 1.6rem;
+  color: #1E201E;
+  background-color: #EB5B00;
+  border: none;
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  color: #ECDFCC;
+  font-weight: bold;
+}
+
+.btn-c:hover {
+  background-color: #d8b98b;
+  color: #EB5B00;
 }
 
 
+.footer{
+  position: relative;
+  margin-top: auto;
+}
 
+.container-footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #1E201E;
+  color: #ECDFCC;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+}
 
-
-
-
-
-
+.container-footer p{
+  font-size: 1.2rem;
+  color: #ECDFCC;
+  
+}
+.page-container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
