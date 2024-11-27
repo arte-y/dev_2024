@@ -92,6 +92,16 @@
     background-color: #d8b98b;
     color: #eb5b00;
   }
+
+  .portfolio-card
+  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 1.2rem;
+  }
 }
 
 /* Per Tablet */
@@ -225,3 +235,5 @@
     padding: 0.8rem;
   }
 }
+
+
