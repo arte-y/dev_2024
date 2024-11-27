@@ -1,166 +1,157 @@
-﻿Dictionary<string, string> Rubrica = new Dictionary<string, string>();
+List<Dictionary<string, string>> rubrica = new List<Dictionary<string, string>>();
 
-string contatto = string.Empty;
-
-bool isRisposta = false;
+bool isTrue = true;
 
 Console.Clear();
-do
+while (true)
 {
-
-  Console.WriteLine("Quale operazione vuole fare?");
-  Console.WriteLine("1. Aggiungi contatto");
-  Console.WriteLine("2. Cerca contatto");
-  Console.WriteLine("3. Elimina contatto");
-  Console.WriteLine("4. Modifica contatto");
-  Console.WriteLine("5. Visualizza rubrica");
+  Console.WriteLine("\n--- Rubrica ---");
+  Console.WriteLine("1. Aggiungi un contatto");
+  Console.WriteLine("2. Visualizza tutti i contatti");
+  Console.WriteLine("3. Cerca un contatto per nome");
+  Console.WriteLine("4. Modifica un contatto per nome");
+  Console.WriteLine("5. Cancella un contatto per nome");
   Console.WriteLine("6. Esci");
+  Console.Write("Scegli un'opzione: ");
+  string scelta = Console.ReadLine();
 
-  int scelta = Convert.ToInt32(Console.ReadLine());
+  if (scelta == "1")
+    AggiungiContatto();
+  else if (scelta == "2")
+    VisualizzaContatti();
+  else if (scelta == "3")
+    CercaContatto();
+  else if (scelta == "4")
+    ModificaContatto();
+  else if (scelta == "5")
+    CancellaContatto();
+  else if (scelta == "6")
+    break;
+  else
+    Console.WriteLine("Opzione non valida. Riprova.");
+}
 
-  switch (scelta)
+void AggiungiContatto()
+{
+  Dictionary<string, string> contatto = new Dictionary<string, string>();
+
+  Console.Write("Inserisci il nome: ");
+  contatto["nome"] = Console.ReadLine();
+
+  Console.Write("Inserisci il cognome: ");
+  contatto["cognome"] = Console.ReadLine();
+
+  Console.Write("Inserisci l'indirizzo: ");
+  contatto["indirizzo"] = Console.ReadLine();
+
+  Console.Write("Inserisci il numero di telefono: ");
+  contatto["numero_telefono"] = Console.ReadLine();
+
+  rubrica.Add(contatto);
+  Console.WriteLine("Contatto aggiunto con successo!");
+}
+
+void VisualizzaContatti()
+{
+  if (rubrica.Count == 0)
   {
-    case 1:
-      AggiungeContatto();
-      break;
-    case 2:
-      CercaContatto();
-      break;
-    case 3:
-      EleminaContatto();
-      break;
-    case 4:
-      ModificaContatto();
-      break;
-    case 5:
-      VisualizzaRubrica();
-      break;
-    case 6:
-      break;
-    default:
-      Console.WriteLine("Scelta non valida");
-      break;
-  }
-
-  Console.WriteLine("Vuoi fare un'altra operazione? (s/n)");
-  string risposta = Console.ReadLine().ToLower();
-  if (risposta == "s")
-  {
-    Console.Clear();
+    Console.WriteLine("La rubrica è vuota.");
   }
   else
   {
-    isRisposta = true;
+    Console.WriteLine("\n--- Contatti ---");
+    for (int i = 0; i < rubrica.Count; i++)
+    {
+      var contatto = rubrica[i];
+      Console.WriteLine($"Nome: {contatto["nome"]}, Cognome: {contatto["cognome"]}, Indirizzo: {contatto["indirizzo"]}, Numero di Telefono: {contatto["numero_telefono"]}");
+    }
   }
-} while (!isRisposta);
-
-
-
-
-#region funzioni
-
-void AggiungeContatto()
-{
-  Console.WriteLine("Aggiungi un contatto nuovo");
-
-  Console.Write("Inserisci un contatto Nome: ");
-  string nome = Console.ReadLine();
-
-  Console.Write("Inserisci un contatto Cognome: ");
-  string cognome = Console.ReadLine();
-
-  Console.Write("Inserisci un l'indirizzo del contatto: ");
-  string via = Console.ReadLine();
-
-
-  Console.Write("Inserisci un contatto Numero: ");
-  string numero = Console.ReadLine();
-
-  Console.WriteLine("Contatto aggiunto con successo");
-  string contatto = $"Nome: {nome} Cognome: {cognome} L'indirizzo: {via} NumeroTel:{numero}";
-  Console.WriteLine(contatto);
-  Rubrica.Add(nome , contatto);
-}
-
-void VisualizzaRubrica()
-{
-  Console.WriteLine("Rubrica:");
-  foreach (var contatto in Rubrica)
-  {
-    Console.WriteLine(contatto.Key + " " + contatto.Value);
-  }
-
 }
 
 void CercaContatto()
 {
-  Console.WriteLine("Inserisci un contatto da cercare: ");
-  string contattoCercato = Console.ReadLine().ToLower();
+  Console.Write("Inserisci il nome da cercare: ");
+  string nome = Console.ReadLine().ToLower(); // Küçük harfe çeviriyoruz
+  bool trovato = false;
 
-  if (Rubrica.ContainsKey(contattoCercato.ToLower()))
+  for (int i = 0; i < rubrica.Count; i++)
   {
-    Console.WriteLine("Il contatto è presente nella rubrica");
-    Console.WriteLine(Rubrica[contattoCercato]);
+    if (rubrica[i]["nome"].ToLower() == nome) // Karşılaştırmayı küçük harflerle yapıyoruz
+    {
+      var contatto = rubrica[i];
+      Console.WriteLine($"Nome: {contatto["nome"]}, Cognome: {contatto["cognome"]}, Indirizzo: {contatto["indirizzo"]}, Numero di Telefono: {contatto["numero_telefono"]}");
+      trovato = true;
+    }
   }
-  else
+
+  if (!trovato)
   {
-    Console.WriteLine("Il contatto non è presente nella rubrica");
+    Console.WriteLine("Nessun contatto trovato.");
   }
 }
 
 void ModificaContatto()
 {
-  Console.WriteLine("Inserisci un contatto da modificare: ");
-  string contattoModificato = Console.ReadLine();
-  if (Rubrica.ContainsKey(contattoModificato))
-  {
-    Rubrica.Remove(contattoModificato);
+  Console.Write("Inserisci il nome del contatto da modificare: ");
+  string nome = Console.ReadLine().ToLower();
+  bool trovato = false;
 
-    Console.WriteLine("Inserisci il nuovo contatto: ");
-    string nuovoContatto = Console.ReadLine();
-    
-    Rubrica.Add(nuovoContatto,contatto);
-    Console.WriteLine("Il contatto è stato modificato");
-  }
-  else
+  for (int i = 0; i < rubrica.Count; i++)
   {
-    Console.WriteLine("Il contatto non è presente nella rubrica");
+    if (rubrica[i]["nome"].ToLower() == nome)
+    {
+      var contatto = rubrica[i];
+      Console.WriteLine("Insserici il nuovo nome (lascia vuoto per non modificare): ");
+      string nuovoNome = Console.ReadLine();
+      if (!string.IsNullOrWhiteSpace(nuovoNome))
+        contatto["nome"] = nuovoNome;
+
+      Console.Write("Inserisci il nuovo cognome (lascia vuoto per non modificare): ");
+      string nuovoCognome = Console.ReadLine();
+      if (!string.IsNullOrWhiteSpace(nuovoCognome))
+        contatto["cognome"] = nuovoCognome;
+
+      Console.Write("Inserisci il nuovo indirizzo (lascia vuoto per non modificare): ");
+      string nuovoIndirizzo = Console.ReadLine();
+      if (!string.IsNullOrWhiteSpace(nuovoIndirizzo))
+        contatto["indirizzo"] = nuovoIndirizzo;
+
+      Console.Write("Inserisci il nuovo numero di telefono (lascia vuoto per non modificare): ");
+      string nuovoTelefono = Console.ReadLine();
+      if (!string.IsNullOrWhiteSpace(nuovoTelefono))
+        contatto["numero_telefono"] = nuovoTelefono;
+
+      Console.WriteLine("Contatto modificato con successo!");
+      trovato = true;
+      break;
+    }
+  }
+
+  if (!trovato)
+  {
+    Console.WriteLine("Contatto non trovato.");
   }
 }
 
-void EleminaContatto()
+void CancellaContatto()
 {
-  Console.WriteLine("Inserisci un contatto da eliminare: ");
-  string contattoEliminato = Console.ReadLine();
-  if (Rubrica.ContainsKey(contattoEliminato))
+  Console.Write("Inserisci il nome del contatto da cancellare: ");
+  string nome = Console.ReadLine().ToLower();
+  bool trovato = false;
+
+  for (int i = 0; i < rubrica.Count; i++)
   {
-    Rubrica.Remove(contattoEliminato);
-    Console.WriteLine("Il contatto è stato eliminato");
+    if (rubrica[i]["nome"].ToLower() == nome)
+    {
+      rubrica.RemoveAt(i);
+      Console.WriteLine("Contatto cancellato con successo!");
+      trovato = true;
+      break;
+    }
   }
-  else
+
+  if (!trovato)
   {
-    Console.WriteLine("Il contatto non è presente nella rubrica");
+    Console.WriteLine("Contatto non trovato.");
   }
 }
-
-#endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
