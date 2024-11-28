@@ -9,135 +9,246 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <title>My Resume</title>
     <script
       src="https://kit.fontawesome.com/69b29e49f7.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="utils.css" />
     <link rel="stylesheet" href="responsive.css" />
-
-    <script src="myscript.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>My WebSite</title>
   </head>
   <body>
-    <div class="container-nav">
-      <div class="logo">
-        <a href="#"><img src="./images/21112210.jpg" alt="logo" /></a>
+    
+    <header>
+      <div class="container-navbar">
+        <div class="logo">
+          <a href="#"><img src="./images/21112210.jpg" alt="logo" /></a>
+        </div>
+        <div class="navbar-center">
+          <a href="#">Home</a>
+          <a href="#">About me</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Skills</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="navbar-icons">
+          <a href="https://www.instagram.com/" target="_blank"
+            ><i class="fa-brands fa-square-instagram fa-lg"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/tameryyilmaz/" target="_blank"
+            ><i class="fa-brands fa-linkedin fa-lg"></i
+          ></a>
+          <a href="https://www.facebook.com/" target="_blank"
+            ><i class="fa-brands fa-square-facebook fa-lg"></i
+          ></a>
+        </div>
       </div>
-      <div class="navbar-center">
-        <a clas="home" href="./index.html">Home</a>
-        <a href="./aboutme.html">About me</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Skills</a>
-        <a href="#">Contact</a>
-      </div>
-      <div class="navbar-icons">
-        <a href="https://www.instagram.com/" target="_blank"
-          ><i class="fa-brands fa-square-instagram fa-lg"></i
-        ></a>
-        <a href="https://www.linkedin.com/in/tameryyilmaz/" target="_blank"
-          ><i class="fa-brands fa-linkedin fa-lg"></i
-        ></a>
-        <a href="https://www.facebook.com/" target="_blank"
-          ><i class="fa-brands fa-square-facebook fa-lg"></i
-        ></a>
-        <a href="https://github.com/arte-y" target="_blank"
-          ><i class="fa-brands fa-github fa-lg"></i
-        ></a>
-        <a href="https://www.youtube.com/" target="_blank"
-          ><i class="fa-brands fa-youtube fa-lg"></i
-        ></a>
-      </div>
-    </div>
+    </header>
 
-    <section class="main">
-      <div class="Pp-foto">
-        <img
-          src="https://img.freepik.com/foto-gratuito/lato-frontale-dell-utente-con-sfondo-bianco_187299-40007.jpg"
-          alt="profile"
-          class="profile"
-        />
-      </div>
+    <section>
+
+      <!-- Main -->
       <div class="container-main">
-        <div class="main-info">
-          <h1>Nome Cognome</h1>
-          <h2>Web Developer</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            imperdiet, nulla et dictum interdum, nisi lorem egestas vitae
-            scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices
-            nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue
-            ut aliquet Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Sapiente obcaecati qui doloremque recusandae deserunt quisquam
-            Lorem, ipsum dolor Lorem, ipsum dolor Lorem, ipsum dolor...
-          </p>
-          <!--<span onclick="myFunction()" id="myBtn">Read more</button> -->
-          <br />
-          <div class="btn-container">
-            <button class="btn-c">Contact</button>
+        <div class="photo-main">
+          <img src="./images/21112210.jpg" alt="photo" /><p><i>follow me</i></p>
+          <div class="follow-me">
+
+            <a href="https://www.instagram.com/" target="_blank"
+              ><i class="fa-brands fa-square-instagram fa-lg"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/tameryyilmaz/" target="_blank"
+              ><i class="fa-brands fa-linkedin fa-lg"></i
+            ></a>
+            <a href="https://www.facebook.com/" target="_blank"
+              ><i class="fa-brands fa-square-facebook fa-lg"></i
+            ></a>
+            
           </div>
+        </div>
+        <div class="main-context">
+          <h5>Hi there</h5>
+          <h1> <span class="me">I'm</span>  Tamer Yilmaz</h1>
+          <h2>Fullstack Developer &</h2>
+          <h3 class="ui-d">UI/UX Designer</h2>
+          <p>
+            I am a <i>Fullstack Developer</i> and <i>UI&UX Designer</i>. I have been working
+            in the field of software for 5 years. I have developed many
+            projects in different languages and frameworks. I am a person who
+            loves to learn and produce. I am a person who loves to learn and
+            produce. I am a person who loves to learn and produce.
+          </p>
+          <a href="#">Download CV</a>
         </div>
       </div>
 
-      <div class="main-about">
-        <div class="main-about-info">
-          <h1>About me</h1>
+      <!-- About -->
+      <div class="container-about">
+        <div class="about-context">
+          <h1>About Me</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            molestiae esse quo perspiciatis consequatur maxime, doloribus
-            numquam fugit suscipit animi earum, minus veritatis sunt dignissimos
-            libero atque eos sed! Provident maiores esse consequuntur quia odio
-            fuga ea sit placeat consectetur, dolorem repudiandae perspiciatis
-            dolor explicabo libero repellat, laboriosam sed soluta! Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Dolores dolorem,
-            obcaecati dicta voluptates vel perferendis voluptatum commodi
-            laboriosam praesentium et!
+            I am a graduate of the Art History department at Ege University. After completing my undergraduate studies, I pursued a master's degree in Art History and Enrichment of Cultural Heritage at the University of Genoa in Italy. <br> <br>
+            During my master's program, I conducted thesis research in collaboration with the University of Cologne, spending six months in Cologne, Germany. I have been living in Italy/Genoa for nearly four years, where I have developed a keen interest in UX&UI design. Over the past two years, I have worked on various projects in this field. Additionally, I am involved in 3D modeling and use 3D Max, Blender and unreal engine 5 (landscape-blueprints) for my projects. <br> <br>
+            I love creating and designing new things, and combining art with design to produce creative and effective solutions is a great passion of mine. With my deep knowledge of art history and cultural heritage, along with my experience in design, I aim to advance further in both my academic and professional career. My goal is to share this knowledge and passion with a broader audience.
           </p>
+          <a href="#">Read More</a>
         </div>
       </div>
 
-      <div class="main-skills">
-        <h1>My Skills</h1>
-        <div class="skills">
-          <div class="skill">
-            <h2>HTML</h2>
-            <div class="skill-bar">
-              <div class="skill-bar-inner"></div>
+      <!-- Portfolio -->
+       <div class="container-portfolio">
+        <div class="portfolio-context">
+          <h1>Portfolio</h1>
+          <div class="portfolio-items">
+            <div class="portfolio-item">
+              <img src="./images/21112210.jpg" alt="portfolio" />
+              <h3>Project 1</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                nec purus feugiat, molestie ipsum et, consequat nibh.
+              </p>
+              <div class="btn-view">
+                <a href="#">View</a>
+              </div>
+            </div>
+            <div class="portfolio-item">
+              <img src="./images/21112210.jpg" alt="portfolio" />
+              <h3>Project 2</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                nec purus feugiat, molestie ipsum et, consequat nibh.
+              </p>
+              <div class="btn-view">
+                <a href="#">View</a>
+              </div>
+            </div>
+            <div class="portfolio-item">
+              <img src="./images/21112210.jpg" alt="portfolio" />
+              <h3>Project 3</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                nec purus feugiat, molestie ipsum et, consequat nibh.
+              </p>
+              <div class="btn-view">
+                <a href="#">View</a>
+              </div>
+            </div>
+            <div class="portfolio-item">
+              <img src="./images/21112210.jpg" alt="portfolio" />
+              <h3>Project 4</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                nec purus feugiat, molestie ipsum et, consequat nibh.
+              </p>
+              <div class="btn-view">
+                <a href="#">View</a>
+              </div>
+            </div>
+            <div class="portfolio-item">
+              <img src="./images/21112210.jpg" alt="portfolio" />
+              <h3>Project 5</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                nec purus feugiat, molestie ipsum et, consequat nibh.
+              </p>
+              <div class="btn-view">
+                <a href="#">View</a>
+              </div>
+            </div>
+            <div class="portfolio-item">
+              <img src="./images/21112210.jpg" alt="portfolio" />
+              <h3>Project 6</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                nec purus feugiat, molestie ipsum et, consequat nibh.
+              </p>
+              <div class="btn-view">
+                <a href="#">View</a>
+              </div>
             </div>
           </div>
-          <div class="skill">
-            <h2>CSS</h2>
-            <div class="skill-bar">
-              <div class="skill-bar-inner"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h2>JavaScript</h2>
-            <div class="skill-bar">
-              <div class="skill-bar-inner"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h2>React</h2>
-            <div class="skill-bar">
-              <div class="skill-bar-inner"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h2>Node.js</h2>
-            <div class="skill-bar">
-              <div class="skill-bar-inner"></div>
+          <a href="#">View All</a>
+        </div>
+       </div>
+
+       <!-- Skills -->
+        <div class="container-skills">
+          <div class="skills-context">
+            <h1> My Skills</h1>
+            <div class="skills-items">
+              <div class="skills-item">
+                <h3>HTML</h3>
+                  <div class="skills-bar
+                  html"><div class="skills-bar-inner-html"><p><i>90%</i></p>
+
+                  </div></div>
+              </div>
+              <div class="skills-item">
+                <h3>CSS</h3>
+                <div class="skills-bar
+                css"><div class="skills-bar-inner-css"> <p><i>85%</i></p>
+
+                </div></div>
+              </div>
+              <div class="skills-item">
+                <h3>JavaScript</h3>
+                <div class="skills-bar
+                js"><div class="skills-bar-inner-js"><p><i>50%</i></p>
+
+                </div></div>
+              </div>
+              <div class="skills-item">
+                <h3>React</h3>
+                <div class="skills-bar
+                react"><div class="skills-bar-inner-react"><p><i>70%</i></p>
+
+                </div></div>
+              </div>
+              <div class="skills-item">
+                <h3>Node.js</h3>
+                <div class="skills-bar
+                node"><div class="skills-bar-inner-node"><p><i>50%</i></p>
+
+                </div></div>
+              </div>
+              <div class="skills-item">
+                <h3>Python</h3>
+                <div class="skills-bar
+                python"><div class="skills-bar-inner-python"><p><i>30%</i></p>
+
+                </div></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+
+        <!-- Contact -->
+        <div class="container-contact">
+          <div class="contact-context">
+            <h1>Contact</h1>
+            <form action="#">
+              <input type="text" placeholder="Name" />
+              <input type="email" placeholder="Email" />
+              <textarea
+                name="message"
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Message"
+              ></textarea>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+
+        </div>
+        
     </section>
 
-    
-
-    <footer class="container-footer">
+    <footer >
+      <div class="container-footer">
       <p>&copy; 2024 All rights reserved</p>
+    </div>
     </footer>
+
   </body>
 </html>
