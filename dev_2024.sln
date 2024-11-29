@@ -63,6 +63,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14_Sorteggio_Partecipanti_t
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15_indovina_numero-con-txt", "Assignment\15_indovina_numero-con-txt\15_indovina_numero-con-txt.csproj", "{A8DBF271-53DE-4D82-9721-62E71E62D201}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prova-qualcosa", "Prova-qualcosa", "{7768D2AD-3587-4540-B09B-59E0C32C2E4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

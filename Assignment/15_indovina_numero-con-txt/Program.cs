@@ -11,6 +11,7 @@ string risposta = "s";
 
 string nomeUtente1 = string.Empty;
 
+
 do
 {
     int scelta = 0;
@@ -61,7 +62,6 @@ do
 } while (risposta == "s" || risposta == "S");
 
 CreaTxt();
-
 
 
 // ScriviTentativiSuFile(tentativiUtenti, nomeUtente1);
