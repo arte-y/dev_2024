@@ -216,6 +216,21 @@ foreach (var tentativoUtente in tentativiUtenti)
 Console.WriteLine("Tentativi salvati su file.");
 }
 
+// nuovo modo! e modo migliore!
+void ScriviTentativiSuFile (Dictionary<string, List<int>> tentativiUtenti, string nomeUtente1)
+{
+  using (StreamWriter sw = new StreamWriter($"{nomeUtente1}.txt"))
+  {
+    foreach (var tentativoUtente in tentativiUtenti)
+    {
+      if (tentativoUtente.Key == nomeUtente1)
+      {
+        sw.WriteLine($"Sig./ra {tentativoUtente.Key}: {string.Join(", ", tentativoUtente.Value)}");
+      }
+    }
+  }
+}
+
 #endregion
 
 ```
