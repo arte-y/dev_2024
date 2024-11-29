@@ -60,7 +60,7 @@ do
 
 } while (risposta == "s" || risposta == "S");
 
-
+CreaTxt();
 
 #region funzioni
 
@@ -159,7 +159,7 @@ void StampaTentativiUtenti()
 
     foreach (var tentativoUtente in tentativiUtenti)
     {
-        Console.WriteLine($"Sig: {tentativoUtente.Key}: {string.Join(", ", tentativoUtente.Value)}"); // stampo i tentativi degli utenti
+        Console.WriteLine($"Sig./ra {tentativoUtente.Key}: {string.Join(", ", tentativoUtente.Value)}"); // stampo i tentativi degli utenti
     }
 }
 
@@ -180,13 +180,8 @@ void GiocareDiNuovoRisposta()
     }
 }
 
-#endregion
-
-
-#region con txt
-
-Console.Clear();
-
+void CreaTxt ()
+{
 string path = @$"{nomeUtente1}.txt";
 if (!File.Exists(path))
 {
@@ -199,10 +194,19 @@ else
 
 foreach (var tentativoUtente in tentativiUtenti)
 {
-    File.AppendAllText(path, $"Sig: {tentativoUtente.Key}: {string.Join(", ", tentativoUtente.Value)}\n");
+    File.AppendAllText(path, $"Sig./ra {tentativoUtente.Key}: {string.Join(", ", tentativoUtente.Value)}\n");
 }
 
 Console.WriteLine("Tentativi salvati su file.");
+}
+
+#endregion
+
+
+#region con txt
+
+
+
 
 
 
