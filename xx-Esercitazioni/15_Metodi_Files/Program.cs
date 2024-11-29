@@ -38,3 +38,37 @@ Console.WriteLine(tempFile);
 // Path.Combine unisce i path in questo caso aggiunge "temp" alla dirrectory temporanea
 string tempDir = Path.Combine(Path.GetTempPath(), "temp");
 Directory.CreateDirectory(tempDir);
+
+
+
+// ottenere informazioni su una directory
+DirectoryInfo dirInfo = new DirectoryInfo(dir);
+Console.WriteLine(dirInfo.CreationTime);
+
+// otteenre informazioni su tutti i file in una directory
+string[] files = Directory.GetFiles(dir);
+foreach (string file in files)
+{
+    Console.WriteLine(file);
+}
+
+// ottenere informazioni su tutte le directory in una directory
+string[] dirs = Directory.GetDirectories(dir);
+foreach (string d in dirs)
+{
+    Console.WriteLine(d);
+}
+
+//ottenere informazioni su tutti i file e le directory in una directory
+string[] all = Directory.GetFileSystemEntries(dir);
+foreach (string a in all)
+{
+  Console.WriteLine(a);
+}
+
+// ottenere informazioni su tutti e le directory in una directory con un filtro
+string [] txtFiles = Directory.GetFiles(dir, "*.txt");
+foreach ( string txtFile in txtFiles)
+{
+  Console.WriteLine(txtFile);
+}

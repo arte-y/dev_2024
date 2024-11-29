@@ -60,9 +60,16 @@ do
 
 } while (risposta == "s" || risposta == "S");
 
-// CreaTxt();
+CreaTxt();
 
-ScriviTentativiSuFile(tentativiUtenti, nomeUtente1);
+
+
+// ScriviTentativiSuFile(tentativiUtenti, nomeUtente1);
+
+// FileInfo ();
+
+
+
 
 #region funzioni
 
@@ -184,7 +191,7 @@ void GiocareDiNuovoRisposta()
 
 void CreaTxt ()
 {
-string path = @$"{nomeUtente1}.txt";
+string path = @$"{nomeUtente1} {DateTime.Now.ToString("dd-MM-yyyy")}.txt";
 if (!File.Exists(path))
 {
     File.Create(path).Close();
@@ -200,7 +207,23 @@ foreach (var tentativoUtente in tentativiUtenti)
 }
 
 Console.WriteLine("Tentativi salvati su file.");
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void ScriviTentativiSuFile (Dictionary<string, List<int>> tentativiUtenti, string nomeUtente1)
 {
@@ -214,8 +237,39 @@ void ScriviTentativiSuFile (Dictionary<string, List<int>> tentativiUtenti, strin
       }
     }
   }
+
 }
+
+void FileInfo ()
+{
+
+// FileInfo info = new FileInfo(nomeUtente1);
+// Console.WriteLine(info.Length);
+// Console.WriteLine(info.CreationTime);
+
+
+  DirectoryInfo dirInfo = new DirectoryInfo (nomeUtente1);
+Console.WriteLine(dirInfo.CreationTime);
+}
+
+
 #endregion
+
+
+#region 
+/*
+FileInfo info = new FileInfo(Path);
+Console.WriteLine(info.Length);
+Console.WriteLine(info.CreationTime);
+
+DirectoryInfo dirInfo = new DirectoryInfo (dir);
+Console.WriteLine(dirInfo.CreationTime);
+
+string path = @$"test_{DateTime.Now.ToString (yyyMMddHHmmss)}.txt;
+File.Create(path).Close();
+
+
+*/
 
 /* nuovo modo!! e anche modo migliore!! usa questo!!
 void ScriviTentativiSuFile (Dictionary<string, List<int>> tentativiUtenti, string nomeUtente)
@@ -234,3 +288,7 @@ void ScriviTentativiSuFile (Dictionary<string, List<int>> tentativiUtenti, strin
 
 
 */
+
+
+
+#endregion
