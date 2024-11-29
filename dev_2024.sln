@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15_Metodi_Files", "xx-Eserc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14_Sorteggio_Partecipanti_txt", "Assignment\14_Sorteggio_Partecipanti_txt\14_Sorteggio_Partecipanti_txt.csproj", "{E46A59E0-53A8-40C2-84BF-C57018110A8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15_indovina_numero-con-txt", "Assignment\15_indovina_numero-con-txt\15_indovina_numero-con-txt.csproj", "{A8DBF271-53DE-4D82-9721-62E71E62D201}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -175,6 +177,10 @@ Global
 		{E46A59E0-53A8-40C2-84BF-C57018110A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E46A59E0-53A8-40C2-84BF-C57018110A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E46A59E0-53A8-40C2-84BF-C57018110A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8DBF271-53DE-4D82-9721-62E71E62D201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8DBF271-53DE-4D82-9721-62E71E62D201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8DBF271-53DE-4D82-9721-62E71E62D201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8DBF271-53DE-4D82-9721-62E71E62D201}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -207,5 +213,6 @@ Global
 		{30100246-1E44-470E-A50B-8FCAD26AD6E8} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 		{DB90AD37-445B-4DBC-B2AF-D1D35350C4BE} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 		{E46A59E0-53A8-40C2-84BF-C57018110A8B} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
+		{A8DBF271-53DE-4D82-9721-62E71E62D201} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 	EndGlobalSection
 EndGlobal
