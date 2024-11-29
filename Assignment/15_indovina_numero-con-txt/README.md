@@ -1,5 +1,7 @@
 # Indovina numero Con txt
 
+## Versione 1
+
 ## Obiettivo
 
 Implementare la persistenza del dioco "indovina numero" su file di testo (versione con funzioni)
@@ -227,3 +229,8 @@ git add --all
 git commit -m "indovina numero versione 1 con txt"
 git push -u origin main
 ```
+
+## Versione 2 
+
+## Obiettivo
+
