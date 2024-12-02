@@ -70,9 +70,9 @@ do
 
     haIndovinato = false;
 
-    CreaTxt(nomeUtente1);
-
 } while (risposta == "s" || risposta == "S");
+
+CreaCvs();
 
 
 #region funzioni
@@ -199,94 +199,23 @@ void GiocareDiNuovoRisposta()
 }
 
 
-void CreaTxt(string nomeUtente1)
+void CreaCvs()
 {
-    string path = @$"{nomeUtente1} {DateTime.Now.ToString("dd-MM-yyyy")}.txt";
-    if (!File.Exists(path))
+    using (StreamWriter file = new StreamWriter($"{nomeUtente}.csv"))
     {
-        File.Create(path).Close();
-    }
-    else
-    {
-        Console.WriteLine("Il file esiste già");
-    }
+        file.WriteLine("NomeUtente;CognomeUtente;NumeroIndovinato;Punteggio");
 
-    foreach (var tentativoUtente in tentativiUtenti)
-    {
-        File.AppendAllText(path, $"Sig./ra {tentativoUtente.Key}: {string.Join(", ", tentativoUtente.Value)}\n");
-    }
-
-    Console.WriteLine("Tentativi salvati su file.");
-
-}
-
-
-
-
-
-void ScriviTentativiSuFile(Dictionary<string, List<int>> tentativiUtenti, string nomeUtente1)
-{
-    using (StreamWriter sw = new StreamWriter($"{nomeUtente1}.txt"))
-    {
         foreach (var tentativoUtente in tentativiUtenti)
         {
-            if (tentativoUtente.Key == nomeUtente1)
-            {
-                sw.WriteLine($"Sig./ra {tentativoUtente.Key}: {string.Join(", ", tentativoUtente.Value)}");
-            }
+            string nomeUtente = tentativoUtente.Key;
+    
+            string cognomeUtente = nomeUtente.Split(' ').Length > 1 ? nomeUtente.Split(' ')[1] : "Non Specificato";
+
+            List<int> tentativi = tentativoUtente.Value;
+
+            file.WriteLine($"{nomeUtente};{cognomeUtente};{string.Join(", ", tentativi)};{punteggio}");
         }
     }
-
 }
-
-void FileInfo(string nomeUtente1)
-{
-
-    // FileInfo info = new FileInfo(nomeUtente1);
-    // Console.WriteLine(info.Length);
-    // Console.WriteLine(info.CreationTime);
-
-
-    DirectoryInfo dirInfo = new DirectoryInfo(nomeUtente1);
-    Console.WriteLine(dirInfo.CreationTime);
-}
-
-
-#endregion
-
-
-#region 
-
-/*
-FileInfo info = new FileInfo(Path);
-Console.WriteLine(info.Length);
-Console.WriteLine(info.CreationTime);
-
-DirectoryInfo dirInfo = new DirectoryInfo (dir);
-Console.WriteLine(dirInfo.CreationTime);
-
-string path = @$"test_{DateTime.Now.ToString (yyyMMddHHmmss)}.txt;
-File.Create(path).Close();
-
-
-*/
-
-/* nuovo modo!! e anche modo migliore!! usa questo!!
-void ScriviTentativiSuFile (Dictionary<string, List<int>> tentativiUtenti, string nomeUtente)
-{
-  using (StreamWriter sw = new StreamWriter ($"{nomeUtente}.txt))
-    {
-      foreach (var tantativiUtente in tentativiUtenti)
-        {
-          if (tentativoUtente.Key ==nomeUtente)
-          {
-            sw.WriteLine.($"{tantativoUttente.Key}: {string.Join (",", tantativoUtente.Value)}");
-          }
-        }
-    }
-  } 
-
-
-*/
 
 #endregion
