@@ -1,0 +1,122 @@
+[
+  {
+    "Codice": "001",
+    "Nome": "pesto",
+    "Prezzo": 2.5,
+    "Quantita": 10
+  },
+  {
+    "Codice": "002",
+    "Nome": "pasta",
+    "Prezzo": 1.5,
+    "Quantita": 20
+  },
+  {
+    "Codice": "003",
+    "Nome": "verdure",
+    "Prezzo": 3.5,
+    "Quantita": 30
+  },
+  {
+    "Codice": "004",
+    "Nome": "pollo",
+    "Prezzo": 5.5,
+    "Quantita": 40
+  },
+  {
+    "Codice": "005",
+    "Nome": "latte",
+    "Prezzo": 1.5,
+    "Quantita": 50
+  },
+  {
+    "Codice": "006",
+    "Nome": "pane",
+    "Prezzo": 1.0,
+    "Quantita": 60
+  },
+  {
+    "Codice": "007",
+    "Nome": "uova",
+    "Prezzo": 2.0,
+    "Quantita": 70
+  },
+  {
+    "Codice": "008",
+    "Nome": "pomodori",
+    "Prezzo": 2.5,
+    "Quantita": 80
+  },
+  {
+    "Codice": "009",
+    "Nome": "patate",
+    "Prezzo": 1.5,
+    "Quantita": 90
+  },
+  {
+    "Codice": "010",
+    "Nome": "insalata",
+    "Prezzo": 1.5,
+    "Quantita": 100
+  },
+  {
+    "Codice": "011",
+    "Nome": "tonno",
+    "Prezzo": 3.5,
+    "Quantita": 110
+  },
+  {
+    "Codice": "012",
+    "Nome": "salmone",
+    "Prezzo": 5.5,
+    "Quantita": 120
+  },
+  {
+    "Codice": "013",
+    "Nome": "sardine",
+    "Prezzo": 2.5,
+    "Quantita": 130
+  },
+  {
+    "Codice": "014",
+    "Nome": "cipolle",
+    "Prezzo": 1.5,
+    "Quantita": 140
+  },
+  {
+    "Codice": "015",
+    "Nome": "carote",
+    "Prezzo": 1.5,
+    "Quantita": 150
+  },
+  {
+    "Codice": "016",
+    "Nome": "zucchine",
+    "Prezzo": 3.5,
+    "Quantita": 160
+  },
+  {
+    "Codice": "017",
+    "Nome": "melanzane",
+    "Prezzo": 5.5,
+    "Quantita": 170
+  },
+  {
+    "Codice": "018",
+    "Nome": "peperoni",
+    "Prezzo": 1.5,
+    "Quantita": 180
+  },
+  {
+    "Codice": "019",
+    "Nome": "cetrioli",
+    "Prezzo": 1.5,
+    "Quantita": 190
+  },
+  {
+    "Codice": 11111,
+    "Nome": "genova",
+    "Prezzo": 45454545.0,
+    "Quantita": 68498468
+  }
+]

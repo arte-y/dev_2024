@@ -73,6 +73,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19_Json-Pers", "xx-Esercita
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16_indovino_num_CSV", "Assignment\16_indovino_num_CSV\16_indovino_num_CSV.csproj", "{93330F59-CDD4-458B-B4A5-811C040139ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_Supermercato_Completo", "Assignment\17_Supermercato_Completo\17_Supermercato_Completo.csproj", "{3CF551F3-7E3D-4611-8186-D972BD5C9E88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -207,6 +209,10 @@ Global
 		{93330F59-CDD4-458B-B4A5-811C040139ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93330F59-CDD4-458B-B4A5-811C040139ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93330F59-CDD4-458B-B4A5-811C040139ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF551F3-7E3D-4611-8186-D972BD5C9E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF551F3-7E3D-4611-8186-D972BD5C9E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF551F3-7E3D-4611-8186-D972BD5C9E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF551F3-7E3D-4611-8186-D972BD5C9E88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -244,5 +250,6 @@ Global
 		{E357ADC2-0C70-4CFB-9989-C0F0927DC0A6} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 		{E9B60804-93D7-4870-B163-51305B93AD55} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 		{93330F59-CDD4-458B-B4A5-811C040139ED} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
+		{3CF551F3-7E3D-4611-8186-D972BD5C9E88} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 	EndGlobalSection
 EndGlobal
