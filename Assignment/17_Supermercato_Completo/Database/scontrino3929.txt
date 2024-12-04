@@ -1,0 +1,7 @@
+********** Scontrino **********
+Nome	Quantita	Prezzo	Totale
+carote	5	1,50	7,50
+-------------------------------
+Totale:			7,50 Euro
+*******************************
+Numero scontrino: 3929

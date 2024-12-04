@@ -1,0 +1,7 @@
+********** Scontrino **********
+Nome	Quantita	Prezzo	Totale
+roma	1	1,00	1,00
+-------------------------------
+Totale:			1,00 Euro
+*******************************
+Numero scontrino: 2700

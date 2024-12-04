@@ -75,48 +75,48 @@
     "Codice": "013",
     "Nome": "sardine",
     "Prezzo": 2.5,
-    "Quantita": 130
+    "Quantita": 100
   },
   {
     "Codice": "014",
     "Nome": "cipolle",
     "Prezzo": 1.5,
-    "Quantita": 140
+    "Quantita": 100
   },
   {
     "Codice": "015",
     "Nome": "carote",
     "Prezzo": 1.5,
-    "Quantita": 150
+    "Quantita": 115
   },
   {
     "Codice": "016",
     "Nome": "zucchine",
     "Prezzo": 3.5,
-    "Quantita": 160
+    "Quantita": 103
   },
   {
     "Codice": "017",
     "Nome": "melanzane",
     "Prezzo": 5.5,
-    "Quantita": 170
+    "Quantita": 70
   },
   {
     "Codice": "018",
     "Nome": "peperoni",
     "Prezzo": 1.5,
-    "Quantita": 180
+    "Quantita": 105
   },
   {
     "Codice": "019",
     "Nome": "cetrioli",
     "Prezzo": 1.5,
-    "Quantita": 190
+    "Quantita": 55
   },
   {
-    "Codice": 11111,
-    "Nome": "genova",
-    "Prezzo": 45454545.0,
-    "Quantita": 68498468
+    "Codice": 22,
+    "Nome": "roma",
+    "Prezzo": 1.0,
+    "Quantita": 15
   }
 ]
