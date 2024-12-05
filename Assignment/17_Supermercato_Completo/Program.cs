@@ -244,18 +244,6 @@ void AdminCercaProdotto()
     }
   }
 
-  //! lamda expression
-  // var product = data.FirstOrDefault(i => i.Nome == nomeProdotto);
-
-  // if (product != null)
-  // {
-  //   Console.WriteLine($"Codice: {product.Codice}, Nome: {product.Nome}, Prezzo: {product.Prezzo}, Quantita: {product.Quantita}");
-  // }
-  // else
-  // {
-  //   Console.WriteLine("Prodotto non trovato");
-  // }
-  //! lamda expression
 }
 
 void AdminAggiungiProdotto()
@@ -311,10 +299,6 @@ void AdminRimuoviProdotto()
 
   var data6 = JsonConvert.DeserializeObject<dynamic[]>(File.ReadAllText(path));
 
-  //! lamda expression
-  // var productToRemove = data5.FirstOrDefault(x => x.Nome == nomeProdotto);
-  // data5.Remove(productToRemove);
-  //! lamda expression
 }
 
 void AdminModificaProdotto()
@@ -333,11 +317,6 @@ void AdminModificaProdotto()
       Console.WriteLine($"Codice: {item.Codice}, Nome: {item.Nome}, Prezzo: {item.Prezzo}, Quantita: {item.Quantita}");
     }
   }
-
-
-  //! lamda expression
-  // var productToModify = data7.FirstOrDefault(i => i.Nome == nomeProdotto);
-  //! lamda expression
 
   for (int i = 0; i < data7.Count; i++)
   {
@@ -372,21 +351,6 @@ void AdminModificaProdotto()
 
       }
     }
-
-    //! non serve più
-    // Console.Write("Nuovo Codice: ");
-    // int nuovoCodice = Convert.ToInt32(Console.ReadLine());
-    // Console.Write("Nuovo Nome: ");
-    // var nuovoNome = Console.ReadLine().ToLower();
-    // Console.Write("Nuovo Prezzo: ");
-    // double nuovoPrezzo = Convert.ToDouble(Console.ReadLine());
-    // Console.Write("Nuova Quantita: ");
-    // int nuovaQuantita = Convert.ToInt32(Console.ReadLine());
-    // productToModify.Codice = nuovoCodice;
-    // productToModify.Nome = nuovoNome;
-    // productToModify.Prezzo = nuovoPrezzo;
-    // productToModify.Quantita = nuovaQuantita;
-    //! non serve più
 
     File.WriteAllText(path, JsonConvert.SerializeObject(data7, Formatting.Indented));
   }
@@ -566,8 +530,8 @@ void ProcediAlPagamento(Dictionary<string, int> carrello)
 
     Random rnd = new Random();
     int numeroScontrino = rnd.Next(1000, 9999);
-    scontrino.Add($"Numero scontrino: {numeroScontrino}");    
-    
+    scontrino.Add($"Numero scontrino: {numeroScontrino}");
+
     string folderData = @"Database";
     string scontrinoPath = Path.Combine(folderData, $"scontrino{numeroScontrino}.txt");
 
