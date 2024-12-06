@@ -1,294 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Supermercato</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- metto -google font- deciderò   -->
-    <!-- my ---- styles.css  -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body class="bg-light">
-    <!-- Navbar -->
-    <div class="container-fluid fixed-top">
-      <div class="row mb-5">
-        <div class="col-12">
-          <nav class="navbar navbar-expand-lg navbar-light bg-success opacity-100">
-            <div class="container">
-              <a href="index.html" class="navbar-brand"> Logo </a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#mobile"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div id="mobile" class="offcanvas offcanvas-start">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title">Logo</h5>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="offcanvas"
-                  ></button>
-                </div>
-                <div class="offcanvas-body">
-                  <ul class="navbar-nav m-auto">
-                    <form class="d-flex">
-                      <input
-                        type="text"
-                        class="form-control me-2 col-6"
-                        placeholder="Search"
-                      />
-                      <button class="btn btn-warning">Search</button>
-                    </form>
-                  </ul>
+<head>
+  <title>My Website</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-                  <!-- Log in -->
-                  <ul class="navbar-nav me-4">
-                    <li class="nav-item">
-                      <button class="btn btn-primary m-2">Log in</button>
-                    </li>
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-                    <!-- Cart -->
-                    <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <i class="fas fa-shopping-cart fs-2"></i>
-                      </a>
-                    </li>
+<body>
+  <div class="container-expand-lg">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+      <div class="container">
+        <a href="index.html" class="navbar-brand navbartext"><i class="fa-solid fa-house fs-2"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobile">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="mobile" class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link active navbartext">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="blogs.html" class="nav-link navbartext">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link navbartext">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex w-50">
+            <input class="form-control rounded-end-0" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-light spinner-border-sm rounded-start-0" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
 
-                    <!-- Language -->
-                    <li class="nav-item dropdown">
-                      <a
-                        href="#"
-                        class="nav-link dropdown-toggle"
-                        id="language"
-                        role="button"
-                        data-bs-toggle="dropdown"
-                      >
-                        <i class="fas fa-globe fs-2"></i>
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="language">
-                        <li>
-                          <a href="#" class="dropdown-item">Italiano</a>
-                        </li>
-                        <li>
-                          <a href="#" class="dropdown-item">English</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+  <header>
+    <!--Carousel-->
+    <div class="container-xxl mt-1 p-0">
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./slider/c1.jpg" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>
+                Some representative placeholder content for the first slide.
+              </p>
             </div>
-          </nav>
+          </div>
+          <div class="carousel-item">
+            <img src="./slider/c2.jpg" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>
+                Some representative placeholder content for the second slide.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./slider/c3.jpg" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>
+                Some representative placeholder content for the third slide.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container bg-info shadow-lg my-2 border-bottom info">
+      <div class="row d-flex bg-light">
+        <div
+          class="row-cols-l-12 row-cols-lg-12 row-cols-md-12 row-cols-sm-12 d-flex justify-content-evenly text-center mt-2 fs-6">
+          <div class="col-lg-3 col-md-2">
+            <i class="fa-solid fa-truck-fast fa-2x" style="color: #ff8800"></i>
+            <h6>
+              Free Shipping <br />
+              Go Now
+            </h6>
+            <p>Free shipping on all your order</p>
+          </div>
+          <div class="col-lg-3">
+            <i class="fa-solid fa-headset fa-2x" style="color: #ff8800"></i>
+            <h6>Customer Support 24/7</h6>
+            <p>Instant access to Support</p>
+          </div>
+          <div class="col-lg-3">
+            <i class="fa-solid fa-bag-shopping fa-2x" style="color: #ff8800"></i>
+            <h6>100% Secure Payment</h6>
+            <p>We ensure your money is save</p>
+          </div>
+          <div class="col-lg-3">
+            <i class="fa-solid fa-hand-holding-dollar fa-2x" style="color: #ff8800"></i>
+            <h6>Money-Back Guarantee</h6>
+            <p>30 Days Money-Back Guarantee</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <header>
-      <!--Carousel-->
+    <!--Popular Categories Card-->
 
-      <div class="container-fluid">
-        <div class="row m-2 mt-5">
-          <div class="col-12">
-            <div
-              id="carouselExampleIndicators"
-              class="carousel slide"
-              data-bs-ride="carousel"
-            >
-              <div class="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="0"
-                  class="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img
-                    src="https://via.placeholder.com/800x400"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>
-                      Some representative placeholder content for the first
-                      slide.
-                    </p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="https://via.placeholder.com/800x400"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>
-                      Some representative placeholder content for the first
-                      slide.
-                    </p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="https://via.placeholder.com/800x400"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>
-                      Some representative placeholder content for the first
-                      slide.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+    <div class="categories container-l mt-3">
+      <h2 class="text-center">Popular Categories</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 m-2">
+        <div class="col">
+          <div class="card h-100">
+            <img src="./slider/pic-1.jpeg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
 
-    <main>
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h2 class="text-center">Prodotti</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="card-group">
-              <div class="card">
-                <img
-                  src="https://via.placeholder.com/150"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Prodotto 1</h5>
-                  <p class="card-text">Descrizione prodotto 1</p>
-                  <p class="card-text">
-                    <small class="text-muted">Prezzo: 1.00 €</small>
-                  </p>
-                  <button class="btn btn-primary">Aggiungi al carrello</button>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    View
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    Add to Cart
+                  </button>
                 </div>
-              </div>
-              <div class="card">
-                <img
-                  src="https://via.placeholder.com/150"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Prodotto 2</h5>
-                  <p class="card-text">Descrizione prodotto 2</p>
-                  <p class="card-text">
-                    <small class="text-muted">Prezzo: 2.00 €</small>
-                  </p>
-                  <button class="btn btn-primary">Aggiungi al carrello</button>
-                </div>
-              </div>
-              <div class="card">
-                <img
-                  src="https://via.placeholder.com/150"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Prodotto 3</h5>
-                  <p class="card-text">Descrizione prodotto 3</p>
-                  <p class="card-text">
-                    <small class="text-muted">Prezzo: 3.00 €</small>
-                  </p>
-                  <button class="btn btn-primary">Aggiungi al carrello</button>
-                </div>
+                <small class="text-muted">$9.99</small>
+
               </div>
             </div>
           </div>
         </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="./slider/pic-1.jpeg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    View
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    Add to Cart
+                  </button>
+                </div>
+                <small class="text-muted">$9.99</small>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="./slider/pic-1.jpeg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    View
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    Add to Cart
+                  </button>
+                </div>
+                <small class="text-muted">$9.99</small>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="./slider/pic-1.jpeg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    View
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    Add to Cart
+                  </button>
+                </div>
+                <small class="text-muted">$9.99</small>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="./slider/pic-1.jpeg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    View
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    Add to Cart
+                  </button>
+                </div>
+                <small class="text-muted">$9.99</small>
+                
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div class="col">
+          <div class="card h-100">
+            <img src="./slider/pic-1.jpeg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    View
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    Add to Cart
+                  </button>
+                </div>
+                <small class="text-muted">$9.99</small>
+                
+              </div>
+            </div>
+          </div>
+        </div>  
       </div>
-    </main>
+    </div>
 
-    <footer>
-      <!-- place footer here -->
-    </footer>
+    <!-- 3 img add and you should write somthing on this img and put on icons -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <img src="./slider/info/1.png" class="img-fluid" alt="..." />
+          <div class="card-img-overlay">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+            <img src="./slider/info/2.png" alt="">
+            <img src="./slider/info/3.png" alt="">
 
-    <!-- Bootstrap JavaScript Libraries -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
+        </div>
+      </div>
+    </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+
+
+    <!--Featured Products Card-->
+
+  </main>
+
+  <footer class="mt-auto">
+    <div class="py-3 bg-dark text-white">
+      <div class="container text-center fs-5">
+        <span> &copy; 2024 All rights reserved </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

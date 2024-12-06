@@ -1,0 +1,41 @@
+@media (max-width: 768px) {
+
+.info
+{
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+  .info h6{
+  font-size: 14px;
+}
+.info p{
+  font-size: 12px;
+}
+.categories h6{
+  font-size: 14px;}
+.categories p{
+  font-size: 12px;
+}
+.navbar-toggler{
+  background-color: #1A1A1A !important;
+}
+}
+
+.navbar {
+    background-color: #F2F2F2 !important;
+    color: #1A1A1A !important;
+}
+
+.navbartext {
+  color: #1A1A1A !important;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.navbar .btn{
+  background-color: #37b43c !important;
+}
+
+
