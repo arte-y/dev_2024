@@ -49,3 +49,25 @@ Realizzare dei layout HTML di varie pagine generiche di un sito web di un superm
 - Utilizzare il sito colorhunt o coolors per la scelta dei colori da utilizzare nel sito web. (https://coolors.co/ o https://colorhunt.co/)
 
 - Utilizzare il piu possibile le impostazioni aria relative all accessibilita.
+
+
+
+Check Requisiti
+
+- Utilizzo delle variabili CSS attraverso il selettore :root
+- Sovrascrittura delle classi di Bootstrap cin !important
+- Personalizzazione dei colori principali
+- Supporto a temi dinamici
+- Modifica dei font e dei titoli
+- Personalizzazione della griglia e dei layout
+- Personalizzazione navbar e pulsanti
+- Typography con google fonts
+- Personalizzazione icons
+- Utilizzo dei mixin
+- Creazione di layout complessi con griglie nidificate
+- Utilizzo delle classi di visibili
+- Allineamento e spaziature responsive
+- Personalizzare dei modali e altri 
+
+- [ ] Unchecked
+- [x] Checked
