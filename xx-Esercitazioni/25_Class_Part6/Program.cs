@@ -11,7 +11,7 @@ class Program
     List<ProdottoAdvanced> prodotti = prodottoRepository.CaricaProdotti();
 
     // creare un oggetto di tipo ProdottoAdvancedManager per gestire i prodotti
-    ProdottoAdvancedManager manager = new ProdottoAdvancedManager();
+    ProdottoAdvancedManager manager = new ProdottoAdvancedManager(prodotti);
 
     // menu interattivo per eseguire le operazioni CRUD sui prodotti
 
@@ -19,6 +19,9 @@ class Program
     bool continua = true;
 
     // il ciclo while continua finche la variabile continua è true
+
+
+    // 1. visualizzare i prodotti nel menu main vengenon solo i prodotti aggiunti in runtime ma non quello del file Json questo un bug
 
     while (continua)
     {
@@ -47,20 +50,25 @@ class Program
           }
           break;
         case "2":
-          Console.Write("Inserisci l'ID del prodotto: ");
-          int id = int.Parse(Console.ReadLine());
-          Console.Write("Inserisci il nome del prodotto: ");
+          // Console.Write("ID: ");
+          // int id = int.Parse(Console.ReadLine());
+          Console.Write("nome: ");
           string nome = Console.ReadLine();
-          Console.Write("Inserisci il prezzo del prodotto: ");
+          Console.Write("prezzo: ");
           decimal prezzo = decimal.Parse(Console.ReadLine());
-          Console.Write("Inserisci la giacenza del prodotto: ");
+          Console.Write("giacenza: ");
           int giacenza = int.Parse(Console.ReadLine());
-          Console.Write("Inserisci la descrizione del prodotto: ");
+          Console.Write("descrizione: ");
           string descrizione = Console.ReadLine();
 
-          manager.AggiungiProdotto(new ProdottoAdvanced { Id = id, NomeProdotto = nome, PrezzoProdotto = prezzo, GiacenzaProdotto = giacenza, DescrizioneProdotto = descrizione });
+          
+          manager.AggiungiProdotto(new ProdottoAdvanced {NomeProdotto =nome, PrezzoProdotto =prezzo, GiacenzaProdotto = giacenza, DescrizioneProdotto=descrizione});
+          // manager.AggiungiProdotto(new ProdottoAdvanced { Id = id, NomeProdotto = nome, PrezzoProdotto = prezzo, GiacenzaProdotto = giacenza, DescrizioneProdotto = descrizione });
+
           break;
         case "3":
+
+          
           Console.Write("Inserisci l'ID del prodotto da cercare: ");
           int idProdotto = int.Parse(Console.ReadLine());
           ProdottoAdvanced prodottoTrovato = manager.TrovaProdotto(idProdotto);
@@ -84,7 +92,7 @@ class Program
           int giacenzaNuovo = int.Parse(Console.ReadLine());
           Console.Write("Descrizione: ");
           string descrizioneNuovo = Console.ReadLine();
-          manager.AggiornaProdotto(idProdottoAggiornare, new ProdottoAdvanced { Id = idProdottoAggiornare, NomeProdotto = nomeNuovo, PrezzoProdotto = prezzoNuovo, GiacenzaProdotto = giacenzaNuovo, DescrizioneProdotto = descrizioneNuovo });
+          manager.AggiornaProdotto(idProdottoAggiornare, new ProdottoAdvanced { NomeProdotto = nomeNuovo, PrezzoProdotto = prezzoNuovo, GiacenzaProdotto = giacenzaNuovo, DescrizioneProdotto = descrizioneNuovo });
           break;
         case "5":
           Console.Write("Inserisci l'ID del prodotto da eliminare: ");
@@ -110,6 +118,10 @@ class Program
 
 public class ProdottoAdvanced
 {
+private static int ultimoId = 0; //campo static per tracciare l'ultimo ID generate
+                                // è private perchè non voglio che venga modificato dall'esterno
+                                  // è static perchè voglio che sia condiviso tra tutte le istanze della classe
+
   private int _id;
   private string _nomeProdotto;
   private decimal _prezzoProdotto;
@@ -122,15 +134,37 @@ public class ProdottoAdvanced
     {
       return _id;
     }
-    set
+    private set
     {
-      if (value <= 0)
-      {
-        throw new ArgumentException("Il valore di Id deve essere maggiore di zero");
-      }
-      _id = value;
+      _id = value; // rende il setter privato per impedire meodifiche manuali all'ID
+                    // value e definito iimplicitamente dal compilatore e rappresenta il valore assegnato alla proprietà
+                    // value è una variabile locale e non può essere utilizzata all'esterno del setter
+                    // value è quello che si chiama un parametro implicito cioè non lo devo dichiarare io ma è già dichiarato dal compilatore
     }
   }
+
+// costruttore per generare autmaticamente l'ID
+// quando viene creato un nuovo oggetto ProdottoAdvanced con il costruttore vuoto (senza parametri) viene chiamato questo csoturttore (costruttore default)
+// ceh genera un nuovo ID e lo assegna all'oggetto usando il metodo generaId
+// invece gli altri parametri (nomeprodotto, prezzoprodotto, ------ ) vengono inizializzati con i valori di default (null, 0,0)
+// ed in seguito vengono assegnati i valori inseriti dall'utente
+  public ProdottoAdvanced ()
+  {
+    Id = GeneraId ();
+  }
+// metodo statico per generare un ID progressivo
+// è statico perche in questo caso mi serve che sia condiviso tra tutte le istnza della classe in modo che l'ID sia univoco per ogni prodotto
+  private static int GeneraId ()
+  {
+    // incremento l'ultimo ID e lo restituisco e getlastid è un metodo statico
+    return ++ultimoId;
+
+
+  }
+
+  
+
+
 
   public string NomeProdotto
   {
@@ -183,15 +217,31 @@ public class ProdottoAdvanced
       _descrizioneProdotto = value;
     }
   }
+  
 }
 
 public class ProdottoAdvancedManager
 {
-  private List<ProdottoAdvanced> prodotti = new List<ProdottoAdvanced>(); // prodotti e private perchè non voglio che vengano modificati dall'esterno
-  public ProdottoAdvancedManager()
+  private List<ProdottoAdvanced> prodotti; // prodotti e private perchè non voglio che vengano modificati dall'esterno
+
+  public ProdottoAdvancedManager(List<ProdottoAdvanced> prodotti)
   {
-    prodotti = new List<ProdottoAdvanced>(); // inizializzo la lista di prodotti nel costruttore pubblico in modo ce sia accessibile dall'esterno
+    this.prodotti = prodotti; // fatto costruttore
+
   }
+
+  // public ProdottoAdvancedManager (List<ProdottoAdvanced> prodottiIniziali =nul) //?prof fatto
+  // {
+  //   if(prodottiIniziali != nul)
+  //   prodotti=prodottiIniziali
+  //   else
+  //   prodotti = new List<ProdottoAdvanced>();
+  // }
+
+  // public ProdottoAdvancedManager( )
+  // {
+  //   prodotti = new List<ProdottoAdvanced>(); // inizializzo la lista di prodotti nel costruttore pubblico in modo ce sia accessibile dall'esterno
+  // }
   // metodo per aggiungere un prodotto alla lista
   public void AggiungiProdotto(ProdottoAdvanced prodotto)
   {
