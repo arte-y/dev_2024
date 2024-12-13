@@ -219,22 +219,22 @@ public class ProdottoAdvanced
 public class ProdottoAdvancedManager
 {
   private ProdottoRepository repository; // prof fatto
-  // private int prossimoId; //!
+  private int prossimoId;
   private List<ProdottoAdvanced> prodotti; // prodotti e private perchè non voglio che vengano modificati dall'esterno
 
   public ProdottoAdvancedManager(List<ProdottoAdvanced> prodotti)
   {
-
+    
     this.prodotti = prodotti; // fatto costruttore
     repository = new ProdottoRepository(); // prof fatto
-    // prossimoId = 1; //!
-    // foreach (var prodotto in prodotti)
-    // {
-    //   if (prodotto.Id >= prossimoId)
-    //   {
-    //     prossimoId = prodotto.Id + 1;
-    //   }
-    // }
+    prossimoId = 1;
+    foreach (var prodotto in prodotti)
+    {
+      if (prodotto.Id >= prossimoId)
+      {
+        prossimoId = prodotto.Id + 1;
+      }
+    }
 
   }
 
@@ -253,8 +253,8 @@ public class ProdottoAdvancedManager
   // metodo per aggiungere un prodotto alla lista
   public void AggiungiProdotto(ProdottoAdvanced prodotto)
   {
-    // prodotto.Id = prossimoId; //!
-    // prossimoId++;
+    prodotto.Id = prossimoId;
+    prossimoId++;
     prodotti.Add(prodotto);
 
   }
@@ -314,7 +314,7 @@ public class ProdottoRepository
 
   public void SalvaProdotti(List<ProdottoAdvanced> prodotti)
   {
-    if (!Directory.Exists(folderPath))
+     if (!Directory.Exists(folderPath))
     {
       Directory.CreateDirectory(folderPath);
     }

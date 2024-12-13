@@ -1,4 +1,5 @@
-﻿using System.Data.Common;
+﻿using System.ComponentModel;
+using System.Data.Common;
 using Newtonsoft.Json;
 class Program
 {
@@ -33,8 +34,13 @@ class Program
       Console.WriteLine("6. Esci");
       // ==
       // acquisire l'input dell'utente 
-      Console.Write("\nScelta: ");
-      string scelta = Console.ReadLine();
+      // Console.Write("\nScelta: ");
+      // string scelta = Console.ReadLine();
+      // string scelta  acquissita mediante il meotodo LeggiIntero della InputManager
+
+      string scelta = InputManager.LeggiIntero("\nScelta: ", 1, 6).ToString();
+      // pulisco la console
+      Console.Clear();
 
       // switch-case per geestire le scelte dell'utente che usa scelta come variable di controllo
 
@@ -45,31 +51,29 @@ class Program
           // visualizzare tutti i prodotti con il metodo OttieniProdotti della classe ProdottoAdvancedManager(manager)
           foreach (var prodotto in manager.OttieniProdotti())
           {
-            Console.WriteLine($"Id: {prodotto.Id}, Nome: {prodotto.NomeProdotto}, Prezzo: {prodotto.PrezzoProdotto}, Giacenza: {prodotto.GiacenzaProdotto}, Descrizione: {prodotto.DescrizioneProdotto}");
+            Console.WriteLine($"Id: {prodotto.Id} - Nome: {prodotto.NomeProdotto} - Prezzo: {prodotto.PrezzoProdotto} - Giacenza: {prodotto.GiacenzaProdotto} - Descrizione: {prodotto.DescrizioneProdotto}");
           }
           break;
         case "2":
-          // Console.Write("ID: ");
-          // int id = int.Parse(Console.ReadLine());
-          Console.Write("nome: ");
-          string nome = Console.ReadLine();
-          Console.Write("prezzo: ");
-          decimal prezzo = decimal.Parse(Console.ReadLine());
-          Console.Write("giacenza: ");
-          int giacenza = int.Parse(Console.ReadLine());
-          Console.Write("descrizione: ");
-          string descrizione = Console.ReadLine();
+
+          // acquisisco il nome mediante il metodo LeggiStringa della classe InputManager
+          string nome = InputManager.LeggiStringa("\nnome: ");
+
+          decimal prezzo = InputManager.LeggiDecimale("\nprezzo: ");
+
+          int giacenza = InputManager.LeggiIntero("\ngiacenza: ");
+
+          string descrizione = InputManager.LeggiStringa("\ndescrizione: ");
 
 
           manager.AggiungiProdotto(new ProdottoAdvanced { NomeProdotto = nome, PrezzoProdotto = prezzo, GiacenzaProdotto = giacenza, DescrizioneProdotto = descrizione });
-          // manager.AggiungiProdotto(new ProdottoAdvanced { Id = id, NomeProdotto = nome, PrezzoProdotto = prezzo, GiacenzaProdotto = giacenza, DescrizioneProdotto = descrizione });
 
           break;
         case "3":
 
+          int idProdotto = InputManager.LeggiIntero("\nID: ");
 
-          Console.Write("Inserisci l'ID del prodotto da cercare: ");
-          int idProdotto = int.Parse(Console.ReadLine());
+
           ProdottoAdvanced prodottoTrovato = manager.TrovaProdotto(idProdotto);
           if (prodottoTrovato != null)
           {
@@ -81,21 +85,22 @@ class Program
           }
           break;
         case "4":
-          Console.Write("ID: ");
-          int idProdottoAggiornare = int.Parse(Console.ReadLine());
-          Console.Write("Nome: ");
-          string nomeNuovo = Console.ReadLine();
-          Console.Write("Prezzo: ");
-          decimal prezzoNuovo = decimal.Parse(Console.ReadLine());
-          Console.Write("Giacenza: ");
-          int giacenzaNuovo = int.Parse(Console.ReadLine());
-          Console.Write("Descrizione: ");
-          string descrizioneNuovo = Console.ReadLine();
+          int idProdottoAggiornare = InputManager.LeggiIntero("\nID: ");
+
+          string nomeNuovo = InputManager.LeggiStringa("\nNome: ");
+
+          decimal prezzoNuovo = InputManager.LeggiDecimale("\nPrezzo: ");
+
+          int giacenzaNuovo = InputManager.LeggiIntero("\nGiacenza: ");
+
+          string descrizioneNuovo = InputManager.LeggiStringa("\nDescrizione: ");
+
           manager.AggiornaProdotto(idProdottoAggiornare, new ProdottoAdvanced { NomeProdotto = nomeNuovo, PrezzoProdotto = prezzoNuovo, GiacenzaProdotto = giacenzaNuovo, DescrizioneProdotto = descrizioneNuovo });
           break;
         case "5":
-          Console.Write("Inserisci l'ID del prodotto da eliminare: ");
-          int idProdottoEliminare = int.Parse(Console.ReadLine());
+
+          int idProdottoEliminare = InputManager.LeggiIntero("\nID: ");
+
           manager.EliminaProdotto(idProdottoEliminare);
           break;
         case "6":
@@ -184,6 +189,7 @@ public class ProdottoAdvanced
         throw new ArgumentException("Il valore di PrezzoProdotto deve essere maggiore di zero");
       }
       _prezzoProdotto = value;
+
     }
   }
 
@@ -219,7 +225,7 @@ public class ProdottoAdvanced
 public class ProdottoAdvancedManager
 {
   private ProdottoRepository repository; // prof fatto
-  // private int prossimoId; //!
+  private int prossimoId;
   private List<ProdottoAdvanced> prodotti; // prodotti e private perchè non voglio che vengano modificati dall'esterno
 
   public ProdottoAdvancedManager(List<ProdottoAdvanced> prodotti)
@@ -227,14 +233,14 @@ public class ProdottoAdvancedManager
 
     this.prodotti = prodotti; // fatto costruttore
     repository = new ProdottoRepository(); // prof fatto
-    // prossimoId = 1; //!
-    // foreach (var prodotto in prodotti)
-    // {
-    //   if (prodotto.Id >= prossimoId)
-    //   {
-    //     prossimoId = prodotto.Id + 1;
-    //   }
-    // }
+    prossimoId = 1;
+    foreach (var prodotto in prodotti)
+    {
+      if (prodotto.Id >= prossimoId)
+      {
+        prossimoId = prodotto.Id + 1;
+      }
+    }
 
   }
 
@@ -253,8 +259,8 @@ public class ProdottoAdvancedManager
   // metodo per aggiungere un prodotto alla lista
   public void AggiungiProdotto(ProdottoAdvanced prodotto)
   {
-    // prodotto.Id = prossimoId; //!
-    // prossimoId++;
+    prodotto.Id = prossimoId;
+    prossimoId++;
     prodotti.Add(prodotto);
 
   }
@@ -373,3 +379,98 @@ public class ProdottoRepository
 // in prodotto advanced manager
 
 // private int prossimoId = 0;
+
+// *************************************************************
+
+// classe di questione degli input (InputManager) che puo essere itegrata per semplificare e standardizzare l'acquisizione e la validazione degli input dell'utente . 
+// Questa classe aiuta a gestire i casi di arrore e fornisce metodi per acquistare input di diversi tipi
+// uso int-MiValue ed int-MaxValue per dare dei valori di default
+// quando chiami il metodo, puoi specificare solo i valo....
+
+public static class InputManager
+{
+  // metodo LeggiIntero accetta un messaggio da visualizzare all'utente e un intervallo di valori interi consentiti
+  // MinValue e MaxValue sono i metodi di int che rappresentano il valore minimo e massimo di un intero
+  public static int LeggiIntero(string messaggio, int min = int.MinValue, int max = int.MaxValue)
+  {
+    int valore; // variabile per memorizzare il valore intero acquisito
+    // while continua finche l'utente non fornisce un input valido
+    while (true)
+    {
+      Console.WriteLine($"{messaggio}"); // messagio e la variabile di inut che dovro passare aò metodo
+      string input = Console.ReadLine(); // acquisisco l'input dell'utente come stringa
+      // try parse per convertire la stringa in un intero e controllare se l'input è valido
+      if (int.TryParse(input, out valore) && valore >= min && valore <= max)
+      {
+        return valore; // se l'input è valido restituisco il valore
+      }
+      else
+      {
+        Console.WriteLine($"inserice un valore intero compreso tra {min} e {max}."); // messahio di errore
+      }
+    }
+  }
+
+  // metodo LeggiDecimale
+  public static decimal LeggiDecimale(string messaggio, decimal min = decimal.MinValue, decimal max = decimal.MaxValue)
+  {
+    decimal valore; // variabile per memorizzare il valore decimale acquisito
+    while (true)
+    {
+      Console.WriteLine($"{messaggio}");
+      string input = Console.ReadLine();
+      // sostituisco la virgula con il punto per gestire i numeri decimali
+      if (input.Contains(","))
+      {
+        input = input.Replace(",", ".");
+      }
+
+      if (decimal.TryParse(input, out valore) && valore >= min && valore <= max)
+      {
+        return valore;
+      }
+      else
+      {
+        Console.WriteLine($"Inserisci un valore decimale compreso tra {min} e {max}.");
+      }
+    }
+  }
+
+  // metodo LeggiStringa
+  public static string LeggiStringa(string messaggio, bool obbligatorio = true)
+  {
+    while (true)
+    {
+      Console.WriteLine($"{messaggio}"); // messaggio e la variabile di input che dovro passare al metodo
+      string input = Console.ReadLine(); // acquisisco l'input dell'utente come stringa
+      if (!string.IsNullOrWhiteSpace(input) || !obbligatorio)
+      {
+        return input; // restituire il valore della stringa
+      }
+      else
+      {
+        Console.WriteLine("Il valore non può essere vuoto. Riprova."); // messaggio di errore
+      }
+    }
+  }
+
+  public static bool LeggiConferma(string messaggio)
+  {
+    while (true)
+    {
+      Console.WriteLine($"{messaggio} (s/n)");
+      string input = Console.ReadLine().ToLower();
+      if (input == "s" || input == "si")
+      {
+        return true;
+      }
+      if (input == "n" || input == "no")
+      {
+        return false;
+      }
+      Console.WriteLine("Errore: Rispondere 's' o 'n'.");
+
+    }
+  }
+}
+
