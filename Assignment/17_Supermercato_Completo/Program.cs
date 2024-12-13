@@ -54,6 +54,7 @@ var data = JsonConvert.DeserializeObject<dynamic[]>(File.ReadAllText(path));
 
 
 Console.Clear();
+
 Console.WriteLine("Benvenuto al Supermercato");
 
 bool continuaT = true;

@@ -95,6 +95,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "27_Class-Part8", "xx-Eserci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "28_Class_Part9", "xx-Esercitazioni\28_Class_Part9\28_Class_Part9.csproj", "{49308B9B-3DA6-4E38-98A4-E7B5CA18AFDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19_Supermercato_Advanced", "Assignment\19_Supermercato_Advanced\19_Supermercato_Advanced.csproj", "{568F590A-A5B7-4F46-8FB7-458EBFC16483}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -273,6 +275,10 @@ Global
 		{49308B9B-3DA6-4E38-98A4-E7B5CA18AFDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49308B9B-3DA6-4E38-98A4-E7B5CA18AFDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49308B9B-3DA6-4E38-98A4-E7B5CA18AFDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{568F590A-A5B7-4F46-8FB7-458EBFC16483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{568F590A-A5B7-4F46-8FB7-458EBFC16483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{568F590A-A5B7-4F46-8FB7-458EBFC16483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{568F590A-A5B7-4F46-8FB7-458EBFC16483}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -321,5 +327,6 @@ Global
 		{93CE6294-2C77-48A0-A57E-7A832F20CFE0} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 		{C3DF2C29-EF84-4582-AC83-F10D67807673} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
 		{49308B9B-3DA6-4E38-98A4-E7B5CA18AFDC} = {B65F928E-A16E-4DC1-B01E-87E39305DE55}
+		{568F590A-A5B7-4F46-8FB7-458EBFC16483} = {4F570AD0-FC46-4FD8-A91F-99E7724D268D}
 	EndGlobalSection
 EndGlobal
