@@ -15,6 +15,7 @@ Implementare le entita che compongono un supermercato.
 |ID|int|viene generato in automatico con un progressivo|
 |username|String|ognuno decide come vuole farlo|
 |carrello|Prodotto[]||
+|||
 |storico_acquisti|Purchases[]|viene popolato al termine di ogni acquisto|
 |percentuale_sconto|int|viene incrementata a seconda del valore dello storico degli acquisti|
 
@@ -24,6 +25,11 @@ Implementare le entita che compongono un supermercato.
 |nome|String|viene inserito dal magazziniere|
 |prezzo|double|viene inserito dal magazziniere|
 |giacenza|int|viene inserito dal magazziniere|
+
+
+|Categoria|Tipo di dato|Note|
+|---|---|---|
+
 
 **Purchases è lo stato nel quale si trova l acquisto di un cliente. Prima di essere passato alla cassa**
 
@@ -49,4 +55,58 @@ Implementare le entita che compongono un supermercato.
 
 |Cassiere|Magazziniere|Amministratore|Cliente|
 |---|---|---|---|
-|puo registrare i prodotti acquistati da un cliente che ha degli acquisti in stato completato e calcolare il totale da pagare generando lo scontrino.|puo visualizzare aggiungere modificare o rimuovere prodotti dal magazzino.|puo visualizzare ed impostare il ruolo dei dipendenti.|Può aggiungere o rimuovere prodotti e cambiare lo stato dell ordine|
+|puo registrare i prodotti acquistati da un cliente che ha degli acquisti in stato completato e calcolare il totale da pagare generando lo scontrino. pou ricaricera credito cliente.|puo visualizzare aggiungere modificare o rimuovere prodotti dal magazzino.|puo visualizzare ed impostare il ruolo dei dipendenti.|Può aggiungere o rimuovere prodotti e cambiare lo stato dell ordine|
+
+
+
+> ## Grafica che rappresente il diagramma 
+
+## Grafici Mermaid
+
+https://mermaid.js.org/
+
+https://jojozhuang.github.io/tutorial/mermaid-cheat-sheet/
+
+## flowchart basic Supermercato
+```mermaid
+graph LR
+DataBase[(
+Interface
+Dipendente - ID
+Dipendente - Username
+Dipendente - Password
+)] -->
+
+DataBase1[(
+Amministratore
+
+)] -->
+DataBase2[(
+Cassiere
+
+)] -->
+DataBase3[(
+Cliente
+
+)] -->
+DataBase4[(
+Magazziniere
+
+)]
+```
+
+``` mermaid
+graph TD
+Start --> Scelta
+Scelta --> |" chi sei"| Amministratore
+Scelta --> |" chi sei"| Cassiere
+Scelta --> |" chi sei"| Cliente
+Scelta --> |" chi sei"| Mazagginiere
+Amministratore --> Login
+Cassiere --> Login
+Cliente --> Login
+Mazagginiere --> Login
+Login -- "Errore" --> Scelta
+Login 
+
+```
