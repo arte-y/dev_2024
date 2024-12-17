@@ -4,12 +4,14 @@ class Program
 {
   static void Main(string[] args)
   {
-    Repository repository = new Repository();
-    List<Prodotto> prodotti = repository.CaricaProdotti();
+    ProdottoRepository prodottoRepository = new ProdottoRepository();
+    ClienteRepository clienteRepository = new ClienteRepository();
+
+    List<Prodotto> prodotti = prodottoRepository.CaricaProdotti();
     ProdottoManager manager = new ProdottoManager(prodotti);
-
-
     ClientManager clientManager = new ClientManager();
+    List<Prodotto> carrello = new List<Prodotto>();
+
 
 
     Console.WriteLine("Benvenuto nel Supermercato!");
@@ -20,7 +22,7 @@ class Program
     string password = Utilities.LeggiStringa("\nPassword: ");
 
     Console.Clear();
-    if (userName == "admin" && password == "admin")
+    if (userName == "1" && password == "1")
     {
       Console.WriteLine("Admin!");
       bool continua = true;
@@ -89,7 +91,7 @@ class Program
             manager.EliminaProdotto(idProdottoEliminare);
             break;
           case "6":
-            repository.SalvaProdotti(manager.OttieniProdotti());
+            prodottoRepository.SalvaProdotti(manager.OttieniProdotti());
             continua = false;
             break;
           default:
@@ -99,11 +101,8 @@ class Program
       }
 
     }
-    else if (userName == "cliente" && password == "cliente")
+    else if (userName == "2" && password == "2")
     {
-      List<Prodotto> carrello = new List<Prodotto>();
-
-      List<Purchases> storicoAcquisti = new List<Purchases>();
 
       Console.WriteLine("Cliente!");
       bool isRunning = true;
@@ -128,40 +127,50 @@ class Program
             break;
 
           case "2":
-            string nomeProdotto = Utilities.LeggiStringa("\nNome Prodotto: ");
-            Prodotto prodottoTrovato = manager.TrovaProdotto(nomeProdotto);
+            Console.WriteLine("Cerca Prodotto e Aggiungi al Carrello:");
+            int idProdotto = Utilities.LeggiIntero("\nID: ");
+            Prodotto prodottoTrovato = manager.TrovaProdotto(idProdotto);
             if (prodottoTrovato != null)
             {
-              Console.WriteLine($"Prodotto trovato: {nomeProdotto}");
-              Console.WriteLine("Vuoi aggiungerlo al carrello? (s/n)");
-
-              string conferma = Console.ReadLine();
+              Console.WriteLine($"Prodotto trovato: Id: {idProdotto}: {prodottoTrovato.Nome} Prezzo: {prodottoTrovato.Prezzo} Giacenza: {prodottoTrovato.Giacenza} Categoria: {prodottoTrovato.Categoria}");
+              Console.WriteLine("Aggiungi al Carrello? (s/n)");
+              string conferma = Utilities.LeggiStringa("Conferma: ");
               if (conferma == "s")
               {
-                Console.WriteLine("Aggiungi al Carrello:");
-                if (clientManager.TrovaProdotto(nomeProdotto) != null)
+                Console.WriteLine("Quante unità vuoi aggiungere al carrello?");
+                int quantita = Utilities.LeggiIntero("Quantità: ");
+
+                int quantitaDisponibile = prodottoTrovato.Giacenza;
+
+                if (quantitaDisponibile < quantita)
                 {
-                  string nome = Utilities.LeggiStringa("\nnome: ");
-
-                  decimal prezzo = Utilities.LeggiDecimale("\nprezzo: ");
-
-                  int giacenza = Utilities.LeggiIntero("\ngiacenza: ");
-
-                  string categoria = Utilities.LeggiStringa("\nCategoria: ");
-
-                  clientManager.AggiungiProdottoAlCarrello(new Prodotto { Nome = nome, Prezzo = prezzo, Giacenza = giacenza, Categoria = categoria });
-
+                  Console.WriteLine("Quantita non disponibile");
                 }
                 else
                 {
-                  Console.WriteLine("Prodotto non trovato");
+                  Prodotto prodotto = new Prodotto
+                  {
+                    Id = prodottoTrovato.Id,
+                    Nome = prodottoTrovato.Nome,
+                    Prezzo = prodottoTrovato.Prezzo,
+                    Giacenza = quantita,
+                    Categoria = prodottoTrovato.Categoria
+                  };
+
+                  prodottoTrovato.Giacenza = quantitaDisponibile - quantita;
+
+                  clientManager.AggiungiProdottoAlCarrello(prodotto);
+
+                  clienteRepository.SalvaCarrello(clientManager.OttieniCarrello());
+                  Console.WriteLine("Prodotto aggiunto al carrello");
+
+
                 }
               }
-
             }
             else
             {
-              Console.WriteLine("Prodotto non trovato");
+              Console.WriteLine($"\nProdotto non trovato per ID {idProdotto}");
             }
 
             break;
@@ -170,9 +179,13 @@ class Program
             clientManager.VisualizzaCarrello();
             break;
           case "4":
+
             Console.WriteLine("Rimuovi dal Carrello:");
-            string rimuoveC = Utilities.LeggiStringa("\nNome Prodotto: ");
-            clientManager.RimuoviProdottoDalCarrello(rimuoveC);
+            int prodottoR = Utilities.LeggiIntero("\nID: ");
+            clientManager.RimuoviProdottoDalCarrello(prodottoR);
+            clienteRepository.SalvaCarrello(clientManager.OttieniCarrello());
+            Console.WriteLine("Prodotto rimosso dal carrello");
+
             break;
           case "5":
             Console.WriteLine("Acquista:");

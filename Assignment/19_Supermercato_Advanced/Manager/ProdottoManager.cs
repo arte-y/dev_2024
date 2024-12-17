@@ -1,6 +1,6 @@
 public class ProdottoManager
 {
-  private Repository repository;
+  private ProdottoRepository repository;
   private int prossimoId;
   private List<Prodotto> prodotti; // prodotti e private perchè non voglio che vengano modificati dall'esterno
 
@@ -8,7 +8,7 @@ public class ProdottoManager
   {
 
     this.prodotti = prodotti;
-    repository = new Repository();
+    repository = new ProdottoRepository();
     prossimoId = 1;
     foreach (var prodotto in prodotti)
     {
@@ -77,7 +77,7 @@ public class ProdottoManager
     if (prodotto != null)
     {
       prodotti.Remove(prodotto);
-      File.Delete($@"Data/Prodotto{prodotto.Id}.json");
+      File.Delete($@"Database/Prodotti/{prodotto.Id}.json");
     }
   }
 

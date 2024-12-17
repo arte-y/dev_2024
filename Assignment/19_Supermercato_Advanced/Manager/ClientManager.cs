@@ -1,14 +1,13 @@
-
 public class ClientManager
 {
-    private Repository repository;
+    private ProdottoRepository repository;
     private List<Prodotto> carrello;
     private List<Purchases> storicoAcquisti;
     private int prossimoId;
 
     public ClientManager()
     {
-        repository = new Repository();
+        repository = new ProdottoRepository();
         carrello = new List<Prodotto>();
         storicoAcquisti = new List<Purchases>();
         prossimoId = 1;
@@ -30,24 +29,17 @@ public class ClientManager
         carrello.Add(prodotto);
     }
 
-    public Prodotto TrovaProdotto(string nome)
+    public Prodotto TrovaProdotto(int id)
     {
-        foreach (var prodotto in carrello)
-        {
-            if (prodotto.Nome == nome)
-            {
-                return prodotto;
-            }
-        }
-        return null;
+        return carrello.FirstOrDefault(p => p.Id == id);
     }
 
-    // modifica un prodotto esistente dentro di carrello
     public void ModificaAlCarrello(int id, Prodotto nuovoProdotto)
     {
-        var prodotto = TrovaProdotto(nuovoProdotto.Nome);
+        var prodotto = TrovaProdotto(id);
         if (prodotto != null)
         {
+            prodotto.Id = nuovoProdotto.Id;
             prodotto.Nome = nuovoProdotto.Nome;
             prodotto.Prezzo = nuovoProdotto.Prezzo;
             prodotto.Giacenza = nuovoProdotto.Giacenza;
@@ -55,14 +47,12 @@ public class ClientManager
         }
     }
 
-    public void RimuoviProdottoDalCarrello(string nome)
+    public void RimuoviProdottoDalCarrello(int id)
     {
-        foreach (var prodotto in carrello)
+        var prodottoDaRimuovere = carrello.FirstOrDefault(p => p.Id == id);
+        if (prodottoDaRimuovere != null)
         {
-            if (prodotto != null)
-            {
-                carrello.Remove(prodotto);
-            }
+            carrello.Remove(prodottoDaRimuovere);
         }
     }
 
@@ -75,7 +65,7 @@ public class ClientManager
         }
         Console.WriteLine($"Totale: {totale}");
         Console.WriteLine("Confermi l'acquisto? (s/n)");
-        string conferma = Console.ReadLine();
+        string conferma = Utilities.LeggiStringa("Conferma:");
     }
 
     public void VisualizzaStoricoAcquisti()
@@ -95,14 +85,8 @@ public class ClientManager
         storicoAcquisti.Add(acquisto);
     }
 
-    public void SalvaCarrello()
+    public List<Prodotto> OttieniCarrello()
     {
-        repository.SalvaProdotti(carrello);
+        return carrello;
     }
-
-    public void CaricaCarrello()
-    {
-        carrello = repository.CaricaProdotti();
-    }
-
 }
