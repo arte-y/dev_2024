@@ -112,10 +112,12 @@ Login
 ```
 
 
+> # Documentazione
 
 # Cosa ci serve!
 ### 1 - Crea una cartella si chiama Models e dentro class quale serve (base)
 
+## Models
 - [x] Cassa
 - [x] Categoria
 - [x] Cliente
@@ -124,6 +126,15 @@ Login
 - [x] Purchases
 
 ## Class Cassa
+Codice details e visualizzare
+<details>
+<summery>Class Cassa</summery>
+
+- [x] Id
+- [x] Dipendente
+- [x] Purchases
+- [x] ScontrinoProcessato
+
 ```csharp
 public class Cassa
 {
@@ -174,7 +185,16 @@ public class Cassa
     }
 }
 ```
+</details>
+
 ## Class Categoria
+Codice Details e visualizzare
+<details>
+<summery> Class Categoria </summery>
+
+- [x] Id
+- [x] Nome
+
 ```csharp
 public class Categoria
 {
@@ -209,7 +229,23 @@ public class Categoria
 
 }
 ```
+</details>
+
 ## Class Cliente
+Codice details e visualizzare
+
+<details>
+
+<summery>Class Cliente</summery>
+
+- [x] Id
+- [x] UserName
+- [x] Carrello
+- [x] StoricoAcquisti
+- [x] PercantualeSconto
+- [x] Credito
+
+
 ```csharp
 public class Cliente
 {
@@ -291,6 +327,8 @@ public class Cliente
     }
 }
 ```
+</details>
+
 ## Class Dipendente
 ```csharp
 public class Dipendente
