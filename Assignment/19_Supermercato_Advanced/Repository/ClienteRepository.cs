@@ -1,69 +1,69 @@
 using Newtonsoft.Json;
 public class ClienteRepository
 {
-    private readonly string folderPath = @"Database/Carrello";
+  private readonly string folderPath = @"Database/Carrello";
 
-    public void SalvaCarrello(List<Prodotto> carrello)
+  public void SalvaCarrello(List<Prodotto> carrello)
+  {
+    if (!Directory.Exists(folderPath))
     {
-        if (!Directory.Exists(folderPath))
-        {
-            Directory.CreateDirectory(folderPath);
-        }
-
-        foreach (var prodotto in carrello)
-        {
-            string filePath = $"{folderPath}/{prodotto.Id}.json";
-            // Serialize file
-            string jsonData = JsonConvert.SerializeObject(prodotto, Formatting.Indented);
-            // Write
-            File.WriteAllText(filePath, jsonData);
-            // Console.WriteLine($"salvati {filePath}");
-        }
+      Directory.CreateDirectory(folderPath);
     }
 
-    public List<Prodotto> CaricaCarrello()
+    foreach (var prodotto in carrello)
     {
-        List<Prodotto> carrello = new List<Prodotto>();
+      string filePath = $"{folderPath}/{prodotto.Id}.json";
+      // Serialize file
+      string jsonData = JsonConvert.SerializeObject(prodotto, Formatting.Indented);
+      // Write
+      File.WriteAllText(filePath, jsonData);
+      // Console.WriteLine($"salvati {filePath}");
+    }
+  }
 
-        // control
-        if (Directory.Exists(folderPath))
-        {
-            string[] filePaths = Directory.GetFiles(folderPath, "*.json");
+  public List<Prodotto> CaricaCarrello()
+  {
+    List<Prodotto> carrello = new List<Prodotto>();
 
-            foreach (var item in filePaths)
-            {
-                // Read fatoo
-                string jsonData = File.ReadAllText(item);
-                // Deserialize
-                Prodotto prodotto = JsonConvert.DeserializeObject<Prodotto>(jsonData);
-                carrello.Add(prodotto);
-                // Console.WriteLine($" caricati {item}");
-            }
-            // foreach (var prodotto in carrello)
-            // {
-            //     Console.WriteLine($"Id: {prodotto.Id}, Nome: {prodotto.Nome}, Prezzo: {prodotto.Prezzo}, Giacenza: {prodotto.Giacenza}, Categoria: {prodotto.Categoria}");
-            // }
-        }
-        else
-        {
-            Console.WriteLine($"Cartella {folderPath} non esiste");
-        }
+    // control
+    if (Directory.Exists(folderPath))
+    {
+      string[] filePaths = Directory.GetFiles(folderPath, "*.json");
 
-        return carrello;
+      foreach (var item in filePaths)
+      {
+        // Read fatoo
+        string jsonData = File.ReadAllText(item);
+        // Deserialize
+        Prodotto prodotto = JsonConvert.DeserializeObject<Prodotto>(jsonData);
+        carrello.Add(prodotto);
+        // Console.WriteLine($" caricati {item}");
+      }
+      // foreach (var prodotto in carrello)
+      // {
+      //     Console.WriteLine($"Id: {prodotto.Id}, Nome: {prodotto.Nome}, Prezzo: {prodotto.Prezzo}, Giacenza: {prodotto.Giacenza}, Categoria: {prodotto.Categoria}");
+      // }
+    }
+    else
+    {
+      Console.WriteLine($"Cartella {folderPath} non esiste");
     }
 
-    public void RimuoviProdottoDaCarrello(int id)
+    return carrello;
+  }
+
+  public void RimuoviDaCarrello(int id)
+  {
+    string filePath = $"{folderPath}/{id}.json";
+    if (File.Exists(filePath))
     {
-        string filePath = $"{folderPath}/{id}.json";
-        if (File.Exists(filePath))
-        {
-            File.Delete(filePath);
-            Console.WriteLine($"Prodotto con id {id} rimosso");
-        }
-        else
-        {
-            Console.WriteLine($"Prodotto con id {id} non trovato");
-        }
+      File.Delete(filePath);
+      Console.WriteLine($"Prodotto con id {id} rimosso");
     }
+    else
+    {
+      Console.WriteLine($"Prodotto con id {id} non trovato");
+    }
+  }
 
 }

@@ -1,57 +1,67 @@
-// using Newtonsoft.Json;
-// public class PurchasesRepository
-// {
-//         private readonly string folderPath = "Database/Prodotti";
+using Newtonsoft.Json;
+public class PurchasesRepository
+{
+  private readonly string folderPath = @"Database/Purchases";
 
-//         public void SalvaAcquisti(List<Purchases> acquisti)
-//     {
-//         if (!Directory.Exists(Path.Combine(folderPath, folderPathAcquisti)))
-//         {
-//             Directory.CreateDirectory(Path.Combine(folderPath, folderPathAcquisti));
-//         }
-//         foreach (var item in acquisti)
-//         {
-//             string filePath = Path.Combine(folderPath, folderPathAcquisti, $"{item.Id}.json");
-//             // Serialize fle
-//             string jsonData = JsonConvert.SerializeObject(item, Formatting.Indented);
-//             // scrivo
-//             File.WriteAllText(filePath, jsonData);
-//             Console.WriteLine($"salvati {filePath}");
-//         }
-//     }
+  public void SalvaPurchases(List<Purchases> purchases)
+  {
+    if (!Directory.Exists(folderPath))
+    {
+      Directory.CreateDirectory(folderPath);
+    }
 
-//     public List<Purchases> CaricaAcquisti()
-//     {
-//         List<Purchases> acquisti = new List<Purchases>();
+    foreach (var purchase in purchases)
+    {
+      string filePath = $"{folderPath}/{purchase.Id}.json";
+      // Serialize file
+      string jsonData = JsonConvert.SerializeObject(purchase, Formatting.Indented);
+      // Write
+      File.WriteAllText(filePath, jsonData);
+      // Console.WriteLine($"salvati {filePath}");
+    }
+  }
 
-//         // control
-//         if (Directory.Exists(Path.Combine(folderPath, folderPathAcquisti)))
-//         {
-//             string[] filePaths = Directory.GetFiles(Path.Combine(folderPath, folderPathAcquisti), "*.json");
+  public List<Purchases> CaricaPurchases()
+  {
+    List<Purchases> purchases = new List<Purchases>();
 
-//             foreach (var item in filePaths)
-//             {
-//                 string jsonData = File.ReadAllText(item);
+    // control
+    if (Directory.Exists(folderPath))
+    {
+      string[] filePaths = Directory.GetFiles(folderPath, "*.json");
 
-//                 Purchases acquisto = JsonConvert.DeserializeObject<Purchases>(jsonData);
-//                 acquisti.Add(acquisto);
-//                 Console.WriteLine($" caricati {item}");
-//             }
+      foreach (var item in filePaths)
+      {
+        // Read fatoo
+        string jsonData = File.ReadAllText(item);
+        // Deserialize
+        Purchases purchase = JsonConvert.DeserializeObject<Purchases>(jsonData);
+        purchases.Add(purchase);
+        // Console.WriteLine($" caricati {item}");
+      }
+      // foreach (var purchase in purchases)
+      // {
+      //     Console.WriteLine($"Id: {purchase.Id}, Nome: {purchase.Nome}, Prezzo: {purchase.Prezzo}, Giacenza: {purchase.Giacenza}, Categoria: {purchase.Categoria}");
+      // }
+    }
+    else
+    {
+      Console.WriteLine($"Cartella {folderPath} non esiste");
+    }
 
-//             foreach (var acquisto in acquisti)
-//             {
-//                 Console.WriteLine($"Id: {acquisto.Id}, Nome: {acquisto.Prodotto.Nome}, Prezzo: {acquisto.Prodotto.Prezzo}, Categoria: {acquisto.DataAcquisto}, Quantita: {acquisto.Quantita}");
-//             }
-//         }
-//         else
-//         {
-//             Console.WriteLine($"Cartella {folderPath} e {folderPathAcquisti} non esiste");
+    return purchases;
+  }
 
-        
-//         }
-
-//         return acquisti;
-//     }
-
-
-// }
+  public void RimuoviDaPurchases(int id)
+  {
+    string filePath = $"{folderPath}/{id}.json";
+    if (File.Exists(filePath))
+    {
+      File.Delete(filePath);
+    }
+    else
+    {
+      Console.WriteLine("Errore: file non trovato");
+    }
+  }
+}

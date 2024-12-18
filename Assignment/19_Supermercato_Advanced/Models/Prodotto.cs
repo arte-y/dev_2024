@@ -1,12 +1,11 @@
-
 public class Prodotto
 {
     private static int ultimoId = 0;
     private int _Id;
     private string _Nome;
-    private decimal _Prezzo;
-    private int _Giacenza;
     private string _Categoria;
+    private double _Prezzo;
+    private int _Giacenza;
 
     public Prodotto()
     {
@@ -44,7 +43,7 @@ public class Prodotto
         }
     }
 
-    public decimal Prezzo
+    public double Prezzo
     {
         get { return _Prezzo; }
         set
