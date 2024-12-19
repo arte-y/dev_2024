@@ -12,7 +12,7 @@ string nomeUtente = "";  // Kullanıcının adı soyadı
 
 do
 {
-  // sklfjsdkgfjsldngskdg
+  // sklfjsdkgfjsldngskdg Tamer
   // İlk olarak isim ve soyisim alınır
   Console.WriteLine("Inserisci il tuo nome e cognome:");
   nomeUtente = Console.ReadLine();
