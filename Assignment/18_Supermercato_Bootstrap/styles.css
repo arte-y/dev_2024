@@ -196,3 +196,11 @@
 .cs-bg-color-errore {
   background-color: #e67b08;
 }
+
+.d-Panel{
+  background-color: #807575 !important;
+  /* her zaman ekranda full gorunsun */
+  height: 100vh;
+  display: inline-block;
+
+}
